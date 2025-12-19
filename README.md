@@ -100,7 +100,7 @@
 
 * Learn IL, MSIL, and .NET execution flow
 
-# 📅 Day 4- December 19, 2025 – Introduction to Basics of C# 💻📁
+# 📅 Day 4 - December 19, 2025 – Introduction to Basics of C# 💻📁
 
 ## Topic: Operators, Data Types, and Type Conversion 🔧
 
@@ -118,5 +118,26 @@
 
 * Practiced simple examples to apply operations and data type conversions.
 
+## Afternoon Session
 
+* Understood how a C# program executes internally using different memory areas  
+* Learned about Heap memory and how objects and non-static data are stored  
+* Studied Stack memory and its role in method calls, local variables, and execution flow  
+* Learned about Stack Overflow errors and their causes  
+* Learned about Static Memory Area (Method Area) and its importance  
+* Understood static members, their characteristics, and execution order  
+* Studied the difference between static and non-static members  
+* Learned about constructors and their role in object initialization  
+* Gained understanding of access modifiers in C#:
+  * public
+  * private
+  * protected
+  * internal
+  * protected internal
+  * private protected
+
+## 🧪 Task for the Day
+
+* Write programs demonstrating access modifiers    
+* Solved Level1 and Level2 coding Questions and pushed in github. 
 
