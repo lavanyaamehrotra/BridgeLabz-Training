@@ -141,3 +141,35 @@
 * Write programs demonstrating access modifiers    
 * Solved Level1 and Level2 coding Questions and pushed in github. 
 
+# 📅 Day 5 –22nd Dec 2025- C# Control Flows Lab Practice 💻
+
+## 🔁 Topic-Control Flow Statements and Decision Making in C#
+
+## 🧩 What I Learned
+
+* Understood C# Control Flows and their role in controlling program execution
+
+* Learned about the boolean (bool) data type and its usage in conditions
+
+* Studied boolean expressions that evaluate to true or false
+
+* Used logical operators (&&, ||, !) to combine multiple conditions
+
+* Implemented conditional statements:if , else if , else
+
+* Learned looping constructs:for loop, while loop
+
+* Understood the use of break and continue statements to control loop execution
+
+* Learned and practiced the switch statement for multi-way decision making
+
+## 🧪 Tasks Completed
+
+* Wrote programs using if-else and switch statements
+
+* Implemented for and while loops with break and continue
+
+* Solved control flow based coding problems
+
+* Pushed all solutions to GitHub
+
