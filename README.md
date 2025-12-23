@@ -191,8 +191,6 @@
 
 * Accessed multi-dimensional arrays using nested loops
 
-* Used Console.Error.WriteLine() and Environment.Exit() for error handling
-
 * Followed best programming practices with proper naming, comments, indentation, and input validation
 
 ## 🧪 Tasks Completed
