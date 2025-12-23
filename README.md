@@ -173,3 +173,32 @@
 
 * Pushed all solutions to GitHub
 
+# 📅 Day 6 — December 23, 2025 — C# Arrays Lab Practice 🧮
+## 🔢 Topic: Arrays in C#
+## 🧩 What I Learned
+
+* Learned basics of C# Arrays and their usage
+
+* Created and accessed single-dimensional arrays
+
+* Accessed array elements using for loop
+
+* Modified array values
+
+* Used Length property of arrays to avoid hard coding
+
+* Learned multi-dimensional and 2D arrays (matrix)
+
+* Accessed multi-dimensional arrays using nested loops
+
+* Used Console.Error.WriteLine() and Environment.Exit() for error handling
+
+* Followed best programming practices with proper naming, comments, indentation, and input validation
+
+## 🧪 Tasks Completed
+
+* Implemented programs using single and multi-dimensional arrays
+
+* Validated user inputs and handled errors
+
+* Pushed all C# array programs to GitHub
