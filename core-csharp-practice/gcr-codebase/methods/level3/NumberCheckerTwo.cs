@@ -10,7 +10,7 @@ class NumberChecker{
     Console.WriteLine("Digits in number:");
     for (int i = 0; i < digits.Length; i++)
       Console.Write(digits[i] + " ");
-    Console.WriteLine("\nDigit Count = " + digitCount);
+    Console.WriteLine("Digit Count = " + digitCount);
     //Sum of digits
     int sumDigits = SumDigits(digits);
     Console.WriteLine("Sum of Digits = " + sumDigits);
