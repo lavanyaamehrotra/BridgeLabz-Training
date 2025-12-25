@@ -1,11 +1,4 @@
 //   Extend or Create a NumberChecker utility class and perform the following task. Call from the main() method the different methods and display results. Make sure all are static methods
-// Hint => 
-// a.               Method to Check if a number is a prime number. A prime number is a number greater than 1 that has no positive divisors other than 1 and itself. 
-// b.               Method to Check if a number is a neon number. A neon number is a number where the sum of digits of the square of the number is equal to the number itself 
-// c.                Method to Check if a number is a spy number. A number is called a spy number if the sum of its digits is equal to the product of its digits
-// d.               Method to Check if a number is an automorphic number. An automorphic number is a number whose square ends with the number itself. E.g. 5 is an automorphic number
-// e.               Method to Check if a number is a buzz number. A buzz number is a number that is either divisible by 7 or ends with 7
-
 using System;
 class NumberCheckerFour{
   static void Main(){
