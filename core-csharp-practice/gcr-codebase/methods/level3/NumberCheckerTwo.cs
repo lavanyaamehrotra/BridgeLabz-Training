@@ -24,7 +24,7 @@ class NumberChecker{
       Console.WriteLine("Harshad Number: NO");
     //Digit frequency
     int[,] frequency = DigitFrequency(digits);
-    Console.WriteLine("\nDigit Frequency:");
+    Console.WriteLine("Digit Frequency:");
     for (int i = 0; i < 10; i++){
       if (frequency[i, 1] > 0)
         Console.WriteLine("Digit " + frequency[i, 0] + " = " + frequency[i, 1]);
