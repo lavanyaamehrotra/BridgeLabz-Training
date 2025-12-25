@@ -1,12 +1,11 @@
 // Extend or Create a NumberChecker utility class and perform the following task. Call from the main() method the different methods and display results. Make sure all are static methods
 using System;
-
 class NumberCheckerFive{
   static void Main(){
     Console.Write("Enter a number: ");
     int number = Convert.ToInt32(Console.ReadLine());
     int[] factors = GetFactors(number);
-    Console.WriteLine("\nFactors of " + number + ":");
+    Console.WriteLine("Factors of " + number + ":");
     for (int i = 0; i < factors.Length; i++){
       Console.Write(factors[i] + " ");
     }
@@ -14,7 +13,7 @@ class NumberCheckerFive{
     Console.WriteLine("Sum of Factors = " + SumOfFactors(factors));
     Console.WriteLine("Product of Factors = " + ProductOfFactors(factors));
     Console.WriteLine("Product of Cubes of Factors = " + ProductOfCubes(factors));
-    Console.WriteLine("\nPerfect Number = " + IsPerfect(number, factors));
+    Console.WriteLine("Perfect Number = " + IsPerfect(number, factors));
     Console.WriteLine("Abundant Number = " + IsAbundant(number, factors));
     Console.WriteLine("Deficient Number = " + IsDeficient(number, factors));
     Console.WriteLine("Strong Number = " + IsStrong(number));
@@ -34,48 +33,36 @@ class NumberCheckerFive{
             if (number % i == 0)
                 factors[index++] = i;
         }
-
-        return factors;
+      return factors;
     }
-
     // Greatest factor
     public static int GetGreatestFactor(int[] factors){
         int greatest = factors[0];
-
         for (int i = 1; i < factors.Length; i++){
-            if (factors[i] > greatest)
-                greatest = factors[i];
+          if (factors[i] > greatest)
+            greatest = factors[i];
         }
-
-        return greatest;
+      return greatest;
     }
-
     // Sum of factors
     public static int SumOfFactors(int[] factors){
-        int sum = 0;
-
-        for (int i = 0; i < factors.Length; i++)
-            sum += factors[i];
-
-        return sum;
+      int sum = 0;
+      for (int i = 0; i < factors.Length; i++)
+        sum += factors[i];
+      return sum;
     }
-
     // Product of factors
     public static long ProductOfFactors(int[] factors){
-        long product = 1;
-
-        for (int i = 0; i < factors.Length; i++)
-            product *= factors[i];
-
-        return product;
+      long product = 1;
+      for (int i = 0; i < factors.Length; i++)
+        product *= factors[i];
+      return product;
     }
-
     // Product of cubes of factors
     public static double ProductOfCubes(int[] factors){
         double product = 1;
 
-        for (int i = 0; i < factors.Length; i++)
-        {
+        for (int i = 0; i < factors.Length; i++){
             product *= Math.Pow(factors[i], 3);
         }
 
@@ -83,19 +70,16 @@ class NumberCheckerFive{
     }
     // Perfect number check
     public static bool IsPerfect(int number, int[] factors){
-            int sum = 0;
-
-            for (int i = 0; i < factors.Length - 1; i++)
-                sum += factors[i];
-
-            return sum == number;
+      int sum = 0;
+      for (int i = 0; i < factors.Length - 1; i++)
+        sum += factors[i];
+      return sum == number;
     }
     // Abundant number check
     public static bool IsAbundant(int number, int[] factors){
         int sum = 0;
-
         for (int i = 0; i < factors.Length - 1; i++)
-            sum += factors[i];
+          sum += factors[i];
 
         return sum > number;
     }
