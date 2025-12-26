@@ -1,5 +1,4 @@
-//  Split Text into Words and Display Word Lengths
-// Hint => 
+//  Split Text into Words and Display Word Length. 
 // Write a method to split text into words without using string.Split(). Use char comparison for spaces.
 // Write another method to calculate string length without string.Length.
 // Return a 2D array where each row contains the word and its length.
