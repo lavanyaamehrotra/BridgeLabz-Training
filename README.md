@@ -206,10 +206,14 @@
 ## Topic: Methods and Function Implementation 🔧  
 
 **What I Learnt:** 📚                 
-* Understood the concept of methods in C# ✅                       
-* Learned method syntax and structure 🔢🔢               
-* Created user-defined methods  📦                           
-* Learned how to call methods from the Main() method ✏️                       
+* Understood the concept of methods in C# ✅  
+
+* Learned method syntax and structure 🔢🔢 
+
+* Created user-defined methods  📦    
+
+* Learned how to call methods from the Main() method ✏️    
+
 * Solved basic logical problems by dividing code into methods 📏                            
 
 ## Day 8: December 26, 2025- Strings in C# 📅
@@ -218,11 +222,18 @@
 
 **What I Learnt:** 📚          
 
-* Introduction to strings in C# 🧩        
-* Declaring and initializing strings🔄         
-* Taking string input from the user 📦          
-* Accessing characters in a string using index ✔️❌        
-* Using string properties and methods such as:Length, ToUpper(), ToLower(), Equals() 🔗           
+* Introduction to strings in C# 🧩  
+
+* Declaring and initializing strings🔄    
+
+* Taking string input from the user 📦     
+
+* Accessing characters in a string using index ✔️❌      
+
+* Using string properties and methods such as:Length, ToUpper(), ToLower(), Equals() 🔗     
+
 * Performed basic string operations: Comparing two strings, Reversing a string, Checking for palindrome strings, Counting vowels and consonants 🔐
-* Implemented programs without using built-in shortcuts where required 📏         
+
+* Implemented programs without using built-in shortcuts where required 📏       
+  
 * Improved understanding of string manipulation and logic building ✅
