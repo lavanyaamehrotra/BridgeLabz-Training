@@ -237,3 +237,60 @@
 * Implemented programs without using built-in shortcuts where required 📏       
   
 * Improved understanding of string manipulation and logic building ✅
+
+## 📅 Day 9 — December 27, 2025 — String Programs Practice 🧵
+## 🧩 What I Learned
+
+* Practiced multiple logic-based string programs
+
+* Strengthened condition handling and problem-solving skills
+
+* Worked on programs like palindrome check, word count, vowel count, and character frequency
+
+## 🧪 Tasks Completed
+
+* Implemented string programs without using shortcuts
+
+* Focused on clean coding and proper structure
+
+* Pushed all solutions to GitHub
+
+## 📅 Day 10 — December 28, 2025 — Built-in String Methods 🔧
+## 🧩 What I Learned
+
+* Practiced C# built-in string methods
+
+* Worked with Split(), Replace(), Substring(), Contains(), etc.
+
+* Improved real-time string handling approach
+
+## 🧪 Tasks Completed
+
+* Solved problems using built-in methods
+
+* Compared manual vs function-based logic
+
+* Uploaded completed programs to GitHub
+
+## 📅 Day 11 — December 29, 2025 — Scenario-Based Coding Practice 🎯
+## 🧩 What I Learned
+
+* Applied programming concepts to real-world scenarios
+
+* Improved logic structuring
+
+## 🧪 Tasks Completed
+
+* Implemented scenario programs including:
+
+* 🎲 Snake & Ladder Game
+
+* 🌡️ Temperature Analyzer
+
+* 🏏 Score Card Manager
+
+* 📝 Sentence Formatter
+
+* Enhanced problem-solving and program flow design
+
+* Committed all solutions to GitHub
