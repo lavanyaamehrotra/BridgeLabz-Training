@@ -14,7 +14,7 @@ class SnakeAndLadder{
   // Snakes
   int[] snakeStart  = { 29, 41, 63, 87, 99 };
   int[] snakeEnd    = { 5, 20, 45, 59, 70 };
-  int[] board = new int[101];
+  int[] board = new int[100];
   //menu driven code for entering the choice what player want to do
   public void Start(){
     int choice = 0;
@@ -48,7 +48,7 @@ class SnakeAndLadder{
     playerCount = Convert.ToInt32(Console.ReadLine());
     if (playerCount < 2 || playerCount > 4){
       Console.WriteLine("Invalid plz choose btw two to four");
-      playerCount = 2;
+      return;
     }
     for (int i = 0; i < playerCount; i++)
       positions[i] = 0;
@@ -78,7 +78,7 @@ class SnakeAndLadder{
     //this function calculates the player moves
   void MovePlayer(){
     bool win = false;
-    Console.WriteLine("\nGame Started -ALL THE BEST");
+    Console.WriteLine("\nGame Started-ALL THE BEST");
     while (!win){
       for (int i = 0; i < playerCount; i++){
         Console.WriteLine($"\n{names[i]}'s turn — press ENTER to roll");
