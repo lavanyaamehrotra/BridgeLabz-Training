@@ -56,12 +56,12 @@ namespace BridgeLabzTraining.oops.banking_system{
         public void ShowAccountDetails(){
             Console.WriteLine("\n====== ACCOUNT DETAILS ======");
             Console.WriteLine($"Account Holder : {AccountHolder}");
-            Console.WriteLine($"Account Number : {AccountNumber}");
-            Console.WriteLine($"Bank Name      : {BankName}");
-            Console.WriteLine($"Branch Name    : {BranchName}");
-            Console.WriteLine($"IFSC Code      : {IFSC}");
-            Console.WriteLine($"City           : {City}");
-            Console.WriteLine($"Balance        : ₹{Balance}");
+            Console.WriteLine($"Account Number: {AccountNumber}");
+            Console.WriteLine($"Bank Name : {BankName}");
+            Console.WriteLine($"Branch Name: {BranchName}");
+            Console.WriteLine($"IFSC Code: {IFSC}");
+            Console.WriteLine($"City: {City}");
+            Console.WriteLine($"Balance: rs{Balance}");
         }
     }
 }
