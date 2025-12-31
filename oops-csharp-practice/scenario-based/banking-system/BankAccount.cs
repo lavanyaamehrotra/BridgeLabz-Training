@@ -1,11 +1,5 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BridgeLabzTraining.oops.banking_system{
-    internal class BankAccount{
+class BankAccount{
         // Basic account details
         public string AccountNumber;
         public string AccountHolder;
@@ -63,4 +57,4 @@ namespace BridgeLabzTraining.oops.banking_system{
             Console.WriteLine($"Balance: rs{Balance}");
         }
     }
-}
+    
