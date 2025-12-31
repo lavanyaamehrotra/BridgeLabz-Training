@@ -10,13 +10,11 @@ namespace BridgeLabzTraining.oops.banking_system{
         public string AccountNumber;
         public string AccountHolder;
         public double Balance;
-
-        // Additional details
         public string BankName;
         public string BranchName;
         public string IFSC;
         public string City;
-
+        //About bank account
         public BankAccount(string accNo, string holder, double balance, string bankName,string branchName, string ifsc, string city){
             AccountNumber = accNo;
             AccountHolder = holder;
@@ -26,7 +24,7 @@ namespace BridgeLabzTraining.oops.banking_system{
             IFSC = ifsc;
             City = city;
         }
-
+        //function for deposit
         public void Deposit(double amount){
             if (amount <= 0){
                 Console.WriteLine("Deposit amount > 0.");
@@ -35,6 +33,7 @@ namespace BridgeLabzTraining.oops.banking_system{
             Balance += amount;
             Console.WriteLine($"Deposited Rs{amount}. New Balance = Rs{Balance}");
         }
+        //function for withdraw
         public void Withdraw(double amount){
             if (amount <= 0){
                 Console.WriteLine("Withdraw amount > 0");
@@ -48,12 +47,12 @@ namespace BridgeLabzTraining.oops.banking_system{
             Balance -= amount;
             Console.WriteLine($"Withdrawn rs{amount}. Remaining Balance = Rs{Balance}");
         }
-
+        //function for check balance
         public void CheckBalance(){
             Console.WriteLine($"Current Balance: rs{Balance}");
         }
-
-        public void ShowAccountDetails(){
+        //function for account details
+        public void AccountDetails(){
             Console.WriteLine("\n====== ACCOUNT DETAILS ======");
             Console.WriteLine($"Account Holder : {AccountHolder}");
             Console.WriteLine($"Account Number: {AccountNumber}");
