@@ -57,10 +57,10 @@ namespace BridgeLabzTraining.oops.banking_system
 
             // Create account
             BankAccount account = new BankAccount(accNo, holder, balance, bankName, branch, ifsc, city);BankManager manager = new BankManager(account);
-
+            //login panel menu
             int userType = 0;
             do{
-                Console.WriteLine("\n=============== LOGIN PANEL=============== ======");
+                Console.WriteLine("\n=============== LOGIN PANEL=====================");
                 Console.WriteLine("1. Bank User");
                 Console.WriteLine("2. Bank Manager");
                 Console.WriteLine("3. Exit App");
@@ -91,7 +91,7 @@ namespace BridgeLabzTraining.oops.banking_system
 
             } while (userType != 3);
         }
-
+        //function for user menu
         static void UserMenu(BankAccount account){
             int choice = 0;
             do{
