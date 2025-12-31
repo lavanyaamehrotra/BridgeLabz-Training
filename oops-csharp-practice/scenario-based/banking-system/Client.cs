@@ -1,14 +1,6 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-namespace BridgeLabzTraining.oops.banking_system
-{
-    internal class Client
-    {
-        static void Main(string[] args)
-        {
+class Client{
+        static void Main(string[] args){
             // Collect account info
             Console.Write("Enter Account Holder Name: ");
             string holder = Console.ReadLine();
@@ -149,4 +141,4 @@ namespace BridgeLabzTraining.oops.banking_system
             } while (choice != 4);
         }
     }
-}
+
