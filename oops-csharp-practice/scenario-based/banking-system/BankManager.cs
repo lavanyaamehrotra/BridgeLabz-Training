@@ -1,11 +1,5 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BridgeLabzTraining.oops.banking_system{
-  internal class BankManager{
+class BankManager{
     BankAccount account;
     public BankManager(BankAccount acc){
       account = acc;
@@ -37,7 +31,6 @@ namespace BridgeLabzTraining.oops.banking_system{
           Console.WriteLine("Invalid choice.");
           break;
           }
-        } while (choice != 3);
-      }
+      } while (choice != 3);
     }
-}
+  }
