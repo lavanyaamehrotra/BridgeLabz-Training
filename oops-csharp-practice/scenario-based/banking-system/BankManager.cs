@@ -10,6 +10,7 @@ namespace BridgeLabzTraining.oops.banking_system{
     public BankManager(BankAccount acc){
       account = acc;
     }
+    //function for manager
     public void ManagerMenu(){
       int choice;
       do{
@@ -21,7 +22,7 @@ namespace BridgeLabzTraining.oops.banking_system{
         choice=Convert.ToInt32(Console.ReadLine());
         switch (choice){
           case 1:
-          account.ShowAccountDetails();
+          account.AccountDetails();
           break;
           case 2:
           Console.Write("Enter new balance: ");
