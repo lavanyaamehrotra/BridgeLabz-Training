@@ -256,3 +256,34 @@
 * Built EduQuiz grading system with detailed feedback and scoring.
 * Practiced modular programming with methods.
 * Committed all solutions to GitHub.
+
+# 📅 Day 13 — January 01, 2026 — Scenario-Based OOP Projects in C# 🧩
+## Topic: Invoice Generator & Cafeteria Menu System — Applied OOP Concepts 💻
+## 🧩 What I Learned
+## 🧾 Invoice Generator — Freelancer Billing System
+
+## Morning Session
+
+* Designed a menu-driven invoice generator using C#
+* Parsed user input to extract:Task names,item price,Quantity
+* Implemented classes instead of single-file logic
+* Created object-based invoice items
+* Calculated:Item total,Subtotal,Tax,Final bill amount
+* Improved program flow using methods and objects
+* Added basic error handling for user input
+* Key Concepts Practiced
+* Classes & Objects
+* Constructors
+* Methods
+* Data encapsulation
+* Real-world scenario programming
+
+## ☕ Cafeteria Menu Billing System
+
+## Afternoon Session
+
+* Built a menu-driven cafeteria ordering application
+* Implemented Admin & User modes
+* Admin Features:Set daily food items,Assign prices to menu items
+* User Features:View available menu,Select items and quantity,Generate bill with total amount
+* Programming Concepts Practiced: Arrays,Methods, Menu-driven program design,Input validation,Real-time billing logic
