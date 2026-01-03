@@ -287,3 +287,48 @@
 * Admin Features:Set daily food items,Assign prices to menu items
 * User Features:View available menu,Select items and quantity,Generate bill with total amount
 * Programming Concepts Practiced: Arrays,Methods, Menu-driven program design,Input validation,Real-time billing logic
+
+# 📅 Day 13 — January 02, 2026 — Inheritance in C# 🌳
+## 🎯 Topic: Code Reusability & Hierarchical Design
+## 🧩 What I Learned
+
+* Understood Inheritance and the IS-A relationship
+* Worked with Base and Derived Classes
+* Learned the purpose of protected members
+* Applied code reusability using inheritance
+* Strengthened understanding of hierarchical class design
+
+## 🧪 Practice & Scenario-Based Assignments
+
+* Animal Hierarchy Program — Demonstrated base-derived relationships
+* Employee Management System — Role-based inheritance structure
+* Student Hierarchy System — Implemented multi-level inheritance
+
+## 📌 Focus Areas:
+* Clean class design
+* Reusability & modular coding
+* Real-world inheritance scenarios
+* 🚀 All programs practiced and pushed to GitHub
+
+# 📅 Day 14 — January 03, 2025 — OOPS Practice Questions 💻
+## 🎯 Topic: Applying OOPS Concepts Through Hands-On Practice
+## 🧩 What I Learned
+
+* Revised core OOPS concepts:Class & Object,Constructors,Inheritance,Encapsulation 🔗
+* Practiced important C# keywords:this,static,sealed,is 📏
+* Strengthened logical thinking through coding
+* Improved real-world object-oriented problem solving
+
+## 🧪 Practice & Assignments
+
+* Solved multiple OOPS-based practice problems
+* Implemented real-world program scenarios using proper class design
+* Focused on:modular coding,structure clarity,reusable components
+
+## 🧠 Student Quiz Grader — Enhancement Task
+
+* Compared student answers with correct answers
+* Calculated final score
+* Displayed detailed feedback & result summary
+* Strengthened concepts in:Arrays,Methods,Conditional logic
+* 🚀 All solutions implemented and uploaded to GitHub
