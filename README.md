@@ -3,9 +3,7 @@
 
 
 # 📅 Day 1 — December 16, 2025 — Git & GitHub Basics
-
 ## Topic: Introduction to Git and GitHub
-
 ## 🧩 What I Learned
 
 * Basics of Git and GitHub
@@ -25,9 +23,7 @@
 * Converting code between languages
 
 # 📅 Day 2 — December 17, 2025 — GitHub Setup & Java Basics
-
 ## Topic: GitHub Repository Setup, Folder Structure Organization
-
 ## 🧩 What I Learned
 
 * Setting up a GitHub repository for project tracking
@@ -45,11 +41,8 @@
 * Converting Java code to C# and learning branch/folder management
 
 # 📅 Day 3 — December 18, 2025 — Introduction to .NET and C# 🔧
-
 ## Topic: .NET Framework, C# Syntax, Java to C# Conversion
-
 ## 🧩 What I Learned
-
 ## Morning Session:
 
 * Converted Java code to C# and pushed it to GitHub
@@ -78,11 +71,8 @@
 * Learn IL, MSIL, and .NET execution flow
 
 # 📅 Day 4 - December 19, 2025 – Introduction to Basics of C# 💻📁
-
 ## Topic: Operators, Data Types, and Type Conversion 🔧
-
 ## 🧩 What I Learned
-
 ## Morning Session:
 
 * In the first half, learned the basics of C# focusing on operators, data types, and type conversion.
@@ -115,9 +105,7 @@
 * Solved Level1 and Level2 coding Questions and pushed in github. 
 
 # 📅 Day 5–22nd Dec 2025- C# Control Flows Lab Practice 💻
-
 ## 🔁 Topic-Control Flow Statements and Decision Making in C#
-
 ## 🧩 What I Learned
 
 * Understood C# Control Flows and their role in controlling program execution
@@ -156,10 +144,9 @@
 * Pushed all C# array programs to GitHub
 
 ## Day 7: December 24, 2025 - Methods in C# 📅  
-
 ## Topic: Methods and Function Implementation 🔧  
+**What I Learnt:** 📚 
 
-**What I Learnt:** 📚                 
 * Understood the concept of methods in C# ✅  
 * Learned method syntax and structure 🔢🔢 
 * Created user-defined methods  📦    
@@ -167,9 +154,7 @@
 * Solved basic logical problems by dividing code into methods 📏                            
 
 ## Day 8: December 26, 2025- Strings in C# 📅
-
 ## Topic:String Handling and Operations 🧵 
-
 **What I Learnt:** 📚          
 
 * Introduction to strings in C# 🧩  
@@ -224,11 +209,8 @@
 * Committed all solutions to GitHub
 
 # 📅 Day 12 — December 30, 2025 — Scenario-Based C# Programs 🧩
-
 ## Topic: Library Management System & EduQuiz – Student Quiz Grader 📚🎓
-
 ## 🧩 What I Learned
-
 ## Morning Session – Library Management System
 
 * Designed a small library system to manage books and track checkouts.
@@ -288,7 +270,7 @@
 * User Features:View available menu,Select items and quantity,Generate bill with total amount
 * Programming Concepts Practiced: Arrays,Methods, Menu-driven program design,Input validation,Real-time billing logic
 
-# 📅 Day 13 — January 02, 2026 — Inheritance in C# 🌳
+# 📅 Day 14 — January 02, 2026 — Inheritance in C# 🌳
 ## 🎯 Topic: Code Reusability & Hierarchical Design
 ## 🧩 What I Learned
 
@@ -310,7 +292,7 @@
 * Real-world inheritance scenarios
 * 🚀 All programs practiced and pushed to GitHub
 
-# 📅 Day 14 — January 03, 2025 — OOPS Practice Questions 💻
+# 📅 Day 15 — January 03, 2025 — OOPS Practice Questions 💻
 ## 🎯 Topic: Applying OOPS Concepts Through Hands-On Practice
 ## 🧩 What I Learned
 
