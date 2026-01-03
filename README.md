@@ -239,7 +239,17 @@
 * Practiced modular programming with methods.
 * Committed all solutions to GitHub.
 
-# 📅 Day 13 — January 01, 2026 — Scenario-Based OOP Projects in C# 🧩
+# Day 13- December 31, 2025- Keywords in C# & Practical Scenarios 📅
+## Topic: this, static, sealed & is Operator 🔑
+## What I Learnt: 📚
+
+* this keyword for resolving naming conflicts 🧠
+* static variables and methods 🧩
+* sealed keyword to restrict inheritance 📦
+* is operator for type checking 🌐
+* Practice & Scenario-Based Assignments: Bank Account System, Employee / Student Type Verification, Secure Utility Class 💻
+
+# 📅 Day 14 — January 01, 2026 — Scenario-Based OOP Projects in C# 🧩
 ## Topic: Invoice Generator & Cafeteria Menu System — Applied OOP Concepts 💻
 ## 🧩 What I Learned
 ## 🧾 Invoice Generator — Freelancer Billing System
@@ -270,7 +280,7 @@
 * User Features:View available menu,Select items and quantity,Generate bill with total amount
 * Programming Concepts Practiced: Arrays,Methods, Menu-driven program design,Input validation,Real-time billing logic
 
-# 📅 Day 14 — January 02, 2026 — Inheritance in C# 🌳
+# 📅 Day 15 — January 02, 2026 — Inheritance in C# 🌳
 ## 🎯 Topic: Code Reusability & Hierarchical Design
 ## 🧩 What I Learned
 
@@ -292,7 +302,7 @@
 * Real-world inheritance scenarios
 * 🚀 All programs practiced and pushed to GitHub
 
-# 📅 Day 15 — January 03, 2025 — OOPS Practice Questions 💻
+# 📅 Day 16 — January 03, 2025 — OOPS Practice Questions 💻
 ## 🎯 Topic: Applying OOPS Concepts Through Hands-On Practice
 ## 🧩 What I Learned
 
