@@ -324,3 +324,34 @@
 * Displayed detailed feedback & result summary
 * Strengthened concepts in:Arrays,Methods,Conditional logic
 * 🚀 All solutions implemented and uploaded to GitHub
+
+# 📅 Day 17 — January 05, 2026
+## 🎯 Topic: Applying OOP Concepts in Hospital & Vehicle Rental Systems
+## 🧩 What I Learned
+
+* Strengthened understanding of Inheritance and class hierarchy design
+* Learned how Polymorphism enables dynamic behavior in programs
+* Practiced method overriding to customize functionality in child classes
+* Implemented base & derived classes for real-world entities
+* Improved code reusability and modular structure in applications
+## 🏥 Morning Session — Hospital Management System
+* Designed a program to manage hospital entities using OOP concepts
+* Implemented classes for:Patient,Doctor,Staff,In-Patient / Out-Patient 
+* Used inheritance to share common properties like:
+* Name, Age, ID, Contact Details
+* Applied polymorphism to override:Display details methods,Billing / consultation features
+* Focused on clean class design & real-world mapping
+* 🔑 Concepts Practiced:Base & Derived Classes,Method Overriding,Runtime Polymorphism,Reusable class structure
+
+## 🚗 Afternoon Session — Vehicle Rental Management System
+
+* Designed a rental system using hierarchical inheritance
+* Created base class:Vehicle (brand, model, rent price)
+* Derived classes:Car,Bike,Truck
+* Implemented:Method overriding for rent calculation,Polymorphic behavior for different vehicle types,Improved understanding of how OOP fits real business scenarios
+* 🧠 Key Learnings:Polymorphism for dynamic method execution,Clean separation of responsibilities,Extensible system design
+* 🧪 Practice & Assignments Completed
+* Developed Hospital Management OOP Program
+* Built Vehicle Rental System using Inheritance & Polymorphism
+* Focused on:Class hierarchy design,Method overriding,Real-time scenario implementation
+* 🚀 All programs completed and pushed to GitHub
