@@ -13,5 +13,15 @@ namespace BridgeLabzTraining.employee_wage{
       };
       return emp;
     }
+    //UC-1
+    public void CheckAttendance(Employee emp){ 
+      Random random = new Random();
+      int attendance = random.Next(0, 2); 
+      if(attendance == 1){
+        Console.WriteLine($"{emp.EmployeeName} is Present");
+      }else {
+        Console.WriteLine($"{emp.EmployeeName} is Absent");
+      }
+    }
   }
 }

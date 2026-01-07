@@ -22,6 +22,9 @@ namespace BridgeLabzTraining.employee_wage{
       Console.WriteLine("\nEmployee Added Successfully!\n");
       // Display added employee details
       Console.WriteLine(emp.ToString());
+      // UC1 - CHECK ATTENDANCE
+      Console.WriteLine("\nUC 1 : Check Attendance\n");
+      employeeUtility.CheckAttendance(emp);
     }
   }
 }

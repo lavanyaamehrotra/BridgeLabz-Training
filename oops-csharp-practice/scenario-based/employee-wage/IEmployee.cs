@@ -8,6 +8,7 @@ using System;
 
 namespace BridgeLabzTraining.employee_wage{
     internal interface IEmployee{ // Interface for Employee operations
-        Employee AddEmployee(string name, int id, int salary);
+        Employee AddEmployee(string name, int id, int salary);//UC-0
+         void CheckAttendance(Employee emp); // UC1
     }
 }
