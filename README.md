@@ -355,3 +355,30 @@
 * Built Vehicle Rental System using Inheritance & Polymorphism
 * Focused on:Class hierarchy design,Method overriding,Real-time scenario implementation
 * 🚀 All programs completed and pushed to GitHub
+
+# Day 18: January 6, 2025- Inheritance, Interfaces & Arrays 📅                                       
+##Topic: Polymorphism with Interfaces and Collections 🐦                                 
+## What I Learnt:📚                                   
+- Implementing multiple interfaces 🌐                                      
+- Using arrays to store objects 🧩                                               
+- Runtime type checking using is operator 📏                                              
+- Applying polymorphism while iterating collections 🏗️                                                                                                                                
+- Practice & Scenario-Based Assignments:Bird Sanctuary System(Scenario: EcoWing Wildlife Conservation Center), Customer Service Call Log Manager(Stored call logs using arrays) 💻            
+
+# Day 19: January 7, 2025- Data Structures Introduction 📅                         
+## Topic: Linked List & Problem Solving 🧩                           
+## What I Learnt: 📚                                     
+- Introduction to Data Structures 📁                          
+- Concept of Linked List ✅                                  
+- Difference between arrays and linked lists 🌐                                   
+- Practical use cases of linked lists 📏                                                                                         
+- Practice & Scenario-Based Assignments:Employee Wage Computation Problem(Calculated employee wages based on conditions). 📦                             
+  
+# Day 20: January 8, 2025- Collections & Polymorphic Systems 📅                                        
+## Topic:Stack, Queue, HashMap & System Design 🏠                                         
+## What I Learnt:📚                                         
+- Stack data structure and its operations 💻                                              
+- Queue data structure and FIFO behavior 🧮                                                      
+- HashMap and hashing function basics 🌐                                              
+- Choosing correct data structures for scenarios 🏗️                                                    
+- Practice & Scenario-Based Assignments:Smart Home Automation(Demonstrated polymorphism). ✅
