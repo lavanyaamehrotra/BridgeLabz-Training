@@ -29,9 +29,10 @@ namespace BridgeLabzTraining.employee_wage{
       employeeUtility.CalculateWageUsingSwitch(emp); // UC-2/3/4 combined
       // UC5 - Calculate Monthly Wage
       Console.WriteLine("\nUC5 : Calculate Monthly Wage\n");
-      employeeUtility.CalculateMonthlyWage(emp, 20); 
-
-
+      employeeUtility.CalculateMonthlyWage(emp, 20);
+      // UC6 - Calculate Wages till condition of total hours or day
+      Console.WriteLine("\nUC6 : Calculate Wages Till Condition (100 hours or 20 days)\n");
+      employeeUtility.CalculateWageTillCondition(emp, 100, 20);
     }
   }
 }

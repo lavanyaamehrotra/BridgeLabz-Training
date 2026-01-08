@@ -78,5 +78,39 @@ namespace BridgeLabzTraining.employee_wage{
     }
     Console.WriteLine($"\nUC5: Total Monthly Wage of {emp.EmployeeName} for {workingDays} working days is: {totalWage}");
     }
+    //UC-6 CALCULATE WAGE TILL CONDITION
+    public void CalculateWageTillCondition(Employee emp, int maxHours, int maxDays){
+    Random random = new Random();
+    int totalHours = 0;
+    int totalDays = 0;
+    int totalWage = 0;
+    while (totalHours < maxHours && totalDays < maxDays){
+        totalDays++;
+        int empCheck = random.Next(0, 3);
+        int workingHours = 0;
+        switch (empCheck){
+          case 1:
+            workingHours = FULL_TIME_HOURS;
+            Console.WriteLine($"Day {totalDays}: {emp.EmployeeName} is Full-Time ({workingHours} hrs)");
+            break;
+            case 2:
+            workingHours = PART_TIME_HOURS;
+            Console.WriteLine($"Day {totalDays}: {emp.EmployeeName} is Part-Time ({workingHours} hrs)");
+            break;
+            default:
+            workingHours = 0;
+            Console.WriteLine($"Day {totalDays}: {emp.EmployeeName} is Absent (0 hrs)");
+            break;
+        }
+        if (totalHours + workingHours > maxHours){
+            workingHours = maxHours - totalHours;
+        }
+        totalHours += workingHours;
+        int dailyWage = workingHours * WAGE_PER_HOUR;
+        totalWage += dailyWage;
+      }
+      Console.WriteLine($"\nUC6: Total Wage of {emp.EmployeeName} till {totalHours} hours or {totalDays} days is: {totalWage}");
+      Console.WriteLine($"Total Days Worked: {totalDays}, Total Hours Worked: {totalHours}");
+    }
   }
 }

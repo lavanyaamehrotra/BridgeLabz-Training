@@ -14,6 +14,7 @@ namespace BridgeLabzTraining.employee_wage{
          void CalculatePartTimeWageUC3(Employee emp); // UC3
         void CalculateWageUsingSwitch(Employee emp); // UC-4
         void CalculateMonthlyWage(Employee emp, int workingDays); // UC5
+        void CalculateWageTillCondition(Employee emp, int maxHours, int maxDays); // UC6
 
 
     }
