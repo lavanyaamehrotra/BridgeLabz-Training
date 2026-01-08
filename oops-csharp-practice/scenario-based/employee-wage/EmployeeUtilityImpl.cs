@@ -55,5 +55,28 @@ namespace BridgeLabzTraining.employee_wage{
       int dailyWage = workingHours * WAGE_PER_HOUR;
       Console.WriteLine($"Daily Wage: {dailyWage}");
     }
+    //UC-5 CALCULATE MONTHLY WAGE
+    public void CalculateMonthlyWage(Employee emp, int workingDays){
+    Random random = new Random();
+    int totalWage = 0;
+    for (int day = 1; day <= workingDays; day++){
+        int empCheck = random.Next(0, 3);
+        int workingHours = 0;
+        switch (empCheck){
+        case 1:
+          workingHours = FULL_TIME_HOURS;
+          break;
+        case 2:
+          workingHours = PART_TIME_HOURS;
+          break;
+        default:
+          workingHours = 0;
+          break;
+        }
+        int dailyWage = workingHours * WAGE_PER_HOUR;
+        totalWage += dailyWage;
+    }
+    Console.WriteLine($"\nUC5: Total Monthly Wage of {emp.EmployeeName} for {workingDays} working days is: {totalWage}");
+    }
   }
 }
