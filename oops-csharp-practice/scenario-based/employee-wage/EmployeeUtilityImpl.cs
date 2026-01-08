@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 namespace BridgeLabzTraining.employee_wage{
   public class EmployeeUtilityImpl : IEmployee{
+    private const int WagePerHour = 20;
+    private const int FullDayHour = 8;
     public Employee AddEmployee(string name, int id, int salary){
       Employee emp = new Employee{// Create new Employee object
       EmployeeName = name,
@@ -22,6 +24,15 @@ namespace BridgeLabzTraining.employee_wage{
       }else {
         Console.WriteLine($"{emp.EmployeeName} is Absent");
       }
+    }
+     // UC2 - Calculate Daily Wage
+    public void CalculateDailyWage(Employee emp){
+        int dailyWage = WagePerHour * FullDayHour;
+
+        Console.WriteLine($"\nUC 2 : Calculate Daily Wage");
+        Console.WriteLine($"Wage per Hour  : {WagePerHour}");
+        Console.WriteLine($"Full Day Hours : {FullDayHour}");
+        Console.WriteLine($"Daily Wage     : {dailyWage}");
     }
   }
 }
