@@ -34,5 +34,19 @@ namespace BridgeLabzTraining.employee_wage{
         Console.WriteLine($"Full Day Hours : {FullDayHour}");
         Console.WriteLine($"Daily Wage     : {dailyWage}");
     }
+    // UC-3 ADD PART TIME EMPLOYEE AND WAGE
+public void CalculatePartTimeWageUC3(Employee emp)
+{
+    const int WagePerHour = 20;
+    const int PartTimeHour = 8;
+
+    int partTimeWage = WagePerHour * PartTimeHour;
+
+    Console.WriteLine("\nUC-3 : Part Time Employee Wage");
+    Console.WriteLine($"Employee : {emp.EmployeeName}");
+    Console.WriteLine($"Part Time Hours : {PartTimeHour}");
+    Console.WriteLine($"Wage Per Hour : {WagePerHour}");
+    Console.WriteLine($"Total Wage : {partTimeWage}");
+}
   }
 }
