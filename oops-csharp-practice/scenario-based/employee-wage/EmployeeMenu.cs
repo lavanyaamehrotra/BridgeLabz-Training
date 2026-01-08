@@ -25,12 +25,7 @@ namespace BridgeLabzTraining.employee_wage{
       // UC1 - CHECK ATTENDANCE
       Console.WriteLine("\nUC 1 : Check Attendance\n");
       employeeUtility.CheckAttendance(emp);
-      //UC2-CALCULATE DAILY WAGE
-      Console.WriteLine("\nUC 2 : Calculate Daily Wage\n");
-      employeeUtility.CalculateDailyWage(emp);
-      // UC-3 : PART TIME WAGE
-      Console.WriteLine("\nUC-3 : Part Time Employee Wage\n");
-      employeeUtility.CalculatePartTimeWageUC3(emp);
+      employeeUtility.CalculateWageUsingSwitch(emp); // UC-2/3/4 combined
 
     }
   }

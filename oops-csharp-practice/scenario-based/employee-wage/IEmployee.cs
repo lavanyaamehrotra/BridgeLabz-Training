@@ -12,6 +12,7 @@ namespace BridgeLabzTraining.employee_wage{
          void CheckAttendance(Employee emp); // UC1
          void CalculateDailyWage(Employee emp); // UC2
          void CalculatePartTimeWageUC3(Employee emp); // UC3
+        void CalculateWageUsingSwitch(Employee emp); // UC-4
 
     }
 }
