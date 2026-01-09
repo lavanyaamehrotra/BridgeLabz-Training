@@ -1,5 +1,5 @@
 using System;
-class ATMNoteDispenser{
+class AtmNoteDispenser{
   // Method to dispense cash 
   public void DispenseCash(int amount, int[] notes){
     Console.WriteLine("Dispensing amount: Rs" + amount);
