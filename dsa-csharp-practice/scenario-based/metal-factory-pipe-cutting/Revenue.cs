@@ -1,4 +1,5 @@
 public class Revenue{
+    //function to display
     public void Display(int ptimized , int nonOptimized){
         Console.WriteLine("\n----- Revenue Report -----");
         Console.WriteLine("Optimized Revenue     : Rs" + optimized);

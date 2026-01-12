@@ -2,10 +2,13 @@ using System;
 class Program{
     static void Main(){
         Console.Write("Enter rod length: ");
+        //rod length
         int length = int.Parse(Console.ReadLine());
         Rod rod = new Rod(length);
+
         PriceChart chart = new PriceChart(length);
         Console.WriteLine("\nEnter price for each length:");
+        //price for each 
         for (int i = 1; i <= length; i++){
             Console.Write("Price for length " + i + ": ");
             chart.AddPrice(i, int.Parse(Console.ReadLine()));

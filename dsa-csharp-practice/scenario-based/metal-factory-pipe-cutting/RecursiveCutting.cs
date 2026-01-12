@@ -1,4 +1,5 @@
 public class RecursiveCutting{
+    //maximum revenue function
     public int MaxRevenue(Rod rod, PriceChart chart){
         return Cut(rod.Length,chart);
     }
