@@ -382,3 +382,56 @@
 - HashMap and hashing function basics 🌐                                              
 - Choosing correct data structures for scenarios 🏗️                                                    
 - Practice & Scenario-Based Assignments:Smart Home Automation(Demonstrated polymorphism). ✅
+
+# 📅 Day 21 — January 09, 2026 — Stack & Queue Concepts 🧱📥
+## Topic: Understanding Stack & Queue Data Structures
+## 🧩 What I Learned
+* Learned the concept of Stack (LIFO – Last In First Out)
+* Learned the concept of Queue (FIFO – First In First Out)
+* Understood basic stack operations:Push,Pop,Peek
+* Understood basic queue operations:Enqueue,Dequeue
+* Studied real-world use cases of Stack & Queue
+
+## 🧪 Practice & Learning Activities
+* Implemented basic stack programs
+* Implemented basic queue programs
+* Practiced push/pop and enqueue/dequeue operations
+* Focused on understanding logic rather than scenarios
+
+## 📅 Day 22 — January 12, 2026 — Scenario-Based Programming 🏭💰
+## Topic: Custom furniture Manufacturing , Metal factory pipe cutting & Loan Processing Systems
+## 🧩 What I Learned
+* Implemented scenario-based programs using OOP concepts
+* Designed classes and methods for real-world applications
+* Applied conditional logic for decision making
+
+## 🧪 Practice & Scenario-Based Assignments
+
+* ⚙️ Metal Custom Manufacturing System
+* Designed metal order details: type, weight, purity
+* Calculated manufacturing cost
+* Displayed order summary using classes and methods
+
+## 🏦 Loan Processing System
+
+* Created customer loan profile
+* Calculated interest and EMI
+* Implemented loan eligibility check
+* Displayed approval / rejection report
+
+# 📅 Day 23 — January 13, 2026 — Searching Algorithms & Scenario-Based Applications 🔍📚
+## Topic: Linear Search, Binary Search & Scenario-Based Systems
+## 🧩 What I Learned
+* Learned Linear Search algorithm
+* Learned Binary Search algorithm
+
+## 🧪 Practice & Scenario-Based Assignments
+
+* 🔍 Implemented Linear Search program
+* ⚡ Implemented Binary Search program
+
+## 📚 Bookshelf Management System
+* Stored book records in arrays,Searched books by title,Displayed availability
+
+## 🎬 Movie Scheduler System
+* Stored movie details and show timings,Implemented search by movie name,Displayed movie schedule dynamically
