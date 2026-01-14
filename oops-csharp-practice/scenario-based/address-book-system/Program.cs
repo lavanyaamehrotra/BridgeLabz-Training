@@ -1,12 +1,28 @@
 using System;
 class Program{
     static void Main(string[] args){
-        // UC-0 : Display Welcome to Address Book Program
-        Console.WriteLine("------ Address Book Application ------");
-        // Create object of utility class
         AddressBookUtility utility = new AddressBookUtility();
-        // Display welcome message
         utility.DisplayWelcomeMessage();
+        int choice = 0;
+        do{
+            Console.WriteLine("\n---- MENU ----");
+            Console.WriteLine("1. Add Contact");
+            Console.WriteLine("2. Exit");
+            Console.Write("Enter your choice: ");
+            choice = Convert.ToInt32(Console.ReadLine());
+            switch (choice){
+                case 1:
+                    utility.AddContact();
+                    break;
+                case 2:
+                    Console.WriteLine("Exiting Program.");
+                    break;
+                default:
+                    Console.WriteLine("Invalid Choice! Try Again.");
+                    break;
+            }
+
+        } while (choice != 2);
         Console.ReadLine();
     }
 }
