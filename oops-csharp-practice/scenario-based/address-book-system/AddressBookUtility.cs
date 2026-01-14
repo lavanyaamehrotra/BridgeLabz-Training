@@ -1,8 +1,10 @@
 using System;
 // Utility class implementing interface
 public class AddressBookUtility : IAddressBook{
-    // Object of model class
-    private AddressBookModel model;
+    // UC-2
+    private AddressBookModel[] contacts = new AddressBookModel[100];
+    private int count = 0;
+    private AddressBookModel model;   // UC-0 welcome message model
     // Constructor
     public AddressBookUtility(){
         model = new AddressBookModel();
@@ -12,24 +14,31 @@ public class AddressBookUtility : IAddressBook{
     public void DisplayWelcomeMessage(){
         Console.WriteLine(model.WelcomeMessage);
     }
-     // UC-1 ADD CONTACTS IN ADDRESS BOOK
+    // UC-1+Uc-2 : Add contacts + Add multiple contacts using AddressBookModel array
     public void AddContact(){
-        Console.Write("Enter First Name : ");
-        contact.FirstName = Console.ReadLine();
-        Console.Write("Enter Last Name  : ");
-        contact.LastName = Console.ReadLine();
-        Console.Write("Enter Address    : ");
-        contact.Address = Console.ReadLine();
-        Console.Write("Enter City       : ");
-        contact.City = Console.ReadLine();
-        Console.Write("Enter State      : ");
-        contact.State = Console.ReadLine();
-        Console.Write("Enter Zip        : ");
-        contact.Zip = Console.ReadLine();
-        Console.Write("Enter Phone No   : ");
-        contact.PhoneNumber = Console.ReadLine();
-        Console.Write("Enter Email      : ");
-        contact.Email = Console.ReadLine();
-        Console.WriteLine("\nContact Added Successfully!");
+    if (count >= contacts.Length){
+        Console.WriteLine("Address Book is Full!");
+        return;
+    }
+    AddressBookModel person = new AddressBookModel();
+    Console.Write("Enter First Name : ");
+    person.FirstName = Console.ReadLine();
+    Console.Write("Enter Last Name  : ");
+    person.LastName = Console.ReadLine();
+    Console.Write("Enter Address    : ");
+    person.Address = Console.ReadLine();
+    Console.Write("Enter City       : ");
+    person.City = Console.ReadLine();
+    Console.Write("Enter State      : ");
+    person.State = Console.ReadLine();
+    Console.Write("Enter Zip        : ");
+    person.Zip = Console.ReadLine();
+    Console.Write("Enter Phone No   : ");
+    person.PhoneNumber = Console.ReadLine();
+    Console.Write("Enter Email      : ");
+    person.Email = Console.ReadLine();
+    contacts[count] = person;
+    count++;
+    Console.WriteLine("\nContact Added Successfully!");
     }
 }

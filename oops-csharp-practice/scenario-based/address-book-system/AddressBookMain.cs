@@ -1,5 +1,5 @@
 using System;
-class Program{
+class AddressBookMain{
     static void Main(string[] args){
         AddressBookUtility utility = new AddressBookUtility();
         utility.DisplayWelcomeMessage();

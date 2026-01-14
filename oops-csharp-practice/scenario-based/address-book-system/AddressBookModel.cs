@@ -17,6 +17,7 @@ public class AddressBookModel{
     public string Zip { get { return zip; } set { zip = value; } }
     public string PhoneNumber { get { return phoneNumber; } set { phoneNumber = value; } }
     public string Email { get { return email; } set { email = value; } }
+    
     //UC-0 WELCOME MESSAGE
     // Private variable
     private string welcomeMessage;
