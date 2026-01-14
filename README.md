@@ -435,3 +435,27 @@
 
 ## 🎬 Movie Scheduler System
 * Stored movie details and show timings,Implemented search by movie name,Displayed movie schedule dynamically
+
+# 📅 Day 24 — January 14, 2026 — Address Book System (UC1 – UC5) 📒
+## Topic: Address Book Application – Use Case Based Development
+## 🧩 What I Learned
+
+* Understood the importance of Use Case driven program design
+* Designed the structure of the Address Book System
+* Created a Contact class with the following attributes:First Name,Last Name,Phone Number,Email,City,State,ZIP Code
+* Practiced object creation, storage, and manipulation
+* Improved understanding of OOP concepts, encapsulation, and class relationships
+
+## 🧪 Practice & Scenario-Based Assignments
+## 📒 Address Book System – UC1 to UC5
+* Use Case	Description
+* UC1	Created AddressBook and Contact classes
+* UC2	Added new contact details to the Address Book
+* UC3	Edited existing contact using person name
+* UC4	Deleted contact by searching person name
+* UC5	Displayed all contact details from the Address Book
+## 🚀 Tasks Completed
+* Built menu-driven Address Book console application
+* Implemented Add, Edit, Delete and Display features
+* Followed clean coding practices and modular structure
+* Pushed Address Book UC1 – UC5 programs to GitHub
