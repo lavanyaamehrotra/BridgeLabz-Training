@@ -5,6 +5,5 @@ public interface IAddressBook{
     void AddContact();//UC-1+ UC-2 ADD CONTACTS IN ADDRESS BOOK
     void EditContact(); // UC-3 EDIT EXISTING CONTACT USING NAME
     void DeleteContact();// UC-4 DELETE CONTACT USING NAME
-
-
+    void AddMultipleContacts(); // UC-5 ADD MANY CONTACT ONE BY ONE
 }

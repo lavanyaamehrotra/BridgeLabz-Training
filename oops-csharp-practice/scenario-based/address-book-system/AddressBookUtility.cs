@@ -90,4 +90,13 @@ public class AddressBookUtility : IAddressBook{
     if (!found)
         Console.WriteLine("\nContact not found");
     }
+    // UC-5 : Add multiple contacts
+    public void AddMultipleContacts(){
+    char choice;
+    do{
+        AddContact();   // reusing UC-1 & UC-2 method
+        Console.Write("\nDo you want to add another contact? (yes/no): ");
+        choice = Convert.ToChar(Console.ReadLine().ToLower());
+        } while (choice == 'yes');
+    }
 }
