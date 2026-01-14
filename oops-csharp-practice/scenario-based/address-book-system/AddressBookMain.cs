@@ -8,7 +8,8 @@ class AddressBookMain{
             Console.WriteLine("\n---- MENU ----");
             Console.WriteLine("1. Add Contact");
             Console.WriteLine("2. Edit Contact");
-            Console.WriteLine("3. Exit");
+            Console.WriteLine("3. Delete Contact");
+            Console.WriteLine("4. Exit");
             Console.Write("Enter your choice: ");
             choice = Convert.ToInt32(Console.ReadLine());
             switch (choice){
@@ -19,6 +20,9 @@ class AddressBookMain{
                     utility.EditContact();// UC-3
                     break;
                 case 3:
+                    utility.DeleteContact();// UC-4
+                    break;
+                case 4:
                     Console.WriteLine("Exiting Program.");
                     break;
                 default:
@@ -26,7 +30,7 @@ class AddressBookMain{
                     break;
             }
 
-        } while (choice != 3);
+        } while (choice != 4);
         Console.ReadLine();
     }
 }
