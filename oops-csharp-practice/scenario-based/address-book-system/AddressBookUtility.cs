@@ -14,7 +14,7 @@ public class AddressBookUtility : IAddressBook{
     public void DisplayWelcomeMessage(){
         Console.WriteLine(model.WelcomeMessage);
     }
-    // UC-1+Uc-2 : Add contacts + Add multiple contacts using AddressBookModel array
+    // UC-1 + UC-2 : Add contacts + Add multiple contacts using AddressBookModel array
     public void AddContact(){
     if (count >= contacts.Length){
         Console.WriteLine("Address Book is Full!");
@@ -41,4 +41,46 @@ public class AddressBookUtility : IAddressBook{
     count++;
     Console.WriteLine("\nContact Added Successfully!");
     }
+    // UC-3 : Edit existing contact using First Name
+public void EditContact()
+{
+    Console.Write("\nEnter First Name of contact to edit: ");
+    string name = Console.ReadLine();
+
+    bool found = false;
+
+    for (int i = 0; i < count; i++)
+    {
+        if (contacts[i].FirstName.Equals(name, StringComparison.OrdinalIgnoreCase))
+        {
+            found = true;
+            Console.WriteLine("\nContact Found. Enter new details:");
+
+            Console.Write("Enter New Address    : ");
+            contacts[i].Address = Console.ReadLine();
+
+            Console.Write("Enter New City       : ");
+            contacts[i].City = Console.ReadLine();
+
+            Console.Write("Enter New State      : ");
+            contacts[i].State = Console.ReadLine();
+
+            Console.Write("Enter New Zip        : ");
+            contacts[i].Zip = Console.ReadLine();
+
+            Console.Write("Enter New Phone No   : ");
+            contacts[i].PhoneNumber = Console.ReadLine();
+
+            Console.Write("Enter New Email      : ");
+            contacts[i].Email = Console.ReadLine();
+
+            Console.WriteLine("\nContact Updated Successfully!");
+            break;
+        }
+    }
+
+    if (!found)
+        Console.WriteLine("\nContact Not Found!");
+}
+
 }
