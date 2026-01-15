@@ -54,12 +54,19 @@ class AddressBookMain{
                     AddressBookUtility.ViewPersonsByState();//UC-9
                     break;
                 case 11:
-                    AddressBookUtility.CountPersonsByCity();
+                    AddressBookUtility.CountPersonsByCity();//UC-10
                     break;
                 case 12:
-                    AddressBookUtility.CountPersonsByState();
+                    AddressBookUtility.CountPersonsByState();//UC-10
                     break;
                 case 13:
+                    if (utility != null){
+                        utility.SortContactsByName();//UC-11
+                    }else{
+                        Console.WriteLine("Select Address Book First!");
+                    }
+                    break;
+                case 14:
                     Console.WriteLine("Exiting Program.");
                     break;
                 default:
@@ -67,7 +74,7 @@ class AddressBookMain{
                     break;
             }
 
-        } while (choice != 13);
+        } while (choice != 14);
         Console.ReadLine();
     }
 }
