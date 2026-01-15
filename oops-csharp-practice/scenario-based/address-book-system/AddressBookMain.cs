@@ -18,7 +18,8 @@ class AddressBookMain{
             Console.WriteLine("10. View Person By State");
             Console.WriteLine("11. Count Person By City");
             Console.WriteLine("12. Count Person By State");
-            Console.WriteLine("13. Exit");
+            Console.WriteLine("13. Sort Contacts by Name");
+            Console.WriteLine("14. Exit");
             Console.Write("Enter your choice: ");
             choice = Convert.ToInt32(Console.ReadLine());
             switch (choice){
