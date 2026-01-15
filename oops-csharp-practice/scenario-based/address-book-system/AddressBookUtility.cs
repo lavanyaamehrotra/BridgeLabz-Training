@@ -10,6 +10,10 @@ public class AddressBookUtility : IAddressBook{
         model = new AddressBookModel();
         model.WelcomeMessage = "Welcome to Address Book Program";
     }
+    //UC-6 ADD ADDRESS BOOK
+    private static AddressBookUtility[] addressBooks = new AddressBookUtility[10];
+    private static string[] addressBookNames = new string[10];
+    private static int bookCount = 0;
     // Implementing interface method
     public void DisplayWelcomeMessage(){
         Console.WriteLine(model.WelcomeMessage);
@@ -97,6 +101,36 @@ public class AddressBookUtility : IAddressBook{
         AddContact();   // reusing UC-1 & UC-2 method
         Console.Write("\nDo you want to add another contact? (yes/no): ");
         choice = Convert.ToChar(Console.ReadLine().ToLower());
-        } while (choice == 'yes');
+        } while (choice == 'y');
     }
+     // UC-6 CREATE ADDRESS BOOK
+     public static void CreateAddressBook(){
+    if (bookCount >= addressBooks.Length){
+        Console.WriteLine("Address Book limit reached!");
+        return;
+    }
+    Console.Write("Enter Unique Address Book Name: ");
+    string name = Console.ReadLine();
+    for (int i = 0; i < bookCount; i++){
+        if (addressBookNames[i].Equals(name, StringComparison.OrdinalIgnoreCase)){
+              Console.WriteLine("Address Book Already Exists!");
+              return;
+          }
+      }
+      addressBooks[bookCount] = new AddressBookUtility();
+      addressBookNames[bookCount++] = name;
+      Console.WriteLine("Address Book Created Successfully!");
+  }
+    public static AddressBookUtility SelectAddressBook(){
+      Console.Write("Enter Address Book Name: ");
+      string name = Console.ReadLine();
+      for (int i = 0; i < bookCount; i++){
+          if (addressBookNames[i].Equals(name, StringComparison.OrdinalIgnoreCase)){
+              Console.WriteLine("Address Book Selected!");
+              return addressBooks[i];
+          }
+      }
+      Console.WriteLine("Address Book Not Found!");
+      return null;
+  }
 }

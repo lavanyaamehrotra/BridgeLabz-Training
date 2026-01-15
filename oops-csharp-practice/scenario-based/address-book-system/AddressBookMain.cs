@@ -6,35 +6,43 @@ class AddressBookMain{
         int choice = 0;
         do{
             Console.WriteLine("\n---- MENU ----");
-            Console.WriteLine("1. Add Contact");
-            Console.WriteLine("2. Add Multiple Contacts");
-            Console.WriteLine("3. Edit Contact");
-            Console.WriteLine("4. Delete Contact");
-            Console.WriteLine("5. Exit");
+            Console.WriteLine("1. Create Address Book");
+            Console.WriteLine("2. Select Address Book");
+            Console.WriteLine("3. Add Contact");
+            Console.WriteLine("4. Add Multiple Contacts");
+            Console.WriteLine("5. Edit Contact");
+            Console.WriteLine("6. Delete Contact");
+            Console.WriteLine("7. Exit");
             Console.Write("Enter your choice: ");
             choice = Convert.ToInt32(Console.ReadLine());
             switch (choice){
                 case 1:
-                    utility.AddContact();// UC-1+UC-2
+                    utility.CreateAddressBook();//UC-6
                     break;
                 case 2:
-                    utility.AddMultipleContacts(); // UC-5
+                    utility = utility.SelectAddressBook();//UC-6
                     break;
                 case 3:
-                    utility.EditContact();// UC-3
+                    utility.AddContact();// UC-1+UC-2
                     break;
                 case 4:
-                    utility.DeleteContact();// UC-4
+                    utility.AddMultipleContacts(); // UC-5
                     break;
                 case 5:
+                    utility.EditContact();// UC-3
+                    break;
+                case 6:
+                    utility.DeleteContact();// UC-4
+                    break;
+                case 7:
                     Console.WriteLine("Exiting Program.");
                     break;
                 default:
-                    Console.WriteLine("Invalid Choice! Try Again.");
+                    Console.WriteLine("Invalid Choice Try Again.");
                     break;
             }
 
-        } while (choice != 5);
+        } while (choice != 7);
         Console.ReadLine();
     }
 }
