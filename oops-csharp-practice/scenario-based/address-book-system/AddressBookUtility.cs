@@ -144,4 +144,52 @@ public class AddressBookUtility : IAddressBook{
     }
     return false;
   }
+    // UC-8 : SEARCH PERSON BY CITY IN ADDRESS BOOK
+    public static void SearchPersonByCity(){
+    Console.Write("Enter City to Search: ");
+    string city = Console.ReadLine();
+    bool found = false;
+    // Loop through all Address Books
+    for (int i = 0; i < bookCount; i++){
+        AddressBookUtility book = addressBooks[i];
+        // Loop through all contacts of the current Address Book
+        for (int j = 0; j < book.count; j++){
+            // Compare city with each contact
+            if (book.contacts[j].City.Equals(city, StringComparison.OrdinalIgnoreCase)){
+                found = true;
+                // Display matched person details
+                Console.WriteLine("\nFound in AddressBook: " + addressBookNames[i]);
+                Console.WriteLine("Name : " + book.contacts[j].FirstName + " " + book.contacts[j].LastName);
+                Console.WriteLine("City : " + book.contacts[j].City);
+                Console.WriteLine("State: " + book.contacts[j].State);
+            }
+        }
+    }
+    if (!found)
+        Console.WriteLine("no person found in the city");
+    }
+    // UC-8 : SEARCH PERSON BY STATE IN ADDRESS BOOK
+    public static void SearchPersonByState(){
+    Console.Write("Enter State to Search: ");
+    string state = Console.ReadLine();
+    bool found = false;
+    // Loop through all Address Books
+    for (int i = 0; i < bookCount; i++){
+        AddressBookUtility book = addressBooks[i];
+        // Loop through all contacts of the current Address Book
+        for (int j = 0; j < book.count; j++){
+            // Compare state with each contct
+            if (book.contacts[j].State.Equals(state, StringComparison.OrdinalIgnoreCase)){
+                found = true;
+                // Display matched person details
+                Console.WriteLine("\nFound in AddressBook: " + addressBookNames[i]);
+                Console.WriteLine("Name : " + book.contacts[j].FirstName + " " + book.contacts[j].LastName);
+                Console.WriteLine("City : " + book.contacts[j].City);
+                Console.WriteLine("State: " + book.contacts[j].State);
+            }
+        }
+    }
+    if (!found)
+        Console.WriteLine("no person found in this state");
+    }
 }

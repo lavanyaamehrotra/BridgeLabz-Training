@@ -12,15 +12,17 @@ class AddressBookMain{
             Console.WriteLine("4. Add Multiple Contacts");
             Console.WriteLine("5. Edit Contact");
             Console.WriteLine("6. Delete Contact");
-            Console.WriteLine("7. Exit");
+            Console.WriteLine("7. Search Person By City");
+            Console.WriteLine("8. Search Person By State");
+            Console.WriteLine("9. Exit");
             Console.Write("Enter your choice: ");
             choice = Convert.ToInt32(Console.ReadLine());
             switch (choice){
                 case 1:
-                    utility.CreateAddressBook();//UC-6
+                    AddressBookUtility.CreateAddressBook();//UC-6
                     break;
                 case 2:
-                    utility = utility.SelectAddressBook();//UC-6
+                    utility = AddressBookUtility.SelectAddressBook();//UC-6
                     break;
                 case 3:
                     utility.AddContact();// UC-1+UC-2
@@ -35,6 +37,12 @@ class AddressBookMain{
                     utility.DeleteContact();// UC-4
                     break;
                 case 7:
+                    AddressBookUtility.SearchPersonByCity();//UC-8
+                    break;
+                case 8:
+                    AddressBookUtility.SearchPersonByState();//UC-8
+                    break;
+                case 9:
                     Console.WriteLine("Exiting Program.");
                     break;
                 default:
