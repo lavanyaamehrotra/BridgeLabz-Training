@@ -5,6 +5,24 @@ public class AddressBookUtility : IAddressBook{
     private AddressBookModel[] contacts = new AddressBookModel[100];
     private int count = 0;
     private AddressBookModel model;   // UC-0 welcome message model
+    //  UC-9 CITY ARRAYS 
+    // // Stores unique city names
+    private static string[] cityList = new string[50];
+    // Stores persons of each city (jagged array)
+    private static AddressBookModel[][] cityPersons = new AddressBookModel[50][];
+    // Stores count of persons per city
+    private static int[] cityCount = new int[50];
+    // Total number of unique cities stored
+    private static int citySize = 0;
+    //  UC-9 STATE ARRA
+    // Stores unique state names
+    private static string[] stateList = new string[50];
+    // Stores persons of each state (jagged array)
+    private static AddressBookModel[][] statePersons = new AddressBookModel[50][];
+    // Stores count of persons per state
+    private static int[] stateCount = new int[50];
+    // Total number of unique states stored
+    private static int stateSize = 0;
     // Constructor
     public AddressBookUtility(){
         model = new AddressBookModel();
@@ -46,6 +64,9 @@ public class AddressBookUtility : IAddressBook{
     return;
     }
     contacts[count++] = person;
+    // Store person city-wise and state-wise
+    AddPersonToCity(person);//UC-9
+    AddPersonToState(person);//UC-9
     Console.WriteLine("\nContact Added Successfully!");
     }
     // UC-3 : Edit existing contact using First Name
@@ -116,14 +137,14 @@ public class AddressBookUtility : IAddressBook{
     string name = Console.ReadLine();
     for (int i = 0; i < bookCount; i++){
         if (addressBookNames[i].Equals(name, StringComparison.OrdinalIgnoreCase)){
-              Console.WriteLine("Address Book Already Exists!");
-              return;
-          }
-      }
-      addressBooks[bookCount] = new AddressBookUtility();
-      addressBookNames[bookCount++] = name;
-      Console.WriteLine("Address Book Created Successfully!");
-  }
+            Console.WriteLine("Address Book Already Exists!");
+            return;
+        }
+    }
+    addressBooks[bookCount] = new AddressBookUtility();
+    addressBookNames[bookCount++] = name;
+    Console.WriteLine("Address Book Created Successfully!");
+    }
     public static AddressBookUtility SelectAddressBook(){
       Console.Write("Enter Address Book Name: ");
       string name = Console.ReadLine();
@@ -191,5 +212,72 @@ public class AddressBookUtility : IAddressBook{
     }
     if (!found)
         Console.WriteLine("no person found in this state");
+    }
+    // Add person
+    private static void AddPersonToCity(AddressBookModel person){
+    int index = -1;
+    // Search city in existing city list
+    for (int i = 0; i < citySize; i++){
+        if (cityList[i].Equals(person.City, StringComparison.OrdinalIgnoreCase)){
+            index = i;
+            break;
+        }
+    }
+    if (index == -1){
+        cityList[citySize] = person.City;
+        cityPersons[citySize] = new AddressBookModel[50];
+        cityCount[citySize] = 0;
+        index = citySize++;
+    }
+    // Add person to that city 
+    cityPersons[index][cityCount[index]++] = person;
+    }
+    // Add person into State-wise 
+    private static void AddPersonToState(AddressBookModel person){
+    int index = -1;
+    // Search state in existing state list
+    for (int i = 0; i < stateSize; i++){
+        if (stateList[i].Equals(person.State, StringComparison.OrdinalIgnoreCase)){
+            index = i;
+            break;
+        }
+    }
+    // If state not found, create new state 
+    if (index == -1){
+        stateList[stateSize] = person.State;
+        statePersons[stateSize] = new AddressBookModel[50];
+        stateCount[stateSize] = 0;
+        index = stateSize++;
+    }
+    // Add person
+    statePersons[index][stateCount[index]++] = person;
+    }
+    // View all persons by City
+    public static void ViewPersonsByCity(){
+    Console.Write("Enter City Name: ");
+    string city = Console.ReadLine();
+    for (int i = 0; i < citySize; i++){
+        if (cityList[i].Equals(city, StringComparison.OrdinalIgnoreCase)){
+            Console.WriteLine("\nPersons in City: " + city);
+            for (int j = 0; j < cityCount[i]; j++)
+                Console.WriteLine(cityPersons[i][j].FirstName + " " + cityPersons[i][j].LastName);
+            return;
+        }
+    }
+    Console.WriteLine("No persons found in this city.");
+}
+    // View all persons by State
+    public static void ViewPersonsByState(){
+    Console.Write("Enter State Name: ");
+    string state = Console.ReadLine();
+    for (int i = 0; i < stateSize; i++){
+        if (stateList[i].Equals(state, StringComparison.OrdinalIgnoreCase)){
+            Console.WriteLine("\nPersons in State: " + state);
+            for (int j = 0; j < stateCount[i]; j++)
+                Console.WriteLine(statePersons[i][j].FirstName + " " + statePersons[i][j].LastName);
+            return;
+        }
+    }
+    Console.WriteLine("No persons found in this state.");
     }
 }
