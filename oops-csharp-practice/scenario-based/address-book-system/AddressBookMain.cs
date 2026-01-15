@@ -15,8 +15,10 @@ class AddressBookMain{
             Console.WriteLine("7. Search Person By City");
             Console.WriteLine("8. Search Person By State");
             Console.WriteLine("9. View Person By City");
-            Console.WriteLine("8. View Person By State");
-            Console.WriteLine("9. Exit");
+            Console.WriteLine("10. View Person By State");
+            Console.WriteLine("11. Count Person By City");
+            Console.WriteLine("12. Count Person By State");
+            Console.WriteLine("13. Exit");
             Console.Write("Enter your choice: ");
             choice = Convert.ToInt32(Console.ReadLine());
             switch (choice){
@@ -51,6 +53,12 @@ class AddressBookMain{
                     AddressBookUtility.ViewPersonsByState();//UC-9
                     break;
                 case 11:
+                    AddressBookUtility.CountPersonsByCity();
+                    break;
+                case 12:
+                    AddressBookUtility.CountPersonsByState();
+                    break;
+                case 13:
                     Console.WriteLine("Exiting Program.");
                     break;
                 default:
@@ -58,7 +66,7 @@ class AddressBookMain{
                     break;
             }
 
-        } while (choice != 11);
+        } while (choice != 13);
         Console.ReadLine();
     }
 }

@@ -280,4 +280,44 @@ public class AddressBookUtility : IAddressBook{
     }
     Console.WriteLine("No persons found in this state.");
     }
+    // UC-10 : Count persons by City
+public static void CountPersonsByCity()
+{
+    Console.Write("Enter City Name: ");
+    string city = Console.ReadLine();
+    int total = 0;
+
+    // Search in cityList array
+    for (int i = 0; i < citySize; i++)
+    {
+        if (cityList[i].Equals(city, StringComparison.OrdinalIgnoreCase))
+        {
+            total = cityCount[i];
+            break;
+        }
+    }
+
+    Console.WriteLine("Total Persons in City " + city + " : " + total);
+}
+// UC-10 : Count persons by State
+public static void CountPersonsByState()
+{
+    Console.Write("Enter State Name: ");
+    string state = Console.ReadLine();
+    int total = 0;
+
+    // Search in stateList array
+    for (int i = 0; i < stateSize; i++)
+    {
+        if (stateList[i].Equals(state, StringComparison.OrdinalIgnoreCase))
+        {
+            total = stateCount[i];
+            break;
+        }
+    }
+
+    Console.WriteLine("Total Persons in State " + state + " : " + total);
+}
+
+
 }
