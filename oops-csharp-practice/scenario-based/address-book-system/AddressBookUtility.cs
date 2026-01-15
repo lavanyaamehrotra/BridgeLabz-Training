@@ -265,7 +265,7 @@ public class AddressBookUtility : IAddressBook{
         }
     }
     Console.WriteLine("No persons found in this city.");
-}
+    }
     // View all persons by State
     public static void ViewPersonsByState(){
     Console.Write("Enter State Name: ");
@@ -280,44 +280,51 @@ public class AddressBookUtility : IAddressBook{
     }
     Console.WriteLine("No persons found in this state.");
     }
-    // UC-10 : Count persons by City
-public static void CountPersonsByCity()
-{
+    // UC-10 Count persons by City
+    public static void CountPersonsByCity(){
     Console.Write("Enter City Name: ");
     string city = Console.ReadLine();
     int total = 0;
-
     // Search in cityList array
-    for (int i = 0; i < citySize; i++)
-    {
-        if (cityList[i].Equals(city, StringComparison.OrdinalIgnoreCase))
-        {
+    for (int i = 0; i < citySize; i++){
+        if (cityList[i].Equals(city, StringComparison.OrdinalIgnoreCase)){
             total = cityCount[i];
             break;
         }
     }
-
-    Console.WriteLine("Total Persons in City " + city + " : " + total);
-}
-// UC-10 : Count persons by State
-public static void CountPersonsByState()
-{
+    Console.WriteLine("total person in city" + city + " : " + total);
+    }
+    // UC-10 Count persons by State
+    public static void CountPersonsByState(){
     Console.Write("Enter State Name: ");
     string state = Console.ReadLine();
     int total = 0;
-
     // Search in stateList array
-    for (int i = 0; i < stateSize; i++)
-    {
-        if (stateList[i].Equals(state, StringComparison.OrdinalIgnoreCase))
-        {
+    for (int i = 0; i < stateSize; i++){
+        if (stateList[i].Equals(state, StringComparison.OrdinalIgnoreCase)){
             total = stateCount[i];
             break;
         }
     }
-
-    Console.WriteLine("Total Persons in State " + state + " : " + total);
+    Console.WriteLine("total persons in state" + state + " : " + total);
+    }
+    // UC-11 : Sort contacts alphabetically by First Name using ARRAY only
+    public void SortContactsByName(){
+    // Simple Bubble Sort on contacts array
+    for (int i = 0; i < count - 1; i++){
+        for (int j = i + 1; j < count; j++){
+            if (string.Compare(contacts[i].FirstName, contacts[j].FirstName, true) > 0){
+                // Swap contacts
+                AddressBookModel temp = contacts[i];
+                contacts[i] = contacts[j];
+                contacts[j] = temp;
+            }
+        }
+    }
+    Console.WriteLine("\nSorted Contacts");
+        for (int i = 0; i < count; i++){
+            Console.WriteLine(contacts[i].ToString());
+        }
+    }
 }
-
-
-}
+    

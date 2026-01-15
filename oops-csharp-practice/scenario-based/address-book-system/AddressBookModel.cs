@@ -33,4 +33,7 @@ public class AddressBookModel{
     AddressBookModel other = (AddressBookModel)obj;
     return this.FirstName.Equals(other.FirstName, StringComparison.OrdinalIgnoreCase) && this.LastName.Equals(other.LastName, StringComparison.OrdinalIgnoreCase);
     }
+    public override string ToString(){
+    return FirstName + " " + LastName + ", " + City + ", " + State + ", " + PhoneNumber;
+    }
 }
