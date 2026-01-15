@@ -26,4 +26,11 @@ public class AddressBookModel{
         get { return welcomeMessage; }
         set { welcomeMessage = value; }
     }
+    public override bool Equals(object obj){
+    if (obj == null || !(obj is AddressBookModel)){
+        return false;
+    }
+    AddressBookModel other = (AddressBookModel)obj;
+    return this.FirstName.Equals(other.FirstName, StringComparison.OrdinalIgnoreCase) && this.LastName.Equals(other.LastName, StringComparison.OrdinalIgnoreCase);
+    }
 }

@@ -41,8 +41,11 @@ public class AddressBookUtility : IAddressBook{
     person.PhoneNumber = Console.ReadLine();
     Console.Write("Enter Email    : ");
     person.Email = Console.ReadLine();
-    contacts[count] = person;
-    count++;
+    if (IsDuplicate(person)){
+    Console.WriteLine("\nDuplicate Entry. person already exists in this Address Book.");
+    return;
+    }
+    contacts[count++] = person;
     Console.WriteLine("\nContact Added Successfully!");
     }
     // UC-3 : Edit existing contact using First Name
@@ -132,5 +135,13 @@ public class AddressBookUtility : IAddressBook{
       }
       Console.WriteLine("Address Book Not Found!");
       return null;
+  }
+  private bool IsDuplicate(AddressBookModel person){
+    for (int i = 0; i < count; i++){
+        if (contacts[i].Equals(person)){
+            return true;
+        }
+    }
+    return false;
   }
 }
