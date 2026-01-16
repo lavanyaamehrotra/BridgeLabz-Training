@@ -468,3 +468,34 @@
 * Implemented UC6–UC11 successfully
 * Enhanced search, sort, and grouping logic
 * 🚀 Pushed all updates to GitHub
+
+# 📅 Day 26 — January 16, 2026 — Scenario-Based Programming Practice 🚦📚🌐
+## Topic: Traffic Manager, Bookshelf & BrowserBuddy Applications
+## 🧩 What I Learned
+* Strengthened problem-solving using real-world scenarios
+* Designed clean, modular programs using OOP concepts
+* Applied conditional logic, loops, and collections effectively
+* Improved understanding of program flow and user interaction
+## 🚦 Traffic Manager System
+* Designed a traffic control simulation program
+* Focused on logic clarity and real-world mapping
+## 📚 Bookshelf Management Program
+* Built a bookshelf application to manage books
+* Stored book details such as title, author, and availability
+* Implemented search functionality for books
+* Displayed book details dynamically
+* Practiced array handling and iteration
+* Concepts Practiced:Arrays,Searching logic,Methods and modular design
+
+## 🌐 BrowserBuddy Application
+* Designed a simple browser-like navigation system
+* Simulated page navigation using menu-driven logic
+* Implemented forward, backward, and history tracking
+* Strengthened understanding of stack-based navigation concepts
+* Concepts Practiced:Stack logic,Menu-driven programs,Real-time scenario simulation
+
+## 🧪 Tasks Completed
+* Implemented Traffic Manager, Bookshelf, and BrowserBuddy programs
+* Focused on clean code, proper structure, and readability
+* Applied OOP and logical problem-solving techniques
+* 🚀 Pushed all programs to GitHub
