@@ -187,7 +187,6 @@
 * Improved real-time string handling approach
 
 ## 🧪 Tasks Completed
-
 * Solved problems using built-in methods
 * Compared manual vs function-based logic
 * Uploaded completed programs to GitHub
@@ -223,7 +222,6 @@
 * Practiced organizing program logic using methods for clean and modular code.
 
 ## Afternoon Session – EduQuiz – Student Quiz Grader
-
 * Built a grading module for a quiz application.
 * Used two String[] arrays: correctAnswers[] and studentAnswers[].
 * Implemented a method calculateScore(String[] correct, String[] student) to calculate scores.
@@ -233,7 +231,6 @@
 * Strengthened skills in arrays, string handling, and method-based programming.
 
 ## 🧪 Tasks Completed
-
 * Developed Library Management System with search and checkout features.
 * Built EduQuiz grading system with detailed feedback and scoring.
 * Practiced modular programming with methods.
@@ -255,7 +252,6 @@
 ## 🧾 Invoice Generator — Freelancer Billing System
 
 ## Morning Session
-
 * Designed a menu-driven invoice generator using C#
 * Parsed user input to extract:Task names,item price,Quantity
 * Implemented classes instead of single-file logic
@@ -271,9 +267,7 @@
 * Real-world scenario programming
 
 ## ☕ Cafeteria Menu Billing System
-
 ## Afternoon Session
-
 * Built a menu-driven cafeteria ordering application
 * Implemented Admin & User modes
 * Admin Features:Set daily food items,Assign prices to menu items
@@ -291,7 +285,6 @@
 * Strengthened understanding of hierarchical class design
 
 ## 🧪 Practice & Scenario-Based Assignments
-
 * Animal Hierarchy Program — Demonstrated base-derived relationships
 * Employee Management System — Role-based inheritance structure
 * Student Hierarchy System — Implemented multi-level inheritance
@@ -312,13 +305,11 @@
 * Improved real-world object-oriented problem solving
 
 ## 🧪 Practice & Assignments
-
 * Solved multiple OOPS-based practice problems
 * Implemented real-world program scenarios using proper class design
 * Focused on:modular coding,structure clarity,reusable components
 
 ## 🧠 Student Quiz Grader — Enhancement Task
-
 * Compared student answers with correct answers
 * Calculated final score
 * Displayed detailed feedback & result summary
@@ -406,14 +397,12 @@
 * Applied conditional logic for decision making
 
 ## 🧪 Practice & Scenario-Based Assignments
-
 * ⚙️ Metal Custom Manufacturing System
 * Designed metal order details: type, weight, purity
 * Calculated manufacturing cost
 * Displayed order summary using classes and methods
 
 ## 🏦 Loan Processing System
-
 * Created customer loan profile
 * Calculated interest and EMI
 * Implemented loan eligibility check
@@ -426,7 +415,6 @@
 * Learned Binary Search algorithm
 
 ## 🧪 Practice & Scenario-Based Assignments
-
 * 🔍 Implemented Linear Search program
 * ⚡ Implemented Binary Search program
 
@@ -459,3 +447,24 @@
 * Implemented Add, Edit, Delete and Display features
 * Followed clean coding practices and modular structure
 * Pushed Address Book UC1 – UC5 programs to GitHub
+
+# 📅 Day 25 — January 15, 2026 — Address Book System (UC6 – UC11) 📒
+## Topic: Advanced Address Book Features
+## 🧩 What I Learned
+
+* Extended Address Book with advanced use cases
+* Improved searching, sorting, and data grouping
+* Learned to manage multiple Address Books
+## 📒 Address Book — UC6 to UC11
+* UC6: Prevented duplicate contact entries
+* UC7: Searched persons by City or State
+* UC8: Viewed persons grouped by City or State
+* UC9: Counted persons by City or State
+* UC10: Sorted contacts by Name, City, State, and ZIP
+* UC11: Managed multiple Address Books
+
+## 🧪 Tasks Completed
+
+* Implemented UC6–UC11 successfully
+* Enhanced search, sort, and grouping logic
+* 🚀 Pushed all updates to GitHub
