@@ -541,3 +541,26 @@
 * Used Stack and HashMap for exam navigation and answers
 * Applied functions for scoring logic
 * Pushed all implementations to GitHub
+
+# 📅 Day 29 — January 20, 2026 — Algorithms & Backtracking 🧠
+## 🧩 Story 1: Sorting Aadhar Numbers using Radix Sort
+**Context:** Efficiently sort 12-digit Aadhar numbers.
+### Scenarios:
+* **A:** Sorted Aadhar numbers in ascending order using **Radix Sort**
+* **B:** Searched a specific Aadhar number using **Binary Search**
+* **C:** Maintained order for numbers with the same prefix (stable sorting)
+**Concepts:** Radix Sort, Binary Search, Time & Space Complexity
+  ## 🧬 Generics Assignment
+  * Implemented **generic classes and methods**
+  * Improved **type safety** and **code reusability**
+ ## 🔁 Story 2: Password Cracker Simulator (Backtracking)
+**Context:** Simulated brute-force password cracking.
+### Scenarios:
+- **A:** Generated all strings of length `n`
+- **B:** Stopped execution when password matched
+- **C:** Analyzed time and space complexity
+- ## 🚀 Tasks Completed:
+- Radix Sort & Binary Search implementation
+- Generics assignment
+- Backtracking-based password simulator
+- 📤 All code pushed to GitHub
