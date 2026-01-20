@@ -499,3 +499,45 @@
 * Focused on clean code, proper structure, and readability
 * Applied OOP and logical problem-solving techniques
 * 🚀 Pushed all programs to GitHub
+
+# 📅 Day 27 — January 17, 2026
+## 🔄 Sorting Algorithms
+## Topic: Quick Sort & Bubble Sort
+##🧩 What I Learned
+* Choosing sorting algorithms based on data size and use case
+* Performance differences between efficient and simple sorting techniques
+
+## 🧪 Scenarios Implemented
+* 🛒 FlashDealz (Quick Sort)
+* Sorted millions of products by discount
+* Used Quick Sort for fast performance on large datasets
+## 🏃 FitnessTracker (Bubble Sort)
+* Ranked daily step counts for a small user group
+* Used Bubble Sort for frequent, real-time updates
+## 🧪 Tasks Completed
+* Implemented Quick Sort and Bubble Sort
+* Compared algorithm efficiency
+* Pushed code to GitHub
+
+# 📅 Day 28 — January 19, 2026
+## 📦 Data Structures & Scenario-Based Applications
+## Topic: Singly Linked List, Stack, HashMap & Functions
+## 🧩 What I Learned
+* Practical use of Linked List, Stack, and HashMap
+* Applying data structures to real-world scenarios
+* Handling edge cases like null references and missing data
+## 🧪 Scenarios Implemented
+##📦 ParcelTracker – Delivery Chain Management (Singly Linked List)
+* Modeled parcel stages as nodes in a singly linked list
+* Enabled forward tracking of delivery stages
+* Added custom intermediate checkpoints
+* Handled lost or missing parcels using null pointer checks
+## 📝 ExamProctor – Online Exam Review System (Stack + HashMap)
+* Tracked question navigation using Stack
+* Stored answers using HashMap
+* Calculated final score using functions
+## 🧪 Tasks Completed
+* Implemented Singly Linked List for delivery tracking
+* Used Stack and HashMap for exam navigation and answers
+* Applied functions for scoring logic
+* Pushed all implementations to GitHub
