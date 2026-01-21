@@ -564,3 +564,27 @@
 - Generics assignment
 - Backtracking-based password simulator
 - 📤 All code pushed to GitHub
+
+# 📅 Day 30 — January 21, 2026 — Scenario-Based DSA Practice 🧠
+## 🎯 Topic  
+Merge Sort, Queue & HashMap in Real-World Scenarios
+## 🧪 Scenarios Implemented
+### 📚 EduResults – Rank Sheet Generator  
+* Used **Merge Sort** to generate a state-wise rank list
+* Maintained **stable sorting** for duplicate marks
+* Menu-driven, user-input based C# program
+* Followed clean **OOP structure**
+### 🛒 SmartCheckout – Supermarket Billing Queue  
+* Used **Queue** for FIFO customer billing
+* Used **HashMap (Dictionary)** for item price & stock lookup
+* Updated stock after each purchase
+* Fully **menu-driven and user-input based**
+## 🧠 Key Learnings
+* Choosing appropriate data structures for scenarios
+* Understanding stable sorting and FIFO processing
+* Writing clean, modular OOP console applications  
+## 🚀 Tasks Completed
+- ✅ Implemented both scenarios in C#  
+- ✅ Used Merge Sort, Queue & HashMap  
+- 📤 Pushed all code to GitHub  
+
