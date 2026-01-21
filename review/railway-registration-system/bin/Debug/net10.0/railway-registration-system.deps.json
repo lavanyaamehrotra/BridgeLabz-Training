@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "railway-registration-system/1.0.0": {
+        "runtime": {
+          "railway-registration-system.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "railway-registration-system/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
