@@ -7,12 +7,12 @@ class VotingSystem{
     static OrderedDictionary voteOrder = new OrderedDictionary();
     static SortedDictionary<int, List<string>> sortedResults = new SortedDictionary<int, List<string>>();
     static void Main(){
-        CastVote("Alice");
-        CastVote("Bob");
-        CastVote("Alice");
-        CastVote("Charlie");
-        CastVote("Bob");
-        CastVote("Alice");
+        CastVote("Lavanya");
+        CastVote("Roshni");
+        CastVote("Khushi");
+        CastVote("Laviosa");
+        CastVote("Lavii");
+        CastVote("Roshii");
         Console.WriteLine("Voting Order (Insertion Order):");
         DisplayVoteOrder();
         Console.WriteLine("\nFinal Vote Count:");
