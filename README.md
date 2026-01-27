@@ -588,3 +588,59 @@ Merge Sort, Queue & HashMap in Real-World Scenarios
 - ✅ Used Merge Sort, Queue & HashMap  
 - 📤 Pushed all code to GitHub  
 
+# 📅 Day 31 — January 22, 2026
+## 🎯 Topic-Circular Linked List & Scenario-Based DSA
+## 🧪 Scenario Implemented
+## 🚑 AmbulanceRoute – Emergency Patient Navigation
+* Implemented Circular Linked List
+* Each node represents a hospital unit
+* Rotated units to find nearest available emergency unit
+* Removed units dynamically when under maintenance
+
+## 🚀 Tasks Completed
+* Built Circular Linked List
+* Simulated ambulance routing
+* 📤 Pushed code to GitHub
+
+# 📅 Day 32 — January 23, 2026
+## 🎯 Topic-Regex & NUnit Testing Basics
+## 🧩 What I Learned
+* Regex metacharacters & quantifiers
+* Email, password & phone validation
+* C# Regex API & methods
+* NUnit framework, annotations & assertions
+  
+## 🚀 Tasks Completed
+* Solved regex validation problems
+* Wrote basic NUnit test cases
+* 📤 Pushed code to GitHub
+
+## 📅 Day 33 — January 24, 2026
+## 🎯 Topic-Annotations & Reflection
+## 🧩 What I Learned
+* Created custom annotations
+* Applied attributes to methods
+* Used reflection to inspect metadata at runtime
+
+## 🚀 Tasks Completed
+* Implemented annotation-based programs
+* Practiced reflection scanning
+* 📤 Pushed code to GitHub
+
+# 📅 Day 34 — January 27, 2026
+## 🎯 Topic-Annotations, Reflection, Exceptions & Testing
+## 🧪 Projects Implemented
+## 🏥 HealthCheckPro – API Metadata Validator
+* Validated API annotations using reflection
+* Detected missing metadata
+* Auto-generated API documentation
+
+## 📊 EventTracker – Auto Audit System
+* Generated structured JSON audit logs via reflection
+* 📒 Address Book-Added exception handling
+* Improved validation and reliability
+
+## 🚀 Tasks Completed
+* Implemented all projects
+* Added NUnit tests
+* 📤 Pushed code to GitHub
