@@ -1,18 +1,13 @@
-namespace UnitTestingPractice
-{
-    public class DatabaseConnection
-    {
+namespace UnitTestingPractice{
+    public class DatabaseConnection{
         public bool IsConnected { get; private set; }
 
         // Simulate opening DB connection
-        public void Connect()
-        {
+        public void Connect(){
             IsConnected = true;
         }
-
         // Simulate closing DB connection
-        public void Disconnect()
-        {
+        public void Disconnect(){
             IsConnected = false;
         }
     }
