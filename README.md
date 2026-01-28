@@ -644,3 +644,23 @@ Merge Sort, Queue & HashMap in Real-World Scenarios
 * Implemented all projects
 * Added NUnit tests
 * 📤 Pushed code to GitHub
+
+# 📅 Day 35 — January 28, 2026
+## 🎯 Topic — Company-Level Coding & Scenario-Based Problems
+## 🧩 What I Learned
+* Solved real-time company-level scenario-based coding questions
+* Applied Annotations, Reflection, JSON handling, and validation logic
+* Improved understanding of enterprise-style problem solving
+## 🧪 Questions Solved
+* HealthCheckPro – API Metadata Validator
+* Used custom annotations and reflection to scan APIs and generate documentation.
+## EventTracker – Auto Audit System
+* Identified annotated methods using reflection and generated structured JSON audit logs.
+## Aerovirgil Problem
+* Solved a logic-based real-world problem with proper condition handling.
+## Bank Account Validation
+* Implemented validation logic with conditional checks and error handling.
+## 🚀 Tasks Completed
+* Solved all four coding problems
+* Focused on clean logic and structured code
+* 📤 Submitted solutions successfully
