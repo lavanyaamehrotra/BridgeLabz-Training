@@ -664,3 +664,16 @@ Merge Sort, Queue & HashMap in Real-World Scenarios
 * Solved all four coding problems
 * Focused on clean logic and structured code
 * 📤 Submitted solutions successfully
+
+# 📅 Day 36 — January 29, 2026
+## 🎯 Topic — Scenario-Based Application & JSON Handling
+## 🧩 What I Learned
+* Worked on a real-world scenario-based application
+* Learned JSON structure and basic data handling
+* Understood structured data integration
+## 🧪 Application
+* Stream-Buzz – Streaming platform data processing and analytics
+## 🚀 Tasks Completed
+* Implemented JSON-based data handling
+* Completed the Stream-Buzz scenario
+* 📤 Pushed code to GitHub
