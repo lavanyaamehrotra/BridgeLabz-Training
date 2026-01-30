@@ -500,7 +500,7 @@
 * Applied OOP and logical problem-solving techniques
 * 🚀 Pushed all programs to GitHub
 
-# 📅 Day 27 — January 17, 2026
+# 📅 Day 27 — January 17, 2026-Scenario-Based Applications & Algorithm Practice
 ## 🔄 Sorting Algorithms
 ## Topic: Quick Sort & Bubble Sort
 ##🧩 What I Learned
@@ -519,13 +519,16 @@
 * Compared algorithm efficiency
 * Pushed code to GitHub
 
-# 📅 Day 28 — January 19, 2026
+# 📅 Day 28 — January 19, 2026-Generics & Scenario-Based Systems
 ## 📦 Data Structures & Scenario-Based Applications
 ## Topic: Singly Linked List, Stack, HashMap & Functions
 ## 🧩 What I Learned
 * Practical use of Linked List, Stack, and HashMap
 * Applying data structures to real-world scenarios
 * Handling edge cases like null references and missing data
+* Learned Generics in C# and their benefits 🏃
+* Implemented type-safe reusable classes and methods 💾
+* Understood how generics improve scalability and performance 🧩
 ## 🧪 Scenarios Implemented
 ##📦 ParcelTracker – Delivery Chain Management (Singly Linked List)
 * Modeled parcel stages as nodes in a singly linked list
@@ -542,7 +545,7 @@
 * Applied functions for scoring logic
 * Pushed all implementations to GitHub
 
-# 📅 Day 29 — January 20, 2026 — Algorithms & Backtracking 🧠
+# 📅 Day 29 — January 20, 2026 — Collections, Sorting & Backtracking 🧠
 ## 🧩 Story 1: Sorting Aadhar Numbers using Radix Sort
 **Context:** Efficiently sort 12-digit Aadhar numbers.
 ### Scenarios:
@@ -565,9 +568,14 @@
 - Backtracking-based password simulator
 - 📤 All code pushed to GitHub
 
-# 📅 Day 30 — January 21, 2026 — Scenario-Based DSA Practice 🧠
+# 📅 Day 30 — January 21, 2026 —Streams in C# & Scenario-Based DSA Practice 🧠
 ## 🎯 Topic  
-Merge Sort, Queue & HashMap in Real-World Scenarios
+Streams,Merge Sort, Queue & HashMap in Real-World Scenarios
+## What I Learned: 🧩                                               
+* Learned Streams in C# for processing large datasets 🏃
+* Understood how streams help in efficient data flow and transformation ⚡
+* Revised Merge Sort for handling large, sorted datasets✅
+* Applied Queue and HashMap together for real-time systems 🏗️
 ## 🧪 Scenarios Implemented
 ### 📚 EduResults – Rank Sheet Generator  
 * Used **Merge Sort** to generate a state-wise rank list
@@ -588,8 +596,13 @@ Merge Sort, Queue & HashMap in Real-World Scenarios
 - ✅ Used Merge Sort, Queue & HashMap  
 - 📤 Pushed all code to GitHub  
 
-# 📅 Day 31 — January 22, 2026
-## 🎯 Topic-Circular Linked List & Scenario-Based DSA
+# 📅 Day 31 — January 22, 2026-Exception Handling & Circular Linked List
+## 🎯 Topic-Exceptions,Circular Linked List & Scenario-Based DSA
+## What I Learned:🧩                                                  
+* Learned Exception and Exception Handling in C# ⚙️
+* Understood try-catch-finally and custom exceptions ⏳
+* Studied Circular Linked List and its advantages ✔️❌
+* Applied data structures to real-time emergency scenarios 📦
 ## 🧪 Scenario Implemented
 ## 🚑 AmbulanceRoute – Emergency Patient Navigation
 * Implemented Circular Linked List
@@ -602,8 +615,8 @@ Merge Sort, Queue & HashMap in Real-World Scenarios
 * Simulated ambulance routing
 * 📤 Pushed code to GitHub
 
-# 📅 Day 32 — January 23, 2026
-## 🎯 Topic-Regex & NUnit Testing Basics
+# 📅 Day 32 — January 23, 2026-Regex, MSTesting & Reflection 
+## 🎯 Topic-Regex & MSTesting Basics
 ## 🧩 What I Learned
 * Regex metacharacters & quantifiers
 * Email, password & phone validation
@@ -615,7 +628,7 @@ Merge Sort, Queue & HashMap in Real-World Scenarios
 * Wrote basic NUnit test cases
 * 📤 Pushed code to GitHub
 
-## 📅 Day 33 — January 24, 2026
+## 📅 Day 33 — January 24, 2026-Code Quality & Static Analysis
 ## 🎯 Topic-Annotations & Reflection
 ## 🧩 What I Learned
 * Created custom annotations
@@ -627,7 +640,7 @@ Merge Sort, Queue & HashMap in Real-World Scenarios
 * Practiced reflection scanning
 * 📤 Pushed code to GitHub
 
-# 📅 Day 34 — January 27, 2026
+# 📅 Day 34 — January 27, 2026-Annotations, Reflection 
 ## 🎯 Topic-Annotations, Reflection, Exceptions & Testing
 ## 🧪 Projects Implemented
 ## 🏥 HealthCheckPro – API Metadata Validator
@@ -645,7 +658,7 @@ Merge Sort, Queue & HashMap in Real-World Scenarios
 * Added NUnit tests
 * 📤 Pushed code to GitHub
 
-# 📅 Day 35 — January 28, 2026
+# 📅 Day 35 — January 28, 2026- Data Handling & Validation
 ## 🎯 Topic — Company-Level Coding & Scenario-Based Problems
 ## 🧩 What I Learned
 * Solved real-time company-level scenario-based coding questions
@@ -665,7 +678,7 @@ Merge Sort, Queue & HashMap in Real-World Scenarios
 * Focused on clean logic and structured code
 * 📤 Submitted solutions successfully
 
-# 📅 Day 36 — January 29, 2026
+# 📅 Day 36 — January 29, 2026-Streams, JSON & Advanced Scenarios
 ## 🎯 Topic — Scenario-Based Application & JSON Handling
 ## 🧩 What I Learned
 * Worked on a real-world scenario-based application
@@ -677,3 +690,9 @@ Merge Sort, Queue & HashMap in Real-World Scenarios
 * Implemented JSON-based data handling
 * Completed the Stream-Buzz scenario
 * 📤 Pushed code to GitHub
+
+# Day 37 — January 30, 2026 — Problem Solving & System Design 📅                     
+## Topic: String Manipulation & Logistics Systems 🧠🚚                                         ## What I Learned:🧩                                     
+* Solved string manipulation challenges💾
+* Designed modular systems using OOPS and DSA ⏳
+* Practice & Scenario-Based Assignments: Lexical Twist(String reversal, comparison, and transformation),  Future Logistics System(Designed logistics workflows).🏃
