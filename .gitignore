@@ -1,0 +1,14 @@
+# Ignore .NET build outputs everywhere
+**/bin/
+**/obj/
+
+# Ignore SonarQube analysis files everywhere
+**/.sonarqube/
+
+# Visual Studio / VS Code
+.vs/
+.vscode/
+
+# OS files
+Thumbs.db
+.DS_Store

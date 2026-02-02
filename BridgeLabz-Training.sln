@@ -1,0 +1,59 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "generics-csharp-practice", "generics-csharp-practice", "{86C325B1-FBC4-DAB2-42F2-B8E9EE3AB1C3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scenario-based", "scenario-based", "{DE32CBA3-4E08-C3E1-9ED0-C857C3AD068F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "smart-checkout", "generics-csharp-practice\scenario-based\smart-checkout\smart-checkout.csproj", "{A3B4B786-852F-8A4C-CD48-A356FB5E3D59}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gcr-codebase", "gcr-codebase", "{8CCD1096-02E5-562C-F65B-6C9871C737F0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nunit-csharp", "nunit-csharp", "{E9FEB2A7-7ADC-6B75-BAC4-C51CE7D12EB8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestingPractice", "generics-csharp-practice\gcr-codebase\nunit-csharp\UnitTestingPractice\UnitTestingPractice.csproj", "{43F2EAFF-8A00-E763-658B-D6F27AC8107F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestingPractice.MSTests", "generics-csharp-practice\gcr-codebase\nunit-csharp\UnitTestingPractice.MSTests\UnitTestingPractice.MSTests.csproj", "{948EAD6A-B049-5F06-C002-295C4F756EBB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestingPractice.NUnitTests", "generics-csharp-practice\gcr-codebase\nunit-csharp\UnitTestingPractice.NUnitTests\UnitTestingPractice.NUnitTests.csproj", "{441833FB-A275-883E-5A01-18FAF721791F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A3B4B786-852F-8A4C-CD48-A356FB5E3D59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3B4B786-852F-8A4C-CD48-A356FB5E3D59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3B4B786-852F-8A4C-CD48-A356FB5E3D59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3B4B786-852F-8A4C-CD48-A356FB5E3D59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43F2EAFF-8A00-E763-658B-D6F27AC8107F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43F2EAFF-8A00-E763-658B-D6F27AC8107F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43F2EAFF-8A00-E763-658B-D6F27AC8107F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43F2EAFF-8A00-E763-658B-D6F27AC8107F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{948EAD6A-B049-5F06-C002-295C4F756EBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{948EAD6A-B049-5F06-C002-295C4F756EBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{948EAD6A-B049-5F06-C002-295C4F756EBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{948EAD6A-B049-5F06-C002-295C4F756EBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{441833FB-A275-883E-5A01-18FAF721791F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{441833FB-A275-883E-5A01-18FAF721791F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{441833FB-A275-883E-5A01-18FAF721791F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{441833FB-A275-883E-5A01-18FAF721791F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DE32CBA3-4E08-C3E1-9ED0-C857C3AD068F} = {86C325B1-FBC4-DAB2-42F2-B8E9EE3AB1C3}
+		{A3B4B786-852F-8A4C-CD48-A356FB5E3D59} = {DE32CBA3-4E08-C3E1-9ED0-C857C3AD068F}
+		{8CCD1096-02E5-562C-F65B-6C9871C737F0} = {86C325B1-FBC4-DAB2-42F2-B8E9EE3AB1C3}
+		{E9FEB2A7-7ADC-6B75-BAC4-C51CE7D12EB8} = {8CCD1096-02E5-562C-F65B-6C9871C737F0}
+		{43F2EAFF-8A00-E763-658B-D6F27AC8107F} = {E9FEB2A7-7ADC-6B75-BAC4-C51CE7D12EB8}
+		{948EAD6A-B049-5F06-C002-295C4F756EBB} = {E9FEB2A7-7ADC-6B75-BAC4-C51CE7D12EB8}
+		{441833FB-A275-883E-5A01-18FAF721791F} = {E9FEB2A7-7ADC-6B75-BAC4-C51CE7D12EB8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {31F51579-42CD-4D51-A272-FEFF31859053}
+	EndGlobalSection
+EndGlobal
