@@ -1,0 +1,14 @@
+# Ignore IPL input files
+ipl.json
+ipl.csv
+
+# Ignore generated output files
+censored_ipl.json
+censored_ipl.csv
+
+# Ignore build folders
+bin/
+obj/
+
+# Ignore user-specific files
+.vs/
