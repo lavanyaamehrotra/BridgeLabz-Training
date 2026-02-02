@@ -1,0 +1,6 @@
+projectKey=smart-checkout
+serverUrl=http://localhost:9000
+serverVersion=9.9.8.100196
+dashboardUrl=http://localhost:9000/dashboard?id=smart-checkout
+ceTaskId=AZwZGEmdK9-NsUmU2vFC
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AZwZGEmdK9-NsUmU2vFC
