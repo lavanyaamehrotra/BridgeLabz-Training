@@ -696,3 +696,24 @@ Streams,Merge Sort, Queue & HashMap in Real-World Scenarios
 * Solved string manipulation challenges💾
 * Designed modular systems using OOPS and DSA ⏳
 * Practice & Scenario-Based Assignments: Lexical Twist(String reversal, comparison, and transformation),  Future Logistics System(Designed logistics workflows).🏃
+
+# 📅 Day 38 — January 31, 2026 — JSON Data Handling 📦
+## 🧩 What I Learned
+* Basics of JSON structure (objects, arrays, key–value pairs)
+* Parsing and accessing JSON data in C#
+* Using JSON for structured data handling
+
+## 🧪 Tasks Completed
+* Implemented JSON-based programs
+* 📤 Pushed code to GitHub
+
+# 📅 Day 39 — February 02, 2026 — Scenario-Based Coding & Code Quality 🔁
+## 🧩 What I Learned
+* Solved Flip Key scenario-based logic problem
+* Applied SonarQube on SmartCheckout project
+* Identified and fixed code smells
+
+## 🧪 Tasks Completed
+* Implemented Flip Key solution
+* Refactored code using SonarQube analysis
+* 📤 Pushed updated code to GitHub
