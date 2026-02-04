@@ -143,4 +143,34 @@ public class AddressBookUtility : IAddressBook{
             Console.WriteLine(contacts[i]);
         }
     }
+    //UC-12
+    public void SortContactsByCity(){
+        contacts.Sort((a, b) =>string.Compare(a.City, b.City, StringComparison.OrdinalIgnoreCase));
+        Console.WriteLine("Contacts Sorted by City:");
+        DisplayContacts();
+    }
+    //UC-12
+    public void SortContactsByState(){
+        contacts.Sort((a, b) =>string.Compare(a.State, b.State, StringComparison.OrdinalIgnoreCase));
+        Console.WriteLine("Contacts Sorted by State:");
+        DisplayContacts();
+    }
+    //UC-12
+    public void SortContactsByZip(){
+        contacts.Sort((a, b) =>string.Compare(a.Zip, b.Zip, StringComparison.OrdinalIgnoreCase));
+        Console.WriteLine("Contacts Sorted by Zip:");
+        DisplayContacts();
+    }
+    //UC-12
+    private void DisplayContacts(){
+        if (contacts.Count == 0){
+            Console.WriteLine("No contacts available.");
+            return;
+        }
+    foreach (var contact in contacts){
+        Console.WriteLine(contact);
+    }
+}
+
+
 }

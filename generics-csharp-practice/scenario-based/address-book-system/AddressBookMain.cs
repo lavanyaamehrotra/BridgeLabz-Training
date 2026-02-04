@@ -19,7 +19,10 @@ class AddressBookMain{
             Console.WriteLine("11. Count Person By City");
             Console.WriteLine("12. Count Person By State");
             Console.WriteLine("13. Sort Contacts by Name");
-            Console.WriteLine("14. Exit");
+            Console.WriteLine("14. Sort Contacts by City");
+            Console.WriteLine("15. Sort Contacts by State");
+            Console.WriteLine("16. Sort Contacts by Zip");
+            Console.WriteLine("17. Exit");
             Console.Write("Enter choice: ");
             choice = Convert.ToInt32(Console.ReadLine());
             switch (choice){
@@ -45,6 +48,15 @@ class AddressBookMain{
                     utility.SortContactsByName();
                     break;
                 case 14:
+                    utility.SortContactsByCity();
+                    break;
+                case 15:
+                    utility.SortContactsByState();
+                    break;
+                case 16:
+                    utility.SortContactsByZip();
+                    break;
+                case 17:
                     Console.WriteLine("Exiting Program.");
                     break;
                 default:
@@ -52,6 +64,6 @@ class AddressBookMain{
                     break;
             }
 
-        } while (choice != 14);
+        } while (choice != 17);
     }
 }
