@@ -8,7 +8,6 @@ public class AddressBookUtility : IAddressBook{
     private AddressBookModel model;
     // UC-13 : File path for Address Book
     private static string filePath = "AddressBook.txt";
-
     // UC-6 : Multiple Address Books
     private static List<AddressBookUtility> addressBooks = new List<AddressBookUtility>();
     private static List<string> addressBookNames = new List<string>();
