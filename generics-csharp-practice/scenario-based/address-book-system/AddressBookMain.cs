@@ -22,7 +22,9 @@ class AddressBookMain{
             Console.WriteLine("14. Sort Contacts by City");
             Console.WriteLine("15. Sort Contacts by State");
             Console.WriteLine("16. Sort Contacts by Zip");
-            Console.WriteLine("17. Exit");
+            Console.WriteLine("17. Write Contacts to File");
+            Console.WriteLine("18. Read Contacts from File");
+            Console.WriteLine("19. Exit");
             Console.Write("Enter choice: ");
             choice = Convert.ToInt32(Console.ReadLine());
             switch (choice){
@@ -57,6 +59,12 @@ class AddressBookMain{
                     utility.SortContactsByZip();
                     break;
                 case 17:
+                    utility.WriteContactsToFile();
+                    break;
+                case 18:
+                    utility.ReadContactsFromFile();
+                    break;
+                case 19:
                     Console.WriteLine("Exiting Program.");
                     break;
                 default:
@@ -64,6 +72,6 @@ class AddressBookMain{
                     break;
             }
 
-        } while (choice != 17);
+        } while (choice != 19);
     }
 }
