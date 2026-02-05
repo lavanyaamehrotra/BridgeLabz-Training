@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using CsvHelper;
+using System.Text.Json;
 
 // Utility class implementing interface
 public class AddressBookUtility : IAddressBook{
@@ -260,5 +261,35 @@ public class AddressBookUtility : IAddressBook{
     catch (Exception ex){
         Console.WriteLine("CSV read error: " + ex.Message);
     }
+    }
+        // UC-15 - Write contacts to JSON using System.Text.Json (GSON equivalent)
+    public void WriteContactsToJsonFile(){
+            if (contacts.Count == 0){
+                Console.WriteLine("No contacts to write.");
+                return;
+            }
+            try{
+        string json = JsonSerializer.Serialize(contacts,new JsonSerializerOptions { WriteIndented = true });
+        File.WriteAllText("AddressBook.json", json);
+        Console.WriteLine("Contacts written to JSON file (UC-15).");
+    }
+        catch (Exception ex){
+            Console.WriteLine("JSON write error: " + ex.Message);
+        }
+    }
+    // UC-15 - Read contacts from JSON using System.Text.Json (GSON equivalent)
+    public void ReadContactsFromJsonFile(){
+    try{
+        if (!File.Exists("AddressBook.json")){
+            Console.WriteLine("JSON file not found.");
+            return;
+        }
+        string json = File.ReadAllText("AddressBook.json");
+        contacts = JsonSerializer.Deserialize<List<AddressBookModel>>(json);
+        Console.WriteLine("Contacts read from JSON file (UC-15).");
+    }
+        catch (Exception ex){
+            Console.WriteLine("JSON read error: " + ex.Message);
+        }
     }
 }

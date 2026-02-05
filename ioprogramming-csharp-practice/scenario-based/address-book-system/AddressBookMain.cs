@@ -26,7 +26,9 @@ class AddressBookMain{
             Console.WriteLine("18. Read Contacts from File");
             Console.WriteLine("19. Write Contacts to CSV (UC-14 CsvHelper)");
             Console.WriteLine("20. Read Contacts from CSV (UC-14 CsvHelper)");
-            Console.WriteLine("21. Exit");
+            Console.WriteLine("21. Write Contacts to JSON ");
+            Console.WriteLine("22. Read Contacts from JSON ");
+            Console.WriteLine("23. Exit");
             Console.Write("Enter choice: ");
             choice = Convert.ToInt32(Console.ReadLine());
             switch (choice){
@@ -73,6 +75,12 @@ class AddressBookMain{
                     utility.ReadContactsFromCsvFile();
                     break;
                 case 21:
+                    utility.WriteContactsToJsonFile();
+                    break;
+                case 22:
+                    utility.ReadContactsFromJsonFile();
+                    break;
+                case 23:
                     Console.WriteLine("Exiting Program.");
                     break;
                 default:
@@ -80,6 +88,6 @@ class AddressBookMain{
                     break;
             }
 
-        } while (choice != 21);
+        } while (choice != 23);
     }
 }
