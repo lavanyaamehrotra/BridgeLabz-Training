@@ -1,7 +1,6 @@
 ﻿# BridgeLabz-Training
 🧠 BridgeLabz Training Data
 
-
 # 📅 Day 1 — December 16, 2025 — Git & GitHub Basics
 ## Topic: Introduction to Git and GitHub
 ## 🧩 What I Learned
@@ -728,3 +727,19 @@ Streams,Merge Sort, Queue & HashMap in Real-World Scenarios
 * Implemented Factory Robot Hazard program
 * Tested edge cases
 * 📤 Pushed code to GitHub
+
+# 📅 Day 41 — February 04, 2026 — Multithreading in C# 🧵
+## What I Learned
+* Basics of multithreading and its use
+* Creating threads using Thread class
+* Main thread vs child threads
+* Basic thread execution and concurrency
+
+# 📅 Day 42 — February 05, 2026 — DBMS Basics 🗄️
+## What I Learned
+* Introduction to DBMS
+* File system vs DBMS
+* Basic database concepts (tables, rows, columns)
+* Primary key and foreign key basics
+* Foundation for SQL and database integration
+* Updated My Address book project till UC-15
