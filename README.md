@@ -717,3 +717,14 @@ Streams,Merge Sort, Queue & HashMap in Real-World Scenarios
 * Implemented Flip Key solution
 * Refactored code using SonarQube analysis
 * 📤 Pushed updated code to GitHub
+
+# 📅 Day 40 — February 03, 2026 — Factory Robot Hazard ⚠️🤖
+## 🧩 What I Learned
+* Solved a factory automation hazard detection scenario
+* Applied conditional logic and decision-making in C#
+* Classified safety levels: Safe / Warning / Critical
+
+## 🧪 Tasks Completed
+* Implemented Factory Robot Hazard program
+* Tested edge cases
+* 📤 Pushed code to GitHub
