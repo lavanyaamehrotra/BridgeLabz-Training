@@ -743,3 +743,30 @@ Streams,Merge Sort, Queue & HashMap in Real-World Scenarios
 * Primary key and foreign key basics
 * Foundation for SQL and database integration
 * Updated My Address book project till UC-15
+
+# Day 43- February 6, 2026                                                   
+## Topic-Database Design & Professional Conduct 🏥📋                                                      
+## What I Learnt: 📚                                             
+* Designed Healthcare Application Database Schema 🔍
+* Created tables with keys, relationships, and constraints ⏳
+* Learned importance of attendance, punctuality, and discipline in professional environments 🏗️
+* Practice & Assignments: Healthcare database schema design, SQL query implementation for healthcare use cases ✔️
+
+# 📅 Day 44 – February 7, 2026
+## 🧩 Topics of the Day
+## 🔗 DBMS Integration – Connecting database with a C# console application
+* 🗄️ Database Schema Design – Structuring tables for the healthcare system
+* ✏️ CRUD Operations – Create, Read, Update, Delete operations
+* Learned how to connect DBMS with a C# console application
+* Implemented CRUD operations to manage healthcare-related data
+  
+# 📅 Day 45 – February 9, 2026
+## 🧩 Topics of the Day
+## 🗂️ Database Schema Design – Structuring tables for the Healthcare project
+* Done with Healthcare Application🔍
+
+# 📅 Day 46 – February 10, 2026
+## 🧩 Topics of the Day
+## 📝 Mock Test – Timed C# console application development
+* ⚙️ Application Design – Applying end-to-end C# concepts
+* Appeared for a mock test where a complete C# console application was designed and implemented within a fixed time duration, applying core C#, OOPs, and logical problem-solving skills
