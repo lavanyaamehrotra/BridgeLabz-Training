@@ -131,8 +131,7 @@ class CitizenRegistration{
         Console.WriteLine("\nZone-wise Sector Citizen Count:");
         for (int i = 0; i < 5; i++){
             Console.WriteLine("Zone " + (i + 1) + ":");
-            for (int j = 0; j < 3; j++)
-        {
+            for (int j = 0; j < 3; j++){
             Console.WriteLine("  Sector " + (j + 1) + " → " + zoneSector[i, j]);
         }
     }
@@ -146,7 +145,12 @@ class CitizenRegistration{
         for (int i = 0; i < citizens.Length; i++)
         {
             Console.WriteLine($"\nCreating Profile #{i + 1}");
-            citizens[i] = ProfileManager.CreateProfile();
+            Citizen newCitizen = ProfileManager.CreateProfile(citizens);
+            if (newCitizen != null){
+                citizens[i] = newCitizen;
+            }else{
+                i--; // retry if profile creation failed
+            }
         }
         // Display profiles
         for (int i = 0; i < citizens.Length; i++)

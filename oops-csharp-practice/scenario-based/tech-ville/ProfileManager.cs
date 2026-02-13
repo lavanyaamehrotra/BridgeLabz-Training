@@ -1,6 +1,5 @@
 using System;
 using System.Globalization;
-
 public static class ProfileManager
 {
     // Format Name (String Manipulation)
@@ -10,13 +9,11 @@ public static class ProfileManager
         return CultureInfo.CurrentCulture.TextInfo
                .ToTitleCase(name.ToLower());
     }
-
     // Email Validation
     public static bool ValidateEmail(string email)
     {
         return email.Contains("@") && email.Contains(".");
     }
-
     // Extract City from Address
     public static string ExtractCity(string address)
     {
@@ -27,20 +24,17 @@ public static class ProfileManager
 
         return "Unknown";
     }
-
     // Pass by Value Example
     public static void IncreaseAge(int age)
     {
         age += 1;
         Console.WriteLine("Age inside method: " + age);
     }
-
     // Pass by Reference Example
     public static void UpdateCitizen(ref Citizen citizen, string newName)
     {
         citizen.Name = FormatName(newName);
     }
-
     // Search using string matching
     public static void SearchCitizen(Citizen[] citizens, string searchName)
     {
@@ -59,26 +53,64 @@ public static class ProfileManager
         if (!found)
             Console.WriteLine("No citizen found.");
     }
-
-    // Profile Generator
-    public static Citizen CreateProfile()
+    // Profile Generator(MODULE 5)
+    public static Citizen CreateProfile(Citizen[] existingCitizens)
     {
-        Console.Write("Enter Name: ");
-        string name = FormatName(Console.ReadLine());
+        try
+        {
+            Console.Write("Enter Name: ");
+            string name = FormatName(Console.ReadLine());
+            // Check Duplicate
+            for (int i = 0; i < existingCitizens.Length; i++)
+            {
+                if (existingCitizens[i] != null &&
+                    existingCitizens[i].Name == name)
+                {
+                    throw new DuplicateCitizenException(
+                        "Citizen with same name already exists.");
+                }
+            }
+            Console.Write("Enter Email: ");
+            string email = Console.ReadLine();
 
-        Console.Write("Enter Email: ");
-        string emailInput = Console.ReadLine();
+            if (!ValidateEmail(email)){
+                throw new FormatException("Invalid Email Format");
+            }
+            Console.Write("Enter Address (Street, City): ");
+            string address = Console.ReadLine();
 
-        string email = ValidateEmail(emailInput)
-                       ? emailInput
-                       : "Invalid Email";
+            Console.Write("Enter Age: ");
+            int age = Convert.ToInt32(Console.ReadLine());
 
-        Console.Write("Enter Address (Street, City): ");
-        string address = Console.ReadLine();
+            if (age <= 0)
+                throw new InvalidAgeException("Age must be greater than 0");
 
-        Console.Write("Enter Age: ");
-        int age = Convert.ToInt32(Console.ReadLine());
-
-        return new Citizen(name, email, address, age);
+            return new Citizen(name, email, address, age);
+        }
+        catch (InvalidAgeException ex)
+        {
+            Console.WriteLine("Age Error: " + ex.Message);
+            ErrorLogger.LogError(ex.Message);
+        }
+        catch (DuplicateCitizenException ex)
+        {
+            Console.WriteLine("Duplicate Error: " + ex.Message);
+            ErrorLogger.LogError(ex.Message);
+        }
+        catch (FormatException ex)
+        {
+            Console.WriteLine("Format Error: " + ex.Message);
+            ErrorLogger.LogError(ex.Message);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Unexpected Error: " + ex.Message);
+            ErrorLogger.LogError(ex.Message);
+        }
+        finally
+        {
+            Console.WriteLine("Profile creation attempt completed.");
+        }
+        return null;
     }
 }
