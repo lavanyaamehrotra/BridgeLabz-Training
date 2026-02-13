@@ -95,6 +95,47 @@ class CitizenRegistration{
                 break;
             }
         }
+        // =========================
+        // Module 3: Smart Citizen Database (Arrays)
+        // =========================
+
+        // 1D Array - store sample citizen IDs
+        int[] citizenIDs = { 105, 102, 110, 101, 108 };
+        Console.WriteLine("\nOriginal Citizen IDs:");
+        foreach (int id in citizenIDs){
+            Console.Write(id + " ");
+        }
+        // Sorting
+        Array.Sort(citizenIDs);
+        Console.WriteLine("\nSorted Citizen IDs:");
+        foreach (int id in citizenIDs) {
+            Console.Write(id + " ");
+        }
+        // Searching
+        Console.Write("\nEnter Citizen ID to search: ");
+        int searchID = Convert.ToInt32(Console.ReadLine());
+        int index = Array.IndexOf(citizenIDs, searchID);
+
+        if (index != -1)
+            Console.WriteLine("Citizen ID found at index: " + index);
+        else
+        Console.WriteLine("Citizen ID not found.");
+        // 2D Array - Zones & Sectors
+        int[,] zoneSector = {
+            {120, 150, 130},
+            {100, 140, 160},
+            {180, 170, 150},
+            {110, 115, 125},
+            {200, 210, 190}
+        };
+        Console.WriteLine("\nZone-wise Sector Citizen Count:");
+        for (int i = 0; i < 5; i++){
+            Console.WriteLine("Zone " + (i + 1) + ":");
+            for (int j = 0; j < 3; j++)
+        {
+            Console.WriteLine("  Sector " + (j + 1) + " → " + zoneSector[i, j]);
+        }
+    }
         Console.WriteLine("\nThank you for using TechVille System!");
     }
 }
