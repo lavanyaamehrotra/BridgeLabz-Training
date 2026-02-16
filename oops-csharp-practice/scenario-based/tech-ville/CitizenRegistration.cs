@@ -219,6 +219,33 @@ class CitizenRegistration{
         // Static variable demo
         Service.ShowTotalServices();
 
+        // =========================
+        // Module 8: City Service Hierarchy
+        // =========================
+
+        Console.WriteLine("\n===== Module 8: City Service Hierarchy =====");
+
+        // Base reference → polymorphism
+        Service routine = new RoutineService(501, "Water Supply");
+        Service emergency = new EmergencyService(601, "Ambulance");
+
+        // Method overriding demo
+        routine.RegisterService();
+        emergency.RegisterService();
+
+        routine.CheckStatus();
+        emergency.CancelService();
+
+        // Method overloading demo
+        RoutineService rs = new RoutineService(502, "Garbage Collection");
+        rs.BookService("20 Feb");
+        rs.BookService("20 Feb", "10:00 AM");
+
+        // Object class methods demo
+        Console.WriteLine(routine.ToString());
+        Console.WriteLine("Services equal? " + routine.Equals(emergency));
+
+
         Console.WriteLine("\nThank you for using TechVille System!");
     }
 }

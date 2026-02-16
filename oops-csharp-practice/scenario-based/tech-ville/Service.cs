@@ -40,4 +40,46 @@ public class Service
     {
         Console.WriteLine($"Total Services Created: {totalServices}");
     }
+    // Common service operations
+    public virtual void RegisterService()
+    {
+        Console.WriteLine($"{serviceName} registered.");
+    }
+
+    public virtual void CancelService()
+    {
+        Console.WriteLine($"{serviceName} cancelled.");
+    }
+
+    public virtual void CheckStatus()
+    {
+        Console.WriteLine($"{serviceName} status: Active");
+    }
+    // =========================
+    // Object Class Overrides (Module 8)
+    // =========================
+
+    // Equivalent of Java toString()
+    public override string ToString()
+    {
+        return $"Service[{serviceID}] - {serviceName}";
+    }
+
+    // Equivalent of equals()
+    public override bool Equals(object obj)
+    {
+        if (obj is Service other)
+        {
+            return this.serviceID == other.serviceID;
+        }
+        return false;
+    }
+
+    // Equivalent of hashCode()
+    public override int GetHashCode()
+    {
+        return serviceID.GetHashCode();
+    }
+
+
 }
