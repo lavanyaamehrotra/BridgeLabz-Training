@@ -159,19 +159,42 @@ class CitizenRegistration{
         }
         // Pass by Value demonstration
         Console.WriteLine("\n--- Pass by Value ---");
-        int tempAge = citizens[0].Age;
+        int tempAge = citizens[0].GetAge();
         ProfileManager.IncreaseAge(tempAge);
-        Console.WriteLine("Original Age: " + citizens[0].Age);
+        Console.WriteLine("Original Age: " + citizens[0].GetAge());
         // Pass by Reference demonstration
         Console.WriteLine("\n--- Pass by Reference ---");
         ProfileManager.UpdateCitizen(ref citizens[0], "updated name");
-        Console.WriteLine("Updated Name: " + citizens[0].Name);
+        Console.WriteLine("Updated Name: " + citizens[0].GetName());
         // Search functionality
         Console.Write("\nEnter name to search: ");
         string searchName = Console.ReadLine();
         ProfileManager.SearchCitizen(citizens, searchName);
         // Address Parsing
-        Console.WriteLine("City: " +ProfileManager.ExtractCity(citizens[0].Address));
+        Console.WriteLine("City: " +ProfileManager.ExtractCity(citizens[0].GetAddress()));
+        
+        // =========================
+        // Module 6: City Services Framework
+        // =========================
+
+        Console.WriteLine("\n===== Module 6: City Services Framework =====");
+
+        // Creating objects (Class vs Object demo)
+        HealthcareService health1 =
+            new HealthcareService(201, "TechVille General Hospital");
+
+        EducationService edu1 =
+            new EducationService(301, "TechVille University");
+
+        // Using methods
+        health1.ShowServiceInfo();
+        health1.ProvideService();
+
+        Console.WriteLine();
+
+        edu1.ShowServiceInfo();
+        edu1.ProvideService();
+
         Console.WriteLine("\nThank you for using TechVille System!");
     }
 }

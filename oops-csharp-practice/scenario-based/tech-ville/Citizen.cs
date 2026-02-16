@@ -2,28 +2,43 @@ using System;
 
 public class Citizen
 {
-    // Properties
-    public string Name { get; set; }
-    public string Email { get; set; }
-    public string Address { get; set; }
-    public int Age { get; set; }
+    // Private attributes
+    private string name;
+    private string email;
+    private string address;
+    private int age;
 
     // Constructor
     public Citizen(string name, string email, string address, int age)
     {
-        Name = name;
-        Email = email;
-        Address = address;
-        Age = age;
+        this.name = name;
+        this.email = email;
+        this.address = address;
+        SetAge(age);
     }
 
-    // Display Method
+    // Get Methods (Public access)
+    public string GetName() => name;
+    public string GetEmail() => email;
+    public string GetAddress() => address;
+    public int GetAge() => age;
+
+    // Setter with validation
+    public void SetAge(int value)
+    {
+        if (value > 0)
+            age = value;
+        else
+            Console.WriteLine("Invalid Age");
+    }
+
+    // Display
     public void DisplayProfile()
     {
         Console.WriteLine("\n--- Citizen Profile ---");
-        Console.WriteLine("Name: " + Name);
-        Console.WriteLine("Email: " + Email);
-        Console.WriteLine("Address: " + Address);
-        Console.WriteLine("Age: " + Age);
+        Console.WriteLine($"Name: {name}");
+        Console.WriteLine($"Email: {email}");
+        Console.WriteLine($"Address: {address}");
+        Console.WriteLine($"Age: {age}");
     }
 }

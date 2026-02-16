@@ -33,7 +33,11 @@ public static class ProfileManager
     // Pass by Reference Example
     public static void UpdateCitizen(ref Citizen citizen, string newName)
     {
-        citizen.Name = FormatName(newName);
+        citizen = new Citizen(
+        FormatName(newName),
+        citizen.GetEmail(),
+        citizen.GetAddress(),
+        citizen.GetAge());
     }
     // Search using string matching
     public static void SearchCitizen(Citizen[] citizens, string searchName)
@@ -42,10 +46,10 @@ public static class ProfileManager
 
         for (int i = 0; i < citizens.Length; i++)
         {
-            if (citizens[i].Name.ToLower()
+            if (citizens[i].GetName().ToLower()
                 .Contains(searchName.ToLower()))
             {
-                Console.WriteLine("Match Found: " + citizens[i].Name);
+                Console.WriteLine("Match Found: " + citizens[i].GetName());
                 found = true;
             }
         }
@@ -64,7 +68,7 @@ public static class ProfileManager
             for (int i = 0; i < existingCitizens.Length; i++)
             {
                 if (existingCitizens[i] != null &&
-                    existingCitizens[i].Name == name)
+                    existingCitizens[i].GetName() == name)
                 {
                     throw new DuplicateCitizenException(
                         "Citizen with same name already exists.");
