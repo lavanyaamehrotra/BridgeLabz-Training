@@ -245,6 +245,20 @@ class CitizenRegistration{
         Console.WriteLine(routine.ToString());
         Console.WriteLine("Services equal? " + routine.Equals(emergency));
 
+        // =========================
+        // Module 9: Flexible Service Contracts
+        // =========================
+
+        Console.WriteLine("\n===== Module 9: Flexible Service Contracts =====");
+
+        // Plugin architecture demo
+        CityServiceBase vendorService =
+            new PrivateVendorService(701, "Private Ambulance");
+
+        // Polymorphic processing
+        ServiceProcessor.ProcessBooking(vendorService);
+        ServiceProcessor.ProcessTracking(vendorService);
+        ServiceProcessor.ProcessCancellation(vendorService);
 
         Console.WriteLine("\nThank you for using TechVille System!");
     }
