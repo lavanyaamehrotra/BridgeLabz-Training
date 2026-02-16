@@ -140,7 +140,7 @@ class CitizenRegistration{
         // =========================
         Console.WriteLine("\n===== Module 4: Citizen Profile Management =====");
         // Create array of Citizen objects
-        Citizen[] citizens = new Citizen[2];
+        Citizen[] citizens = new Citizen[familyCount];
         // Generate profiles
         for (int i = 0; i < citizens.Length; i++)
         {
@@ -194,6 +194,30 @@ class CitizenRegistration{
 
         edu1.ShowServiceInfo();
         edu1.ProvideService();
+
+        // =========================
+        // Module 7: Advanced Service Architecture
+        // =========================
+
+        Console.WriteLine("\n===== Module 7: Advanced Service Architecture =====");
+
+        // Factory Pattern
+        Service s1 = ServiceFactory.CreateService("healthcare");
+        Service s2 = ServiceFactory.CreateService("premiumhealthcare");
+
+        s1.ProvideService();
+        Console.WriteLine();
+
+        s2.ProvideService();
+
+        // instanceof (type checking)
+        if (s2 is PremiumHealthcareService)
+        {
+            Console.WriteLine("This is a premium healthcare service.");
+        }
+
+        // Static variable demo
+        Service.ShowTotalServices();
 
         Console.WriteLine("\nThank you for using TechVille System!");
     }

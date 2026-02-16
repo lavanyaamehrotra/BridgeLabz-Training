@@ -2,23 +2,29 @@ using System;
 
 public class Service
 {
-    // Class variable (shared)
-    protected static string cityName = "TechVille";
+    // STATIC CLASS VARIABLES
+    protected static string cityName = "TechVille";   
+    protected static int totalServices = 0;
 
-    // Instance variables
+    // INSTANCE VARIABLES
     protected string serviceName;
     protected int serviceID;
+    protected int usageCount;
 
-    // Constructor
-    public Service(string name, int id)
+    // Constructor using THIS keyword
+    public Service(string serviceName, int serviceID)
     {
-        serviceName = name;
-        serviceID = id;
+        this.serviceName = serviceName;
+        this.serviceID = serviceID;
+        this.usageCount = 0;
+
+        totalServices++;
     }
 
     // Virtual method
     public virtual void ProvideService()
     {
+        usageCount++;
         Console.WriteLine($"Providing {serviceName} service in {cityName}");
     }
 
@@ -26,5 +32,12 @@ public class Service
     {
         Console.WriteLine($"Service: {serviceName}");
         Console.WriteLine($"Service ID: {serviceID}");
+        Console.WriteLine($"Usage Count: {usageCount}");
+    }
+
+    // Static method
+    public static void ShowTotalServices()
+    {
+        Console.WriteLine($"Total Services Created: {totalServices}");
     }
 }
