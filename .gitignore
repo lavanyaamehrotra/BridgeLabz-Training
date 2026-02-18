@@ -12,3 +12,7 @@ obj/
 
 # Ignore user-specific files
 .vs/
+
+# Ignore SonarQube analysis files
+.sonarqube/
+**/.sonarqube/
