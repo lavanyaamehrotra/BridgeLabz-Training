@@ -1,10 +1,13 @@
 using System;
-class AddressBookMain{
-    static void Main(string[] args){
+class AddressBookMain
+{
+    static void Main(string[] args)
+    {
         AddressBookUtility utility = new AddressBookUtility();
         utility.DisplayWelcomeMessage();
         int choice;
-        do{
+        do
+        {
             Console.WriteLine("\n---- MENU ----");
             Console.WriteLine("1. Create Address Book");
             Console.WriteLine("2. Select Address Book");
@@ -27,51 +30,90 @@ class AddressBookMain{
             Console.WriteLine("19. Exit");
             Console.Write("Enter choice: ");
             choice = Convert.ToInt32(Console.ReadLine());
-            switch (choice){
+            switch (choice)
+            {
                 case 1:
                     AddressBookUtility.CreateAddressBook();
                     break;
+
                 case 2:
-                    utility = AddressBookUtility.SelectAddressBook();
+                    AddressBookUtility selected = AddressBookUtility.SelectAddressBook();
+                    if (selected != null)
+                        utility = selected;
                     break;
+
                 case 3:
                     utility.AddContact();
                     break;
+
                 case 4:
                     utility.AddMultipleContacts();
                     break;
+
                 case 5:
                     utility.EditContact();
                     break;
+
                 case 6:
                     utility.DeleteContact();
                     break;
+
+                case 7:
+                    utility.SearchPersonByCity();
+                    break;
+
+                case 8:
+                    utility.SearchPersonByState();
+                    break;
+
+                case 9:
+                    utility.ViewPersonByCity();
+                    break;
+
+                case 10:
+                    utility.ViewPersonByState();
+                    break;
+
+                case 11:
+                    utility.CountPersonByCity();
+                    break;
+
+                case 12:
+                    utility.CountPersonByState();
+                    break;
+
                 case 13:
                     utility.SortContactsByName();
                     break;
+
                 case 14:
                     utility.SortContactsByCity();
                     break;
+
                 case 15:
                     utility.SortContactsByState();
                     break;
+
                 case 16:
                     utility.SortContactsByZip();
                     break;
+
                 case 17:
                     utility.WriteContactsToFile();
                     break;
+
                 case 18:
                     utility.ReadContactsFromFile();
                     break;
+
                 case 19:
                     Console.WriteLine("Exiting Program.");
                     break;
+
                 default:
-                    Console.WriteLine("Inavlid choice.Try again Later");
+                    Console.WriteLine("Invalid choice.");
                     break;
             }
-
-        } while (choice != 19);
+        }while(choice!=19);
     }
 }
