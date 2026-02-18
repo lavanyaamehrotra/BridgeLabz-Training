@@ -770,3 +770,51 @@ Streams,Merge Sort, Queue & HashMap in Real-World Scenarios
 ## 📝 Mock Test – Timed C# console application development
 * ⚙️ Application Design – Applying end-to-end C# concepts
 * Appeared for a mock test where a complete C# console application was designed and implemented within a fixed time duration, applying core C#, OOPs, and logical problem-solving skills
+
+# 📅 Day 47 – February 11, 2026
+## 🧩 Topics of the Day-🏥 Healthcare Project – Project initiation and planning
+## 📚 Project Completion – Finalizing Address Book System
+## ✅ Today's Work
+* Started working on the Healthcare Project structure and planning
+* Completed the Address Book System with final improvements and cleanup
+
+# 📅 Day 48 – February 12, 2026
+## 🧩 Topics of the Day-🏥 Healthcare Project Development – Implementation and integration
+* Solved the Question of Notify Hub with concepts using Multithreading, Async Programming, Collections, OOP – Basic & Advanced, Annotations
+* Continued building the Healthcare Project features
+* Integrated database operations using ADO.NET and improved project flow
+* Attended the meeting with Capgemini Mentors
+
+# 📅 Day 49 – February 13, 2026
+## 🧩 Topics of the Day-✅ Healthcare Project Completion – Final implementation and testing
+* Solved question on College Admission Portal using concepts of multithreading, IO file handling and Annotation with Regex.
+* Started working on the TechVilla project and set up its structure
+* Connected with Mentors for Soft skill classes
+  
+# 📅 Day 50 – February 14, 2026
+## 🧩 Topics of the Day-🏗️ TechVilla Project Development – Feature implementation
+* 🧠 Project-Based Learning – Applying full-stack console concepts
+* Implemented core features and integrated database functionalities
+
+# 📅 Day 51 – February 16, 2026
+## 🧩 Topics of the Day
+* 📝 M1 Test Revision – Revising all topics for upcoming Module 1 test
+* 🧠 Concept Reinforcement – Strengthening understanding of previously learned topics
+* Thoroughly revised all topics that will appear in the M1 Test
+* Practiced sample problems and clarified doubts to ensure readiness
+
+# 📅 Day 52 – February 17, 2026
+## 🧩 Topics of the Day-📘 Theory Revision – Reviewed core concepts covered so far
+* 🧠 Concept Strengthening – Revised fundamentals and theoretical understanding of all previously learned topics
+* Revised theoretical concepts of each and every topic learned during the training
+* Strengthened understanding of core programming and project concepts
+* Focused on conceptual clarity and revision instead of new implementation
+
+# 📅 Day 53 – February 18, 2026
+## 🧩 Topics of the Day-📝 Mock Examination – Problem Solving Assessment
+* 💍 Jewelry Problem – Logic building and implementation
+* 🔎 Regex Problem – Pattern matching and string validation
+* Attempted the mock exam consisting of two programming questions
+* Solved the Jewelry problem focusing on logical implementation and problem analysis
+* Solved the Regex problem involving pattern matching and validation concepts
+* Practiced applying learned concepts under exam conditions
