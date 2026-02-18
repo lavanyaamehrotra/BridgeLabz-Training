@@ -1,14 +1,11 @@
 using System;
-using System.Threading.Tasks;   
 class AddressBookMain
 {
-    static async Task Main(string[] args)
+    static void Main(string[] args)
     {
         AddressBookUtility utility = new AddressBookUtility();
         utility.DisplayWelcomeMessage();
-
         int choice;
-
         do
         {
             Console.WriteLine("\n---- MENU ----");
@@ -18,17 +15,23 @@ class AddressBookMain
             Console.WriteLine("4. Add Multiple Contacts");
             Console.WriteLine("5. Edit Contact");
             Console.WriteLine("6. Delete Contact");
-            Console.WriteLine("17. Write Contacts to File");
-            Console.WriteLine("18. Read Contacts from File");
-            Console.WriteLine("19. Write Contacts to CSV");
-            Console.WriteLine("20. Read Contacts from CSV");
-            Console.WriteLine("21. Write Contacts to JSON");
-            Console.WriteLine("22. Read Contacts from JSON");
-            Console.WriteLine("23. Exit");
-
+            Console.WriteLine("7. Search Person By City");
+            Console.WriteLine("8. Search Person By State");
+            Console.WriteLine("9. View Person By City");
+            Console.WriteLine("10. View Person By State");
+            Console.WriteLine("11. Count Person By City");
+            Console.WriteLine("12. Count Person By State");
+            Console.WriteLine("13. Sort Contacts by Name");
+            Console.WriteLine("14. Sort Contacts by City");
+            Console.WriteLine("15. Sort Contacts by State");
+            Console.WriteLine("16. Sort Contacts by Zip");
+            Console.WriteLine("17. Write Contacts to TXT File");
+            Console.WriteLine("18. Read Contacts from TXT File");
+            Console.WriteLine("19. Write Contacts to CSV File");
+            Console.WriteLine("20. Read Contacts from CSV File");
+            Console.WriteLine("21. Exit");
             Console.Write("Enter choice: ");
             choice = Convert.ToInt32(Console.ReadLine());
-
             switch (choice)
             {
                 case 1:
@@ -36,7 +39,9 @@ class AddressBookMain
                     break;
 
                 case 2:
-                    utility = AddressBookUtility.SelectAddressBook();
+                    AddressBookUtility selected = AddressBookUtility.SelectAddressBook();
+                    if (selected != null)
+                        utility = selected;
                     break;
 
                 case 3:
@@ -55,41 +60,70 @@ class AddressBookMain
                     utility.DeleteContact();
                     break;
 
+                case 7:
+                    utility.SearchPersonByCity();
+                    break;
+
+                case 8:
+                    utility.SearchPersonByState();
+                    break;
+
+                case 9:
+                    utility.ViewPersonByCity();
+                    break;
+
+                case 10:
+                    utility.ViewPersonByState();
+                    break;
+
+                case 11:
+                    utility.CountPersonByCity();
+                    break;
+
+                case 12:
+                    utility.CountPersonByState();
+                    break;
+
+                case 13:
+                    utility.SortContactsByName();
+                    break;
+
+                case 14:
+                    utility.SortContactsByCity();
+                    break;
+
+                case 15:
+                    utility.SortContactsByState();
+                    break;
+
+                case 16:
+                    utility.SortContactsByZip();
+                    break;
+
                 case 17:
-                    await utility.ExecuteStorageOperation("TEXT", "Write");
+                    utility.WriteContactsToFile();
                     break;
 
                 case 18:
-                    await utility.ExecuteStorageOperation("TEXT", "Read");
+                    utility.ReadContactsFromFile();
                     break;
 
                 case 19:
-                    await utility.ExecuteStorageOperation("CSV", "Write");
+                    utility.WriteContactsToCsvFile();
                     break;
 
                 case 20:
-                    await utility.ExecuteStorageOperation("CSV", "Read");
+                    utility.ReadContactsFromCsvFile();
                     break;
 
                 case 21:
-                    await utility.ExecuteStorageOperation("JSON", "Write");
-                    break;
-
-                case 22:
-                    await utility.ExecuteStorageOperation("JSON", "Read");
-                    break;
-
-                                
-                                
-                case 23:
-                    Console.WriteLine("Exiting Program.");
-                    break;
-
+                Console.WriteLine("Thank you");
+                return;
+                
                 default:
                     Console.WriteLine("Invalid choice.");
                     break;
             }
-
-        } while (choice != 23);
+        }while(choice!=21);
     }
 }
