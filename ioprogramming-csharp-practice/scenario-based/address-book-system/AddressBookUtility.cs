@@ -7,6 +7,8 @@ using System.Globalization;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using System.Reflection;
+
 
 // Utility class implementing interface
 public class AddressBookUtility : IAddressBook
@@ -46,58 +48,31 @@ public class AddressBookUtility : IAddressBook
 
     // UC-1 + UC-2 : Add Contact
     public void AddContact()
+{
+    try
     {
-        try
+        AddressBookModel person =
+            CreateContactUsingReflection();
+
+        if (person == null)
+            return;
+
+        foreach (var contact in contacts)
         {
-            AddressBookModel person = new AddressBookModel();
-
-            Console.Write("Enter First Name : ");
-            person.FirstName = Console.ReadLine();
-
-            Console.Write("Enter Last Name  : ");
-            person.LastName = Console.ReadLine();
-
-
-            // Duplicate Check
-            foreach (var contact in contacts)
-            {
-                if (contact.Equals(person))
-                {
-                    throw new DuplicateContactException(
-                        "Duplicate contact found! Person already exists."
-                    );
-                }
-            }
-
-
-            Console.Write("Enter Address    : ");
-            person.Address = Console.ReadLine();
-
-            Console.Write("Enter City       : ");
-            person.City = Console.ReadLine();
-
-            Console.Write("Enter State      : ");
-            person.State = Console.ReadLine();
-
-            Console.Write("Enter Zip        : ");
-            person.Zip = Console.ReadLine();
-
-            Console.Write("Enter Phone No   : ");
-            person.PhoneNumber = Console.ReadLine();
-
-            Console.Write("Enter Email      : ");
-            person.Email = Console.ReadLine();
-
-
-            contacts.Add(person);
-
-            Console.WriteLine("Contact Added Successfully!");
+            if (contact.Equals(person))
+                throw new DuplicateContactException(
+                    "Duplicate contact found! Person already exists.");
         }
-        catch (DuplicateContactException ex)
-        {
-            Console.WriteLine(ex.Message);
-        }
+
+        contacts.Add(person);
+
+        Console.WriteLine("Contact Added Successfully!");
     }
+    catch (Exception ex)
+    {
+        Console.WriteLine(ex.Message);
+    }
+}
 
 
     // UC-3 : Edit Contact
@@ -593,23 +568,73 @@ public async Task ReadContactsFromJsonFileAsync()
         Console.WriteLine(ex.Message);
     }
 }
+private AddressBookModel CreateContactUsingReflection()
+{
+    AddressBookModel person = new AddressBookModel();
 
+    var properties =
+        typeof(AddressBookModel).GetProperties();
 
-        // Display
-        private void DisplayContacts()
-        {
-            foreach (var contact in contacts)
-            {
-                Console.WriteLine(contact);
-            }
-        }
-
-    private void DisplayContacts(List<AddressBookModel> list)
+    foreach (var prop in properties)
     {
-        foreach (var contact in list)
+        var display =
+            prop.GetCustomAttribute<DisplayAttribute>();
+
+        if (display == null)
+            continue;
+
+        Console.Write($"Enter {display.Label}: ");
+        string input = Console.ReadLine();
+
+        var required =
+            prop.GetCustomAttribute<RequiredAttribute>();
+
+        if (required != null && string.IsNullOrWhiteSpace(input))
         {
-            Console.WriteLine(contact);
+            Console.WriteLine($"{display.Label} is required!");
+            return null;
         }
+
+        prop.SetValue(person, input);
     }
+
+    return person;
+}
+private void DisplayContacts()
+{
+    foreach (var contact in contacts)
+    {
+        DisplayContact(contact);
+    }
+}
+
+private void DisplayContacts(List<AddressBookModel> list)
+{
+    foreach (var contact in list)
+    {
+        DisplayContact(contact);
+    }
+}
+
+    private void DisplayContact(AddressBookModel contact)
+{
+    var properties = typeof(AddressBookModel).GetProperties();
+
+    Console.WriteLine("\n----- Contact -----");
+
+    foreach (var prop in properties)
+    {
+        var display = prop.GetCustomAttribute<DisplayAttribute>();
+
+        if (display == null)
+            continue;
+
+        Console.WriteLine(
+            $"{display.Label}: {prop.GetValue(contact)}");
+    }
+
+    Console.WriteLine("-------------------");
+}
+
 
 }
