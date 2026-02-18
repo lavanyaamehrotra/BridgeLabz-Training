@@ -6,8 +6,7 @@ using CsvHelper;
 using System.Globalization;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-
-
+using System.Threading.Tasks;
 
 // Utility class implementing interface
 public class AddressBookUtility : IAddressBook
@@ -541,6 +540,61 @@ public class AddressBookUtility : IAddressBook
                 Console.WriteLine(ex.Message);
             }
         }
+        // UC-17 : Non-blocking JSON Write
+public async Task WriteContactsToJsonFileAsync()
+{
+    try
+    {
+        Console.WriteLine("Writing JSON asynchronously...");
+
+        var options = new JsonSerializerOptions
+        {
+            WriteIndented = true
+        };
+
+        string jsonData =
+            JsonSerializer.Serialize(contacts, options);
+
+        await File.WriteAllTextAsync(jsonFilePath, jsonData);
+
+        Console.WriteLine("JSON written successfully (Async)!");
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine(ex.Message);
+    }
+}
+// UC-17 : Non-blocking JSON Read
+public async Task ReadContactsFromJsonFileAsync()
+{
+    try
+    {
+        Console.WriteLine("Reading JSON asynchronously...");
+
+        if (!File.Exists(jsonFilePath))
+        {
+            Console.WriteLine("JSON file not found.");
+            return;
+        }
+
+        string jsonData =
+            await File.ReadAllTextAsync(jsonFilePath);
+
+        var data =
+            JsonSerializer.Deserialize<List<AddressBookModel>>(jsonData);
+
+        if (data != null)
+            contacts = data;
+
+        Console.WriteLine("JSON read successfully (Async)!");
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine(ex.Message);
+    }
+}
+
+
         // Display
         private void DisplayContacts()
         {

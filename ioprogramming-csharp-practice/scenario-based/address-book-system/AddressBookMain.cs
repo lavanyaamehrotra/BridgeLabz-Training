@@ -1,7 +1,8 @@
 using System;
 class AddressBookMain
 {
-    static void Main(string[] args)
+    static async Task Main(string[] args)
+
     {
         AddressBookUtility utility = new AddressBookUtility();
         utility.DisplayWelcomeMessage();
@@ -31,7 +32,10 @@ class AddressBookMain
             Console.WriteLine("20. Read Contacts from CSV File");
             Console.WriteLine("21. Write Contacts to JSON File");
             Console.WriteLine("22. Read Contacts from JSON File");
-            Console.WriteLine("23. Exit");
+            Console.WriteLine("23. Write JSON Async (Non-Blocking)");
+            Console.WriteLine("24. Read JSON Async (Non-Blocking)");
+            Console.WriteLine("25. Exit");
+
 
             Console.Write("Enter choice: ");
             choice = Convert.ToInt32(Console.ReadLine());
@@ -126,8 +130,16 @@ class AddressBookMain
                 case 22:
                     utility.ReadContactsFromJsonFile();
                     break;
-
                 case 23:
+                    await utility.WriteContactsToJsonFileAsync();
+                    break;
+
+                case 24:
+                    await utility.ReadContactsFromJsonFileAsync();
+                    break;
+
+
+                case 25:
                     Console.WriteLine("Thank you");
                     return;
 
@@ -135,6 +147,6 @@ class AddressBookMain
                     Console.WriteLine("Invalid choice.");
                     break;
             }
-        }while(choice!=23);
+        }while(choice!=25);
     }
 }
