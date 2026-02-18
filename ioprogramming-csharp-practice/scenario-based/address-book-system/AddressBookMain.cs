@@ -29,7 +29,10 @@ class AddressBookMain
             Console.WriteLine("18. Read Contacts from TXT File");
             Console.WriteLine("19. Write Contacts to CSV File");
             Console.WriteLine("20. Read Contacts from CSV File");
-            Console.WriteLine("21. Exit");
+            Console.WriteLine("21. Write Contacts to JSON File");
+            Console.WriteLine("22. Read Contacts from JSON File");
+            Console.WriteLine("23. Exit");
+
             Console.Write("Enter choice: ");
             choice = Convert.ToInt32(Console.ReadLine());
             switch (choice)
@@ -117,13 +120,21 @@ class AddressBookMain
                     break;
 
                 case 21:
-                Console.WriteLine("Thank you");
-                return;
-                
+                    utility.WriteContactsToJsonFile();
+                    break;
+
+                case 22:
+                    utility.ReadContactsFromJsonFile();
+                    break;
+
+                case 23:
+                    Console.WriteLine("Thank you");
+                    return;
+
                 default:
                     Console.WriteLine("Invalid choice.");
                     break;
             }
-        }while(choice!=21);
+        }while(choice!=23);
     }
 }

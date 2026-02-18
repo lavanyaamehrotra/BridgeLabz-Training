@@ -37,4 +37,8 @@ public interface IAddressBook
     void WriteContactsToCsvFile();
     void ReadContactsFromCsvFile();
 
+    // UC-15 JSON
+    void WriteContactsToJsonFile();
+    void ReadContactsFromJsonFile();
+
 }
