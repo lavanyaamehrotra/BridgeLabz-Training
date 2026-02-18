@@ -55,31 +55,32 @@ class AddressBookMain
                     utility.DeleteContact();
                     break;
 
-                // ✅ ASYNC CALLS
                 case 17:
-                    await utility.WriteContactsToFileAsync();
+                    await utility.ExecuteStorageOperation("TEXT", "Write");
                     break;
 
                 case 18:
-                    await utility.ReadContactsFromFileAsync();
+                    await utility.ExecuteStorageOperation("TEXT", "Read");
                     break;
 
                 case 19:
-                    await utility.WriteContactsToCsvFileAsync();
+                    await utility.ExecuteStorageOperation("CSV", "Write");
                     break;
 
                 case 20:
-                    await utility.ReadContactsFromCsvFileAsync();
+                    await utility.ExecuteStorageOperation("CSV", "Read");
                     break;
 
                 case 21:
-                    await utility.WriteContactsToJsonFileAsync();
+                    await utility.ExecuteStorageOperation("JSON", "Write");
                     break;
 
                 case 22:
-                    await utility.ReadContactsFromJsonFileAsync();
+                    await utility.ExecuteStorageOperation("JSON", "Read");
                     break;
 
+                                
+                                
                 case 23:
                     Console.WriteLine("Exiting Program.");
                     break;

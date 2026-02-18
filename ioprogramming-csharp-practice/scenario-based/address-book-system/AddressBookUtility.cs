@@ -295,6 +295,7 @@ public class AddressBookUtility : IAddressBook{
         }
     }
     // UC-16 Async Write TEXT File
+        [Storage("TEXT")]
         public async Task WriteContactsToFileAsync()
         {
             try
@@ -319,6 +320,7 @@ public class AddressBookUtility : IAddressBook{
             }
         }
         // UC-16 Async Read TEXT File
+        [Storage("TEXT")]
         public async Task ReadContactsFromFileAsync()
         {
             try
@@ -358,6 +360,7 @@ public class AddressBookUtility : IAddressBook{
             }
         }
         // UC-16 Async CSV Write
+        [Storage("CSV")]
         public async Task WriteContactsToCsvFileAsync()
         {
             if (contacts.Count == 0)
@@ -391,6 +394,7 @@ public class AddressBookUtility : IAddressBook{
             }
         }
         // UC-16 Async CSV Read
+        [Storage("CSV")]
         public async Task ReadContactsFromCsvFileAsync()
         {
             try
@@ -424,6 +428,7 @@ public class AddressBookUtility : IAddressBook{
             }
         }
         // UC-16 Async JSON Write
+        [Storage("JSON")]
         public async Task WriteContactsToJsonFileAsync()
         {
             if (contacts.Count == 0)
@@ -448,6 +453,7 @@ public class AddressBookUtility : IAddressBook{
             }
         }
         // UC-16 Async JSON Read
+        [Storage("JSON")]
         public async Task ReadContactsFromJsonFileAsync()
         {
             try
@@ -470,4 +476,30 @@ public class AddressBookUtility : IAddressBook{
                 Console.WriteLine(ex.Message);
             }
         }
+        // UC-17 : Execute Storage using Annotation + Reflection
+    public async Task ExecuteStorageOperation(string storageType, string operation)
+    {
+        var methods = this.GetType().GetMethods();
+
+        foreach (var method in methods)
+        {
+            var attribute =
+                (StorageAttribute)Attribute.GetCustomAttribute(
+                    method,
+                    typeof(StorageAttribute));
+
+            if (attribute != null &&
+                attribute.StorageType.Equals(storageType,
+                StringComparison.OrdinalIgnoreCase) &&
+                method.Name.Contains(operation))
+            {
+                var task = (Task)method.Invoke(this, null);
+                await task;
+                return;
+            }
+        }
+
+        Console.WriteLine("Operation not found using reflection.");
+}
+
 }
