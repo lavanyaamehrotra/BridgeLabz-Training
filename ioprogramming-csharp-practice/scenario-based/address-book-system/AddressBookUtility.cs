@@ -4,6 +4,8 @@ using System.Globalization;
 using System.IO;
 using CsvHelper;
 using System.Text.Json;
+using System.Threading.Tasks;
+
 
 // Utility class implementing interface
 public class AddressBookUtility : IAddressBook{
@@ -292,4 +294,180 @@ public class AddressBookUtility : IAddressBook{
             Console.WriteLine("JSON read error: " + ex.Message);
         }
     }
+    // UC-16 Async Write TEXT File
+        public async Task WriteContactsToFileAsync()
+        {
+            try
+            {
+                using StreamWriter writer = new StreamWriter(filePath);
+
+                foreach (var contact in contacts)
+                {
+                    string line =
+                        $"{contact.FirstName},{contact.LastName},{contact.Address}," +
+                        $"{contact.City},{contact.State},{contact.Zip}," +
+                        $"{contact.PhoneNumber},{contact.Email}";
+
+                    await writer.WriteLineAsync(line);
+                }
+
+                Console.WriteLine("Contacts written asynchronously!");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+        // UC-16 Async Read TEXT File
+        public async Task ReadContactsFromFileAsync()
+        {
+            try
+            {
+                if (!File.Exists(filePath))
+                {
+                    Console.WriteLine("File not found!");
+                    return;
+                }
+
+                string[] lines = await File.ReadAllLinesAsync(filePath);
+
+                contacts.Clear();
+
+                foreach (string line in lines)
+                {
+                    string[] data = line.Split(',');
+
+                    contacts.Add(new AddressBookModel
+                    {
+                        FirstName = data[0],
+                        LastName = data[1],
+                        Address = data[2],
+                        City = data[3],
+                        State = data[4],
+                        Zip = data[5],
+                        PhoneNumber = data[6],
+                        Email = data[7]
+                    });
+                }
+
+                Console.WriteLine("Contacts read asynchronously!");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+        // UC-16 Async CSV Write
+        public async Task WriteContactsToCsvFileAsync()
+        {
+            if (contacts.Count == 0)
+            {
+                Console.WriteLine("No contacts.");
+                return;
+            }
+
+            try
+            {
+                using var stream = new FileStream(
+                    "AddressBook.csv",
+                    FileMode.Create,
+                    FileAccess.Write,
+                    FileShare.None,
+                    4096,
+                    true);
+
+                using var writer = new StreamWriter(stream);
+                using var csv = new CsvHelper.CsvWriter(writer, CultureInfo.InvariantCulture);
+
+                csv.WriteRecords(contacts);
+
+                await writer.FlushAsync();
+
+                Console.WriteLine("CSV written asynchronously!");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+        // UC-16 Async CSV Read
+        public async Task ReadContactsFromCsvFileAsync()
+        {
+            try
+            {
+                if (!File.Exists("AddressBook.csv"))
+                {
+                    Console.WriteLine("CSV not found.");
+                    return;
+                }
+
+                using var stream = new FileStream(
+                    "AddressBook.csv",
+                    FileMode.Open,
+                    FileAccess.Read,
+                    FileShare.Read,
+                    4096,
+                    true);
+
+                using var reader = new StreamReader(stream);
+                using var csv = new CsvHelper.CsvReader(reader, CultureInfo.InvariantCulture);
+
+                contacts = csv.GetRecords<AddressBookModel>().ToList();
+
+                await Task.CompletedTask;
+
+                Console.WriteLine("CSV read asynchronously!");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+        // UC-16 Async JSON Write
+        public async Task WriteContactsToJsonFileAsync()
+        {
+            if (contacts.Count == 0)
+            {
+                Console.WriteLine("No contacts.");
+                return;
+            }
+
+            try
+            {
+                string json = JsonSerializer.Serialize(
+                    contacts,
+                    new JsonSerializerOptions { WriteIndented = true });
+
+                await File.WriteAllTextAsync("AddressBook.json", json);
+
+                Console.WriteLine("JSON written asynchronously!");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+        // UC-16 Async JSON Read
+        public async Task ReadContactsFromJsonFileAsync()
+        {
+            try
+            {
+                if (!File.Exists("AddressBook.json"))
+                {
+                    Console.WriteLine("JSON not found.");
+                    return;
+                }
+
+                string json = await File.ReadAllTextAsync("AddressBook.json");
+
+                contacts = JsonSerializer.Deserialize<List<AddressBookModel>>(json)
+                        ?? new List<AddressBookModel>();
+
+                Console.WriteLine("JSON read asynchronously!");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
 }
