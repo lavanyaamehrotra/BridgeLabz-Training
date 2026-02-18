@@ -500,6 +500,31 @@ public class AddressBookUtility : IAddressBook{
         }
 
         Console.WriteLine("Operation not found using reflection.");
-}
+    }
+    // ===== TEST METHODS (for MSTest only) =====
+
+        public void AddTestContact(string first, string last)
+        {
+            contacts.Add(new AddressBookModel
+            {
+                FirstName = first,
+                LastName = last,
+                City = "TestCity",
+                State = "TestState",
+                PhoneNumber = "1234567890",
+                Email = "test@test.com"
+            });
+        }
+
+        public void DeleteTestContact(string firstName)
+        {
+            contacts.RemoveAll(c => c.FirstName == firstName);
+        }
+
+        public int GetContactCount()
+        {
+            return contacts.Count;
+        }
+
 
 }
