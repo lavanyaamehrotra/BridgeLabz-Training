@@ -818,3 +818,54 @@ Streams,Merge Sort, Queue & HashMap in Real-World Scenarios
 * Solved the Jewelry problem focusing on logical implementation and problem analysis
 * Solved the Regex problem involving pattern matching and validation concepts
 * Practiced applying learned concepts under exam conditions
+
+# 📅 Day 54 — February 19, 2026  
+## 🌐 Web API & Entity Framework
+
+* Built RESTful APIs using **ASP.NET Core**
+* Understood the **ORM (Object Relational Mapping)** concept using **Entity Framework Core**
+* Implemented **CRUD operations** with EF Core
+* Learned database workflow using **DbContext**
+* Worked with **Migrations** for database schema management
+
+## 📅 Day 55 — February 20, 2026  
+### 📏 Quantity Measurement App (UC-1 to UC-3)
+
+### 📚 What I Learned
+*  **UC-1:** Feet measurement validation and equality comparison
+*  **UC-2:** Feet & Inches measurement handling
+*  **UC-3:** Introduced a **Generic QuantityLength class** following the **DRY Principle**
+*  Applied **OOP concepts**, **Generics**, and layered architecture
+*  Strengthened understanding of **Clean Architecture principles**
+
+---
+
+## 📅 Day 56 — February 21, 2026  
+### 📐 Quantity Measurement App (UC-4 to UC-5)
+
+### 📚 What I Learned
+* **UC-4:** Extended unit support (Feet, Inch, Yard, Centimeter)
+*  **UC-5:** Implemented **unit-to-unit conversion**
+*   Applied **Enums** for type-safe unit handling
+*   Introduced **Base Unit Normalization** using Feet
+*   Implemented accurate **bidirectional conversions**
+*   Focused on scalability and extensible design
+
+### 🔑 Key Concepts
+* Precision handling
+* Base unit normalization
+* Enum extensibility
+* Scalable conversion logic
+
+---
+
+# 📅 Day 57 — February 23, 2026  
+## 🧮 Quantity Measurement App (UC-6 to UC-7)
+
+## 📚 What I Learned
+* **UC-6:** Addition of two length measurements across different units
+*  **UC-7:** Addition with user-specified target unit
+*   Implemented cross-unit arithmetic using normalization
+*   Maintained **immutability**, **precision**, and **commutative behavior**
+* Used **method overloading** for flexible operations
+*  Applied a private utility method to maintain **clean and DRY implementation**
