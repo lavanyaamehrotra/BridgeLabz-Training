@@ -3,3 +3,17 @@
 # =========================
 bin/
 obj/
+# Ignore IPL input files
+ipl.json
+ipl.csv
+
+# Ignore generated output files
+censored_ipl.json
+censored_ipl.csv
+
+# Ignore user-specific files
+.vs/
+
+# Ignore SonarQube analysis files
+.sonarqube/
+**/.sonarqube/

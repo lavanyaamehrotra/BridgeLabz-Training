@@ -1,0 +1,7 @@
+Application started successfully
+Connection established
+ERROR: Unable to connect to database
+User logged in
+warning: low memory
+Error occurred while saving data
+Process completed
