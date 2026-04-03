@@ -1,0 +1,4 @@
+﻿C:\Projects\smart-checkout\CheckoutQueue.cs
+C:\Projects\smart-checkout\Customer.cs
+C:\Projects\smart-checkout\ItemStore.cs
+C:\Projects\smart-checkout\Program.cs
