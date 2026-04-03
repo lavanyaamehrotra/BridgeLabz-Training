@@ -668,23 +668,15 @@ Regex input validation • Unit tests with MSTest • Dynamic class/method analy
 
 ---
 
-## 📈 Progress Overview
-Phase 1 — Foundation       ████████████████████  Days 01–04  ✅
-Phase 2 — Control & I/O    ████████████████████  Days 05–08  ✅
-Phase 3 — OOP              ████████████████████  Days 09–16  ✅
-Phase 4 — DSA              ████████████████████  Days 17–28  ✅
-Phase 5 — Advanced C#      ████████████████████  Days 29–36  ✅
-Phase 6 — Design & Threads ████████████████████  Days 37–38  ✅
-Phase 7 — Databases        ████████████████████  Days 39–46  ✅
-Phase 8 — Web Development  ████████████████████  Days 47–52  ✅
+## 📊 Progress Overview
 
----
----
-
-<div align="center">
-
-**Made with 💙 during BridgeLabz Training**
-
-*"Every expert was once a beginner. Keep building, keep learning."* 🚀
-
-</div>
+| Phase | Topic | Duration | Status |
+|------|------|--------|--------|
+| Phase 1 | Foundation | Days 01–04 | ✅ |
+| Phase 2 | Control & I/O | Days 05–08 | ✅ |
+| Phase 3 | OOP | Days 09–16 | ✅ |
+| Phase 4 | DSA | Days 17–28 | ✅ |
+| Phase 5 | Advanced C# | Days 29–36 | ✅ |
+| Phase 6 | Design & Threads | Days 37–38 | ✅ |
+| Phase 7 | Databases | Days 39–46 | ✅ |
+| Phase 8 | Web Development | Days 47–52 | ✅ |
