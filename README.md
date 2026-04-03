@@ -679,3 +679,12 @@ Phase 7 — Databases        █████████████████
 Phase 8 — Web Development  ████████████████████  Days 47–52  ✅
 
 ---
+---
+
+<div align="center">
+
+**Made with 💙 during BridgeLabz Training**
+
+*"Every expert was once a beginner. Keep building, keep learning."* 🚀
+
+</div>
