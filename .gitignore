@@ -1,24 +1,18 @@
-# ===============================
-# .NET build folders
-# ===============================
+# Ignore IPL input files
+ipl.json
+ipl.csv
+
+# Ignore generated output files
+censored_ipl.json
+censored_ipl.csv
+
+# Ignore build folders
 bin/
 obj/
-# ===============================
-# SonarQube
-# ===============================
-.sonarqube/
-# ===============================
-# Visual Studio / VS Code
-# ===============================
+
+# Ignore user-specific files
 .vs/
-.vscode/
-# ===============================
-# User-specific files
-# ===============================
-*.user
-*.suo
-# ===============================
-# OS generated files
-# ===============================
-Thumbs.db
-.DS_Store
+
+# Ignore SonarQube analysis files
+.sonarqube/
+**/.sonarqube/
