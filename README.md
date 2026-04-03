@@ -21,13 +21,9 @@
 * Commit and push sample files
 
 * Explore Git commands such as init, add, commit, and push
-
 ## 🧭 What’s Next
 
 * Organizing projects and codebases for real applications
-
-* Converting code between languages
-
 # 📅 Day 2 — December 17, 2025 — GitHub Setup & Java Basics
 
 ## Topic: GitHub Repository Setup, Folder Structure Organization
@@ -45,7 +41,6 @@
 ## 🧪 Task for the Day
 
 * Set up project folders for Java and C# codes
-
 * Commit and push initial project files to GitHub
 
 ## 🧭 What’s Next
