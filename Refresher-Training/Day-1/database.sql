@@ -20,7 +20,6 @@ CREATE TABLE Doctor
 
 
 -- CREATING PATIENT TABLE --
-
 CREATE TABLE Patient
 (
     PatientID INT IDENTITY(1,1) PRIMARY KEY,
@@ -33,7 +32,6 @@ CREATE TABLE Patient
 );
 
 -- CREATING APPOINTMENT TABLE --
-
 CREATE TABLE Appointment
 (
     AppointmentID INT IDENTITY(1,1),
