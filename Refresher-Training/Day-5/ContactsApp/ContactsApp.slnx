@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="ContactsApp.API/ContactsApp.API.csproj" />
+  <Project Path="ContactsApp.Models/ContactsApp.Models.csproj" />
+  <Project Path="ContactsApp.Repository/ContactsApp.Repository.csproj" />
+  <Project Path="ContactsApp.Service/ContactsApp.Service.csproj" />
+</Solution>
