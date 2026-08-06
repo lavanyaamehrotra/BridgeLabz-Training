@@ -2,7 +2,7 @@
 
 > A structured learning journey covering **DBMS, SQL Server, Database Design, ER Modeling, Normalization, Indexing, Query Optimization, SQL Joins, Stored Procedures, Triggers, ADO.NET, ASP.NET Core, and Backend Development**.
 
-This repository documents my day-wise progress throughout the **BridgeLabz Backend Refresher Training**. Each module includes theoretical concepts, practical implementations, database design exercises, assignments, query optimization techniques, and hands-on SQL Server development to strengthen backend development skills using the .NET ecosystem.
+This repository documents my day-wise progress throughout the **BridgeLabz Backend Refresher Training**. Each module includes theoretical concepts, practical implementations, database design exercises, assignments, query optimization techniques, hands-on SQL Server development, ADO.NET programming, and ASP.NET Core Web API development to strengthen backend development skills using the .NET ecosystem.
 
 ---
 
@@ -12,9 +12,12 @@ This repository documents my day-wise progress throughout the **BridgeLabz Backe
 |----------|--------------|
 | 💻 Database | Microsoft SQL Server |
 | 🗄️ Query Language | SQL (T-SQL) |
-| 🛠️ IDE | SQL Server Management Studio (SSMS) |
+| 💻 Programming Language | C# |
+| 🌐 Backend Framework | ASP.NET Core |
+| 🔗 Data Access | ADO.NET |
+| 🛠️ IDE | Visual Studio, SQL Server Management Studio (SSMS) |
 | 🔧 Version Control | Git & GitHub |
-| 📐 Concepts | DBMS, RDBMS, ER Diagram, Normalization, Indexing, Query Optimization, SQL Joins, Stored Procedures, Triggers |
+| 📐 Concepts | DBMS, RDBMS, ER Diagram, Normalization, Indexing, Query Optimization, SQL Joins, Stored Procedures, Triggers, ADO.NET, REST APIs |
 | 🎯 Domain | Backend Development (.NET) |
 
 ---
@@ -117,15 +120,14 @@ Extended the existing **Health Clinic Database** by implementing advanced databa
 
 - ✅ Created **Room** table
 - ✅ Established **Doctor–Room** relationship using a Foreign Key
-- ✅ Designed the complete **Entity Relationship (ER) Diagram** using standard ER notation
-- ✅ Included **Entities, Attributes, Relationships, Cardinality, Participation, Primary Keys, and Foreign Keys**
-- ✅ Uploaded the hand-drawn **ER Diagram** to GitHub
-- ✅ Created **Single Column Index**
-- ✅ Created **Composite Index**
-- ✅ Created **Covering Index**
-- ✅ Created **PatientPhones** table for normalization
-- ✅ Verified **1NF**, **2NF**, and **3NF**
-- ✅ Compared query execution before and after indexing using SQL Server Execution Plans
+- ✅ Designed the complete ER Diagram
+- ✅ Uploaded ER Diagram to GitHub
+- ✅ Created Single Column Index
+- ✅ Created Composite Index
+- ✅ Created Covering Index
+- ✅ Created PatientPhones table
+- ✅ Verified 1NF, 2NF and 3NF
+- ✅ Compared execution plans before and after indexing
 
 ---
 
@@ -174,7 +176,7 @@ Implemented and analyzed:
 - Query execution using a Composite Index
 - Query execution using a Covering Index
 
-Verified query optimization using **SQL Server Execution Plans (Index Seek)**.
+Verified query optimization using SQL Server Execution Plans (Index Seek).
 
 ---
 
@@ -190,13 +192,11 @@ Created the **PatientPhones** table to support multiple phone numbers per patien
 
 ## 🎯 Learning Outcomes
 
-- Designed a complete ER Diagram using standard database design principles.
-- Identified entities, attributes, relationships, cardinality, and participation constraints.
-- Applied normalization techniques to eliminate redundancy.
-- Extended the database by introducing new entities and relationships.
-- Implemented Single Column, Composite, and Covering Indexes.
-- Learned query optimization techniques using SQL Server Execution Plans.
-- Documented both SQL implementation and ER diagrams in GitHub.
+- Designed a complete ER Diagram.
+- Applied normalization techniques.
+- Implemented Single, Composite and Covering Indexes.
+- Learned query optimization using SQL Server Execution Plans.
+- Strengthened database design skills.
 
 ---
 
@@ -233,12 +233,8 @@ Enhanced the **Health Clinic Database** by implementing advanced SQL programming
 - ✅ Implemented **FULL OUTER JOIN** to combine doctor and patient appointment information
 - ✅ Created reusable **Stored Procedures** for common healthcare operations
 - ✅ Created **DoctorAudit**, **PatientAudit**, and **AppointmentAudit** tables
-- ✅ Implemented **INSERT Trigger** for Doctor table
-- ✅ Implemented **UPDATE Trigger** for Doctor table
-- ✅ Implemented **DELETE Trigger** for Doctor table
-- ✅ Implemented **INSERT Trigger** for Patient table
-- ✅ Implemented **INSERT Trigger** for Appointment table
-- ✅ Verified automatic audit logging through SQL Server triggers
+- ✅ Implemented INSERT, UPDATE and DELETE Triggers
+- ✅ Verified automatic audit logging through SQL Server Triggers
 
 ---
 
@@ -288,12 +284,12 @@ using:
 
 ## ⚙️ Stored Procedures
 
-Created reusable stored procedures for operations such as:
+Created reusable Stored Procedures for:
 
 - Retrieving doctor appointments
 - Viewing patient appointment history
 - Fetching doctor schedules
-- Updating appointment status
+- Updating appointment details
 - Managing appointment records
 
 ---
@@ -311,13 +307,11 @@ Implemented SQL Server Triggers to automatically:
 
 ## 📊 Audit Logging
 
-Implemented dedicated Audit Tables to maintain historical records of database operations.
-
 Captured:
 
 - Record ID
 - Entity Information
-- Operation Performed (INSERT / UPDATE / DELETE)
+- Operation Performed
 - Timestamp of Action
 
 ---
@@ -326,11 +320,195 @@ Captured:
 
 - Learned practical implementation of SQL Joins.
 - Created reusable Stored Procedures.
-- Understood SQL Server Triggers for database automation.
-- Implemented INSERT, UPDATE, and DELETE triggers.
-- Built Audit Tables for maintaining historical records.
-- Automated database auditing using SQL Server.
+- Understood SQL Server Triggers.
+- Implemented database automation.
+- Built Audit Tables.
 - Strengthened backend database programming skills.
+
+---
+
+# 📅 Day 4 – ADO.NET & Health Clinic Application Development
+
+## 📖 Topics Covered
+
+- Introduction to ADO.NET
+- ADO.NET Architecture
+- Connected Architecture
+- CRUD Operations using ADO.NET
+- SQL Server Connectivity
+- SqlConnection
+- SqlCommand
+- SqlDataReader
+- SqlParameter
+- ExecuteNonQuery()
+- ExecuteReader()
+- Parameterized Queries
+- Exception Handling
+- Layered Architecture
+- Health Clinic Console Application
+
+---
+
+## 🛠️ Practical Implementation
+
+Developed a **Health Clinic Console Application** using **ADO.NET** and connected it with **Microsoft SQL Server**.
+
+### Tasks Completed
+
+- ✅ Connected the .NET application with SQL Server using **SqlConnection**
+- ✅ Implemented Doctor Management Module
+- ✅ Implemented Patient Management Module
+- ✅ Performed CRUD operations using ADO.NET
+- ✅ Used Stored Procedures for Update operation
+- ✅ Executed Parameterized Queries to prevent SQL Injection
+- ✅ Applied Exception Handling using try-catch blocks
+- ✅ Created a layered architecture using Entities, Interfaces, Services, and Exceptions
+- ✅ Integrated the finalized Health Clinic ER Diagram with the application
+
+---
+
+## 🗄️ Application Modules
+
+### Doctor Module
+
+- Add Doctor
+- View Doctors
+- Update Doctor
+- Delete Doctor
+
+### Patient Module
+
+- Register Patient
+- View Patients
+- Update Patient
+- Delete Patient
+
+### Appointment Module
+
+- Schedule Appointment
+- View Appointments
+- Update Appointment
+- Cancel Appointment
+
+---
+
+## ⚙️ ADO.NET Components Used
+
+- SqlConnection
+- SqlCommand
+- SqlDataReader
+- SqlParameter
+- ExecuteNonQuery()
+- ExecuteReader()
+
+---
+
+## 🔒 Security Features
+
+- Parameterized Queries
+- Exception Handling
+- Input Validation
+- Stored Procedures
+
+---
+
+## 🎯 Learning Outcomes
+
+- Understood ADO.NET Architecture.
+- Learned Connected Architecture in ADO.NET.
+- Connected C# applications with SQL Server.
+- Implemented CRUD operations using ADO.NET.
+- Prevented SQL Injection using Parameterized Queries.
+- Built a console-based Health Clinic Management System.
+- Improved backend development skills using C# and SQL Server.
+---
+
+# 📅 Day 5 – ASP.NET Core Web API & RESTful Services
+
+## 📖 Topics Covered
+
+- Introduction to ASP.NET Core
+- ASP.NET Core Web API
+- RESTful APIs
+- HTTP Methods
+- GET, POST, PUT and DELETE Requests
+- API Controllers
+- Routing
+- Dependency Injection
+- JSON Data Exchange
+- Swagger / OpenAPI
+- Project Structure
+- Model Binding
+- Action Methods
+
+---
+
+## 🛠️ Practical Implementation
+
+Created a **Health Clinic Web API** using **ASP.NET Core** and implemented RESTful endpoints for handling healthcare data.
+
+### Tasks Completed
+
+- ✅ Created an ASP.NET Core Web API project
+- ✅ Explored the ASP.NET Core project structure
+- ✅ Created API Controllers
+- ✅ Implemented GET APIs
+- ✅ Implemented POST APIs
+- ✅ Configured Attribute Routing
+- ✅ Tested APIs using Swagger UI
+- ✅ Returned JSON responses
+- ✅ Connected API endpoints with backend business logic
+- ✅ Followed REST API best practices
+
+---
+
+## 🌐 REST APIs Implemented
+
+### Doctor APIs
+
+- GET Doctors
+- GET Doctor by ID
+- POST Doctor
+
+### Patient APIs
+
+- GET Patients
+- POST Patient
+
+---
+
+## ⚙️ Technologies Used
+
+- ASP.NET Core
+- ASP.NET Core Web API
+- C#
+- REST API
+- HTTP Protocol
+- Swagger / OpenAPI
+- Visual Studio
+
+---
+
+## 📚 API Features
+
+- RESTful API Design
+- JSON Response Handling
+- Controller-based Architecture
+- Routing
+- Dependency Injection
+- Swagger Documentation
+
+---
+
+## 🎯 Learning Outcomes
+
+- Understood ASP.NET Core architecture.
+- Learned REST API development.
+- Created Controllers and API endpoints.
+- Implemented GET and POST APIs.
+- Tested APIs using Swagger.
+- Learned request-response lifecycle.
+- Strengthened backend development using ASP.NET Core.
 
 ---
 
@@ -345,76 +523,33 @@ BridgeLabz-Backend-Refresher
 ├── Day2
 │   ├── database.sql
 │   ├── ER_Diagram.png
-│ 
 │
 ├── Day3
 │   ├── database.sql
-│   
+│
+├── Day4
+│   ├── HealthClinicApp
+│   ├── Entities
+│   ├── Interfaces
+│   ├── Services
+│   ├── Exceptions
+│   └── Program.cs
+│
+├── Day5
+│   ├── HealthClinicAPI
+│   ├── Controllers
+│   ├── Models
+│   ├── Program.cs
+│   └── appsettings.json
 │
 └── README.md
-```
-
----
-
-# 💡 Key Skills Acquired
-
-- Database Design
-- Relational Database Modeling
-- Microsoft SQL Server
-- T-SQL Programming
-- Database Schema Design
-- Primary & Foreign Keys
-- Data Integrity
-- ER Diagram Design
-- Cardinality & Participation
-- Database Normalization (1NF, 2NF, 3NF)
-- SQL Constraints
-- Single Column Index
-- Composite Index
-- Covering Index
-- Query Optimization
-- SQL Joins
-- Stored Procedures
-- SQL Triggers
-- Audit Tables
-- Database Automation
-- Execution Plan Analysis
-- Backend Database Development
-
----
-
-# 📊 Progress Overview
-
-| Day | Module | Status |
-|------|-----------------------------------------------|--------|
-| Day 1 | DBMS Fundamentals & RDBMS Basics | ✅ Completed |
-| Day 2 | ER Diagram, Normalization & Indexing | ✅ Completed |
-| Day 3 | SQL Joins, Stored Procedures & Triggers | ✅ Completed |
-
----
-
-# 🎯 Current Project
-
-## 🏥 Health Clinic Database Management System
-
-A relational database project built using **Microsoft SQL Server** to understand real-world backend database development concepts, including:
-
-- Database Schema Design
-- ER Modeling
-- Table Relationships
-- Data Integrity
-- Database Normalization
-- SQL Constraints
-- SQL Joins
-- Indexing
-- Query Optimization
-- Stored Procedures
-- SQL Triggers
-- Audit Tables
-- Database Automation
 
 ---
 
 # 🌟 About This Repository
 
-This repository serves as a comprehensive record of my **BridgeLabz Backend Refresher Training**. It showcases my day-wise learning through hands-on SQL Server implementations, database design exercises, SQL programming assignments, query optimization techniques, joins, stored procedures, triggers, and backend development concepts. Each module builds upon the previous one, helping me develop a strong foundation in **Microsoft SQL Server**, **T-SQL**, and **.NET Backend Development** while applying industry-standard database design and programming practices.
+This repository serves as a comprehensive record of my **BridgeLabz Backend Refresher Training (.NET)**. It showcases my day-wise learning through hands-on implementations in **Microsoft SQL Server**, **ADO.NET**, and **ASP.NET Core Web API**. The repository covers database design, SQL programming, query optimization, joins, stored procedures, triggers, connected database programming, CRUD operations, and RESTful API development. Each module builds upon the previous one, helping me develop a strong foundation in **.NET Backend Development** while following industry-standard software development practices.
+
+---
+
+## ⭐ If you found this repository helpful, consider giving it a Star!
