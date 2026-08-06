@@ -452,10 +452,6 @@ Created a **Contacts Management Web API** using **ASP.NET Core Web API** by foll
 - ✅ Created an ASP.NET Core Web API solution
 - ✅ Organized the project into API, Models, Repository, and Service layers
 - ✅ Implemented API Controllers
-- ✅ Configured Dependency Injection
-- ✅ Implemented GET and POST endpoints
-- ✅ Tested APIs using Swagger UI
-- ✅ Returned JSON responses
 - ✅ Followed Repository Pattern and Service Layer architecture
 
 ---
