@@ -445,20 +445,18 @@ Developed a **Health Clinic Console Application** using **ADO.NET** and connecte
 
 ## 🛠️ Practical Implementation
 
-Created a **Health Clinic Web API** using **ASP.NET Core** and implemented RESTful endpoints for handling healthcare data.
+Created a **Contacts Management Web API** using **ASP.NET Core Web API** by following a layered architecture.
 
 ### Tasks Completed
 
-- ✅ Created an ASP.NET Core Web API project
-- ✅ Explored the ASP.NET Core project structure
-- ✅ Created API Controllers
-- ✅ Implemented GET APIs
-- ✅ Implemented POST APIs
-- ✅ Configured Attribute Routing
+- ✅ Created an ASP.NET Core Web API solution
+- ✅ Organized the project into API, Models, Repository, and Service layers
+- ✅ Implemented API Controllers
+- ✅ Configured Dependency Injection
+- ✅ Implemented GET and POST endpoints
 - ✅ Tested APIs using Swagger UI
 - ✅ Returned JSON responses
-- ✅ Connected API endpoints with backend business logic
-- ✅ Followed REST API best practices
+- ✅ Followed Repository Pattern and Service Layer architecture
 
 ---
 
@@ -536,13 +534,15 @@ BridgeLabz-Backend-Refresher
 │   └── Program.cs
 │
 ├── Day5
-│   ├── HealthClinicAPI
-│   ├── Controllers
-│   ├── Models
-│   ├── Program.cs
-│   └── appsettings.json
+│   └── ContactsApp
+│       ├── ContactsApp.API
+│       ├── ContactsApp.Models
+│       ├── ContactsApp.Repository
+│       ├── ContactsApp.Service
+│       └── ContactsApp.slnx
 │
 └── README.md
+```
 
 ---
 
