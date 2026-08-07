@@ -13,13 +13,13 @@ This repository documents my day-wise progress throughout the **BridgeLabz Backe
 | 💻 Database | Microsoft SQL Server |
 | 🗄️ Query Language | SQL (T-SQL) |
 | 💻 Programming Language | C# |
-| 🌐 Backend Framework | ASP.NET Core |
+| 🌐 Backend Framework | ASP.NET Core, ASP.NET Core MVC, ASP.NET Core Web API |
+| 🎨 Frontend | HTML5, CSS3, Razor Views (.cshtml) |
 | 🔗 Data Access | ADO.NET |
-| 🛠️ IDE | Visual Studio, SQL Server Management Studio (SSMS) |
+| 🛠️ IDE | Visual Studio, Visual Studio Code, SQL Server Management Studio (SSMS) |
 | 🔧 Version Control | Git & GitHub |
-| 📐 Concepts | DBMS, RDBMS, ER Diagram, Normalization, Indexing, Query Optimization, SQL Joins, Stored Procedures, Triggers, ADO.NET, REST APIs |
+| 📐 Concepts | DBMS, RDBMS, ER Diagram, Normalization, Indexing, Query Optimization, SQL Joins, Stored Procedures, Triggers, ADO.NET, MVC Architecture, Routing, REST APIs, HTTP Request & Response, Model Binding, Dependency Injection, IConfiguration |
 | 🎯 Domain | Backend Development (.NET) |
-
 ---
 
 # 📅 Daily Learning Progress
@@ -506,20 +506,129 @@ Created a **Contacts Management Web API** using **ASP.NET Core Web API** by foll
 
 ---
 
+---
+
+# 📅 Day 6 – ASP.NET Core MVC & REST Request Handling
+
+## 📖 Topics Covered
+
+- Introduction to ASP.NET Core MVC
+- MVC (Model-View-Controller) Architecture
+- Model
+- View
+- Controller
+- Routing in ASP.NET Core MVC
+- HTTP Request & Response Lifecycle
+- REST Request Handling
+- Controller Action Methods
+- IConfiguration
+- View Rendering
+- Razor Views (.cshtml)
+- Static Files (CSS)
+- Project Structure
+
+---
+
+## 🛠️ Practical Implementation
+
+Built a **My Greetings App** using **ASP.NET Core MVC** by following the MVC architecture and implementing request-response handling.
+
+### Tasks Completed
+
+- ✅ Created an ASP.NET Core MVC Project
+- ✅ Organized the project using MVC architecture
+- ✅ Created Greeting Model
+- ✅ Implemented Greetings Controller
+- ✅ Created Razor View (Index.cshtml)
+- ✅ Used IConfiguration to read greeting messages from appsettings.json
+- ✅ Implemented POST request handling using form submission
+- ✅ Added Routing between Controller and View
+- ✅ Designed a responsive UI using HTML & CSS
+- ✅ Displayed greeting message on button click
+
+---
+
+## 🏗️ Project Structure
+
+```text
+MyGreetingsApp
+│
+├── Controllers
+│   └── GreetingsController.cs
+│
+├── Models
+│   └── GreetingModel.cs
+│
+├── Views
+│   ├── Greetings
+│   │   └── Index.cshtml
+│   └── Shared
+│
+├── wwwroot
+│   └── css
+│       └── style.css
+│
+├── Program.cs
+├── appsettings.json
+└── MyGreetingsApp.csproj
+```
+
+---
+
+## ⚙️ Technologies Used
+
+- ASP.NET Core MVC
+- C#
+- Razor Views (.cshtml)
+- HTML5
+- CSS3
+- IConfiguration
+- HTTP Protocol
+- Visual Studio
+
+---
+
+## 🌐 Features Implemented
+
+- MVC Project Structure
+- Controller-Based Request Handling
+- Razor View Rendering
+- Model Binding
+- Routing
+- Form Submission
+- Configuration Management using appsettings.json
+- Responsive UI
+- Static File Handling (CSS)
+
+---
+
+## 🎯 Learning Outcomes
+
+- Understood the MVC (Model-View-Controller) architecture.
+- Learned how requests are processed in ASP.NET Core MVC.
+- Implemented Controllers, Models, and Razor Views.
+- Learned Routing and Action Methods.
+- Used IConfiguration to access application settings.
+- Built a simple ASP.NET Core MVC application.
+- Styled the application using HTML and CSS.
+- Strengthened understanding of request-response handling in MVC.
+
+---
+
 # 📂 Repository Structure
 
 ```text
 BridgeLabz-Backend-Refresher
 │
 ├── Day1
-│   ├── database.sql
+│   └── database.sql
 │
 ├── Day2
 │   ├── database.sql
-│   ├── ER_Diagram.png
+│   └── ER_Diagram.png
 │
 ├── Day3
-│   ├── database.sql
+│   └── database.sql
 │
 ├── Day4
 │   ├── HealthClinicApp
@@ -537,6 +646,23 @@ BridgeLabz-Backend-Refresher
 │       ├── ContactsApp.Service
 │       └── ContactsApp.slnx
 │
+├── Day6
+│   └── MyGreetingsApp
+│       ├── Controllers
+│       │   └── GreetingsController.cs
+│       ├── Models
+│       │   └── GreetingModel.cs
+│       ├── Views
+│       │   ├── Greetings
+│       │   │   └── Index.cshtml
+│       │   └── Shared
+│       ├── wwwroot
+│       │   └── css
+│       │       └── style.css
+│       ├── Program.cs
+│       ├── appsettings.json
+│       └── MyGreetingsApp.csproj
+│
 └── README.md
 ```
 
@@ -544,7 +670,7 @@ BridgeLabz-Backend-Refresher
 
 # 🌟 About This Repository
 
-This repository serves as a comprehensive record of my **BridgeLabz Backend Refresher Training (.NET)**. It showcases my day-wise learning through hands-on implementations in **Microsoft SQL Server**, **ADO.NET**, and **ASP.NET Core Web API**. The repository covers database design, SQL programming, query optimization, joins, stored procedures, triggers, connected database programming, CRUD operations, and RESTful API development. Each module builds upon the previous one, helping me develop a strong foundation in **.NET Backend Development** while following industry-standard software development practices.
+This repository serves as a comprehensive record of my **BridgeLabz Backend Refresher Training (.NET)**. It showcases my day-wise learning through hands-on implementations using **Microsoft SQL Server**, **ADO.NET**, **ASP.NET Core Web API**, and **ASP.NET Core MVC**. The repository covers database design, SQL programming, query optimization, joins, stored procedures, triggers, connected database programming, CRUD operations, RESTful API development, MVC architecture, routing, Razor Views, and request-response handling. Each module builds upon the previous one, helping me develop a strong foundation in **.NET Backend Development** while following industry-standard software development practices.
 
 ---
 
