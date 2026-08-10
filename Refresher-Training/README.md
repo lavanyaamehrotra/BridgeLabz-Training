@@ -1,8 +1,7 @@
 # 🚀 BridgeLabz Backend Refresher Training (.NET)
+A structured learning journey covering **DBMS, SQL Server, Database Design, ER Modeling, Normalization, Indexing, Query Optimization, SQL Joins, Stored Procedures, Triggers, ADO.NET, ASP.NET Core MVC, ASP.NET Core Minimal APIs, REST APIs, and Backend Development**.
 
-> A structured learning journey covering **DBMS, SQL Server, Database Design, ER Modeling, Normalization, Indexing, Query Optimization, SQL Joins, Stored Procedures, Triggers, ADO.NET, ASP.NET Core, and Backend Development**.
-
-This repository documents my day-wise progress throughout the **BridgeLabz Backend Refresher Training**. Each module includes theoretical concepts, practical implementations, database design exercises, assignments, query optimization techniques, hands-on SQL Server development, ADO.NET programming, and ASP.NET Core Web API development to strengthen backend development skills using the .NET ecosystem.
+This repository documents my day-wise progress throughout the **BridgeLabz Backend Refresher Training**. Each module includes theoretical concepts, practical implementations, database design exercises, SQL programming, ADO.NET applications, ASP.NET Core MVC projects, ASP.NET Core Minimal API development, CRUD operations, RESTful API implementation, and backend development practices using the .NET ecosystem.
 
 ---
 
@@ -10,16 +9,16 @@ This repository documents my day-wise progress throughout the **BridgeLabz Backe
 
 | Category | Technologies |
 |----------|--------------|
-| 💻 Database | Microsoft SQL Server |
-| 🗄️ Query Language | SQL (T-SQL) |
-| 💻 Programming Language | C# |
-| 🌐 Backend Framework | ASP.NET Core, ASP.NET Core MVC, ASP.NET Core Web API |
-| 🎨 Frontend | HTML5, CSS3, Razor Views (.cshtml) |
-| 🔗 Data Access | ADO.NET |
-| 🛠️ IDE | Visual Studio, Visual Studio Code, SQL Server Management Studio (SSMS) |
-| 🔧 Version Control | Git & GitHub |
-| 📐 Concepts | DBMS, RDBMS, ER Diagram, Normalization, Indexing, Query Optimization, SQL Joins, Stored Procedures, Triggers, ADO.NET, MVC Architecture, Routing, REST APIs, HTTP Request & Response, Model Binding, Dependency Injection, IConfiguration |
-| 🎯 Domain | Backend Development (.NET) |
+| 💻 **Database** | Microsoft SQL Server |
+| 🗄️ **Query Language** | SQL (T-SQL) |
+| 💻 **Programming Language** | C# |
+| 🌐 **Backend Framework** | ASP.NET Core, ASP.NET Core MVC, ASP.NET Core Minimal APIs |
+| 🎨 **Frontend** | HTML5, CSS3, Razor Views (.cshtml) |
+| 🔗 **Data Access** | ADO.NET |
+| 🛠️ **IDE** | Visual Studio, Visual Studio Code, SQL Server Management Studio (SSMS) |
+| 🔧 **Version Control** | Git & GitHub |
+| 📐 **Concepts** | DBMS, RDBMS, Database Design, ER Diagram, Normalization, Indexing, Query Optimization, SQL Joins, Stored Procedures, Triggers, ADO.NET, MVC Architecture, Minimal APIs, REST APIs, CRUD Operations, Routing, HTTP Methods (GET, POST, PUT, DELETE), Model Binding, Dependency Injection (DI), IConfiguration, Repository Pattern |
+| 🎯 **Domain** | Backend Development (.NET), RESTful API Development |
 ---
 
 # 📅 Daily Learning Progress
@@ -615,6 +614,173 @@ MyGreetingsApp
 
 ---
 
+---
+
+### 📅 Day 7 — August 10, 2026
+**Topic:** ASP.NET Core Minimal API with ADO.NET (Contacts CRUD Application) 🌐
+
+### 📚 What I Learnt
+
+- 🚀 Introduction to ASP.NET Core Minimal APIs and how they differ from MVC.
+- ⚡ Understood that Minimal APIs are lightweight and use endpoint mapping instead of Controllers.
+- 🗄️ Created a SQL Server database (`ContactsDB`) from scratch.
+- 📋 Designed the `Contacts` table with proper data types and constraints.
+- 🔤 Learned the difference between `VARCHAR` and `NVARCHAR` and why Unicode support is important.
+- 📦 Created a Minimal API project using:
+
+```bash
+dotnet new web -n ContactsApp
+```
+
+- 📥 Installed required NuGet package:
+
+```bash
+dotnet add package Microsoft.Data.SqlClient
+```
+
+- 🔗 Connected the application to SQL Server using ADO.NET.
+- 🏗️ Implemented the Repository Pattern to separate business logic from database access.
+- ⚙️ Configured the database connection using `appsettings.json`.
+- 📑 Built complete CRUD functionality for Contacts.
+- 🌐 Learned endpoint mapping using:
+  - `MapGet()`
+  - `MapPost()`
+  - `MapPut()`
+  - `MapDelete()`
+- 🔒 Used parameterized SQL queries to prevent SQL Injection.
+- 🧪 Tested API endpoints using browser (GET) and Postman (POST, PUT, DELETE).
+
+---
+
+## 📂 Project Structure
+
+```text
+ContactsApp
+│
+├── Database
+│      DbConnectionFactory.cs
+│
+├── Models
+│      Contact.cs
+│
+├── Repositories
+│      IContactRepository.cs
+│      ContactRepository.cs
+│
+├── Program.cs
+├── appsettings.json
+└── ContactsApp.csproj
+```
+
+---
+
+## 🗄️ Database Structure
+
+```text
+ContactsDB
+│
+└── Contacts
+      │
+      ├── Id
+      ├── Name
+      ├── Email
+      └── Phone
+```
+
+---
+
+## 🌐 API Endpoints Implemented
+
+| HTTP Method | Endpoint | Purpose |
+|-------------|----------|---------|
+| GET | `/contacts` | Retrieve all contacts |
+| GET | `/contacts/{id}` | Retrieve contact by Id |
+| POST | `/contacts` | Add a new contact |
+| PUT | `/contacts/{id}` | Update an existing contact |
+| DELETE | `/contacts/{id}` | Delete a contact |
+
+---
+
+## 🏛️ Application Architecture
+
+```text
+Client (Browser / Postman)
+            │
+            ▼
+ ASP.NET Core Minimal API
+            │
+            ▼
+ Repository Layer
+            │
+            ▼
+ DbConnectionFactory
+            │
+            ▼
+      SQL Server Database
+```
+
+---
+
+## 🔄 CRUD Flow
+
+```text
+Request
+   │
+   ▼
+Minimal API Endpoint
+   │
+   ▼
+Repository Method
+   │
+   ▼
+ADO.NET
+(SqlConnection, SqlCommand)
+   │
+   ▼
+SQL Server
+   │
+   ▼
+Response
+```
+
+---
+
+## 🛠️ Technologies Used
+
+- C#
+- ASP.NET Core Minimal API
+- SQL Server
+- ADO.NET
+- Repository Pattern
+- Dependency Injection
+- REST API
+- Postman
+
+---
+
+## 💡 Key Learnings
+
+- Difference between Minimal API and MVC.
+- Project setup from scratch.
+- Folder organization and clean architecture.
+- SQL Server integration using ADO.NET.
+- Dependency Injection basics.
+- CRUD implementation using REST APIs.
+- Repository Pattern implementation.
+- Parameterized SQL queries.
+- HTTP methods (`GET`, `POST`, `PUT`, `DELETE`).
+- API testing using Postman.
+
+---
+
+## 🛠️ Practice Project
+
+**Contacts Management System**
+
+Developed a complete Contacts CRUD application using ASP.NET Core Minimal API, SQL Server, ADO.NET, and the Repository Pattern. The application supports creating, reading, updating, and deleting contact records through RESTful API endpoints while following a clean project structure and separating data access from endpoint logic.
+
+---
+
 # 📂 Repository Structure
 
 ```text
@@ -662,6 +828,19 @@ BridgeLabz-Backend-Refresher
 │       ├── Program.cs
 │       ├── appsettings.json
 │       └── MyGreetingsApp.csproj
+│
+├── Day7
+│   └── ContactsApp
+│       ├── Database
+│       │   └── DbConnection.cs
+│       ├── Models
+│       │   └── Contact.cs
+│       ├── Repositories
+│       │   ├── IContactRepository.cs
+│       │   └── ContactRepository.cs
+│       ├── Program.cs
+│       ├── appsettings.json
+│       ├── ContactsApp.csproj
 │
 └── README.md
 ```
