@@ -9,15 +9,15 @@ This repository documents my day-wise progress throughout the **BridgeLabz Backe
 
 | Category | Technologies |
 |----------|--------------|
-| 💻 **Database** | Microsoft SQL Server |
+| 💻 **Database** | Microsoft SQL Server, H2 Database |
 | 🗄️ **Query Language** | SQL (T-SQL) |
 | 💻 **Programming Language** | C# |
 | 🌐 **Backend Framework** | ASP.NET Core, ASP.NET Core MVC, ASP.NET Core Minimal APIs |
 | 🎨 **Frontend** | HTML5, CSS3, Razor Views (.cshtml) |
-| 🔗 **Data Access** | ADO.NET |
+| 🔗 **Data Access** | ADO.NET, H2Sharp |
 | 🛠️ **IDE** | Visual Studio, Visual Studio Code, SQL Server Management Studio (SSMS) |
 | 🔧 **Version Control** | Git & GitHub |
-| 📐 **Concepts** | DBMS, RDBMS, Database Design, ER Diagram, Normalization, Indexing, Query Optimization, SQL Joins, Stored Procedures, Triggers, ADO.NET, MVC Architecture, Minimal APIs, REST APIs, CRUD Operations, Routing, HTTP Methods (GET, POST, PUT, DELETE), Model Binding, Dependency Injection (DI), IConfiguration, Repository Pattern |
+| 📐 **Concepts** | DBMS, RDBMS, Database Design, ER Diagram, Normalization, Indexing, Query Optimization, SQL Joins, Stored Procedures, Triggers, ADO.NET, H2 Database, Distributed Architecture, SDLC, MVC Architecture, Minimal APIs, REST APIs, CRUD Operations, Routing, HTTP Methods (GET, POST, PUT, DELETE), Model Binding, Dependency Injection, IConfiguration, Repository Pattern |
 | 🎯 **Domain** | Backend Development (.NET), RESTful API Development |
 ---
 
@@ -779,7 +779,123 @@ Response
 
 Developed a complete Contacts CRUD application using ASP.NET Core Minimal API, SQL Server, ADO.NET, and the Repository Pattern. The application supports creating, reading, updating, and deleting contact records through RESTful API endpoints while following a clean project structure and separating data access from endpoint logic.
 
+
+
 ---
+
+# 📅 Day 8 – H2Sharp Database, Distributed Architecture & SQL Server Integration
+
+### 📅 August 11, 2026
+
+**Topic:** H2Sharp Database, Distributed Architecture & SDLC Exposure with Contacts Management Application 🗄️🌐
+
+### 📚 What I Learnt
+
+- 🗄️ Introduction to H2 Database.
+- 🔗 Learned about **H2Sharp**, an ADO.NET wrapper for H2 Database.
+- ⚙️ Understood how database connectivity can be handled through an ADO.NET-based wrapper.
+- 🏗️ Learned the basics of **Distributed Architecture**.
+- 🔄 Understood the role of different components/services in a distributed system.
+- 🧩 Learned about service separation and communication between distributed components.
+- 📋 Got exposure to **Software Development Life Cycle (SDLC)** and its different phases.
+- 🔧 Continued development of the **Contacts Management Application**.
+- 🗄️ Implemented **Microsoft SQL Server** integration in the Contacts App.
+- 🔗 Connected the Contacts App backend with SQL Server.
+- 📦 Applied the concepts learned during the daily live sessions to the existing backend project.
+
+---
+
+## 🛠️ Practical Implementation
+
+Continued working on the **Contacts Management Application** and implemented database integration using **Microsoft SQL Server**.
+
+### Tasks Completed
+
+- ✅ Studied H2 Database fundamentals.
+- ✅ Learned about the H2Sharp ADO.NET wrapper.
+- ✅ Understood database connectivity through H2Sharp.
+- ✅ Learned the basics of Distributed Architecture.
+- ✅ Got exposure to SDLC concepts and development practices.
+- ✅ Continued development of the Contacts Management backend.
+- ✅ Integrated Microsoft SQL Server with the Contacts App.
+- ✅ Configured SQL Server database connectivity.
+- ✅ Applied database concepts to the existing Contacts CRUD application.
+- ✅ Continued following a layered project structure with Repository and database-access components.
+
+---
+
+## 🗄️ Database Technologies Studied
+
+### H2 Database
+
+- H2 Database fundamentals
+- H2 database connectivity
+- H2Sharp
+- ADO.NET wrapper concept
+
+### Microsoft SQL Server
+
+- SQL Server database integration
+- Database connectivity from .NET
+- CRUD operations
+- SQL Server configuration
+- Backend-to-database communication
+
+---
+
+## 🏗️ Distributed Architecture
+
+Learned the basic concepts of distributed architecture, including:
+
+- Distributed systems
+- Service separation
+- Communication between components
+- Scalability
+- Reliability
+- Independent service responsibilities
+- Backend service architecture
+
+---
+
+## 🔄 SDLC Exposure
+
+Got practical exposure to the major phases of the Software Development Life Cycle:
+
+- Requirement Analysis
+- Design
+- Development
+- Testing
+- Deployment
+- Maintenance
+
+---
+
+## 🌐 Contacts App – SQL Server Integration
+
+The Contacts Management Application was continued with **Microsoft SQL Server** as the database.
+
+### Application Flow
+
+```text
+Client
+   │
+   ▼
+ASP.NET Core Minimal API
+   │
+   ▼
+Repository Layer
+   │
+   ▼
+Database Connection
+   │
+   ▼
+Microsoft SQL Server
+   │
+   ▼
+Contacts Table
+---
+
+
 
 # 📂 Repository Structure
 
