@@ -896,12 +896,11 @@ Contacts Table
 
 
 ```
-
 # 📅 Day 9 – Entity Framework Core, Code First & Database Migrations
 
 ### 📅 August 12, 2026
 
-**Topic:** Entity Framework Core, Code First Approach, SQL Server Integration & Database Migrations 🗄️⚙️
+**Topic:** Entity Framework Core, Code First Approach, SQL Server Integration, Repository & Service Architecture, Dependency Injection and Database Migrations 🗄️⚙️
 
 ### 📚 What I Learnt
 
@@ -913,9 +912,9 @@ Contacts Table
 - 🏗️ Understood the **Code First Approach**.
 - 🔄 Learned about **Entity Framework Core Migrations**.
 - 🛠️ Learned how to create migrations using:
-  
+
 ```bash
-dotnet ef migrations add InitialCreate
+dotnet ef migrations add InitialCreate --output-dir Repo/Migrations
 ```
 
 - 🗄️ Learned how to create and update the database using:
@@ -930,10 +929,15 @@ dotnet ef database update
 dotnet ef migrations list
 ```
 
-- 🆕 Created a **new SQL Server database using EF Core Migration** instead of using an existing database.
+- 🆕 Created a **new SQL Server database using EF Core Migrations** instead of using an existing database.
 - 🌐 Continued development of the **Contacts Management Application** using **Entity Framework Core and SQL Server**.
 - 📑 Worked with **ASP.NET Core Web API**, Entity Framework Core, SQL Server and Swagger/OpenAPI.
 - 🔍 Understood how EF Core generates database tables from C# entities.
+- 🏢 Learned about the **Repository Layer** for handling database operations.
+- ⚙️ Learned about the **Service Layer** for handling application/business logic.
+- 🔌 Learned how to use **Interfaces** for Repository and Service abstraction.
+- 💉 Learned about **Dependency Injection (DI)** in ASP.NET Core.
+- 📑 Configured the SQL Server connection string using `appsettings.json`.
 - 🧪 Tested API operations using **Swagger** and verified the generated database using **SQL Server Management Studio (SSMS)**.
 
 ---
@@ -949,10 +953,16 @@ Continued working on the **Contacts Management Application** and implemented dat
 - ✅ Created Entity classes using C#.
 - ✅ Created `AppDbContext`.
 - ✅ Configured Entity Framework Core with SQL Server.
+- ✅ Configured the SQL Server connection string in `appsettings.json`.
 - ✅ Implemented the Code First approach.
 - ✅ Created a new SQL Server database using EF Core Migrations.
-- ✅ Generated the initial migration using `dotnet ef migrations add`.
+- ✅ Generated the initial migration inside the `Repo/Migrations` folder.
 - ✅ Applied the migration using `dotnet ef database update`.
+- ✅ Created the **Repository Layer** for database operations.
+- ✅ Created the **Service Layer** for application/business logic.
+- ✅ Created `IContactRepository` and `IContactService` interfaces.
+- ✅ Configured **Dependency Injection** for `AppDbContext`, Repository and Service.
+- ✅ Connected the Controller → Service → Repository → DbContext architecture.
 - ✅ Verified the generated database and tables using SQL Server Management Studio.
 - ✅ Practiced modifying entities and creating new migrations.
 - ✅ Continued development of the Contacts Management backend using EF Core.
@@ -969,17 +979,50 @@ An Entity is a C# class that represents a table in the database.
 Example:
 
 ```csharp
-public class Contact
+namespace ContactsApp.Models
 {
-    public int ContactId { get; set; }
-    public string Name { get; set; }
-    public string Email { get; set; }
+    public class Contact
+    {
+        public int ContactId { get; set; }
+
+        public string Name { get; set; }
+
+        public string Email { get; set; }
+
+        public string Phone { get; set; }
+
+        public string Address { get; set; }
+
+        public string City { get; set; }
+
+        public string State { get; set; }
+    }
 }
 ```
 
 ### DbContext
 
 `DbContext` is responsible for managing communication between the application and the database.
+
+Example:
+
+```csharp
+using ContactsApp.Models;
+using Microsoft.EntityFrameworkCore;
+
+namespace ContactsApp.Repo
+{
+    public class AppDbContext : DbContext
+    {
+        public AppDbContext(DbContextOptions<AppDbContext> options)
+            : base(options)
+        {
+        }
+
+        public DbSet<Contact> Contacts { get; set; }
+    }
+}
+```
 
 ### DbSet
 
@@ -1004,10 +1047,10 @@ Migrations are used to track changes in the Entity Framework Core model and appl
 ### Create Migration
 
 ```bash
-dotnet ef migrations add InitialCreate
+dotnet ef migrations add InitialCreate --output-dir Repo/Migrations
 ```
 
-Creates migration files based on the current Entity Framework Core model.
+Creates migration files based on the current Entity Framework Core model and stores them inside the `Repo/Migrations` folder.
 
 ### Apply Migration
 
@@ -1050,9 +1093,107 @@ SQL Server Database
 
 ---
 
+## 🏗️ Repository & Service Architecture
+
+The Contacts Management Application follows a layered architecture:
+
+```text
+Client / Swagger
+       │
+       ▼
+ContactController
+       │
+       ▼
+IContactService
+       │
+       ▼
+ContactService
+       │
+       ▼
+IContactRepository
+       │
+       ▼
+ContactRepository
+       │
+       ▼
+AppDbContext
+       │
+       ▼
+Entity Framework Core
+       │
+       ▼
+SQL Server
+```
+
+### Controller
+
+The Controller handles HTTP requests and responses.
+
+The application supports:
+
+```text
+GET
+POST
+PUT
+DELETE
+```
+
+### Service Layer
+
+The Service Layer handles application and business logic.
+
+The Controller communicates with the Service Layer instead of directly accessing the database.
+
+### Repository Layer
+
+The Repository Layer handles database operations.
+
+Examples include:
+
+```text
+Get
+Add
+Update
+Delete
+```
+
+The Repository communicates with `AppDbContext` to perform database operations.
+
+### Interfaces
+
+Interfaces provide abstraction between the different layers.
+
+The project contains:
+
+```text
+Interfaces
+│
+├── IContactRepository.cs
+└── IContactService.cs
+```
+
+### Dependency Injection
+
+ASP.NET Core Dependency Injection is used to provide the required dependencies automatically.
+
+Example:
+
+```csharp
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(
+        builder.Configuration.GetConnectionString("DefaultConnection")
+    ));
+
+builder.Services.AddScoped<IContactRepository, ContactRepository>();
+
+builder.Services.AddScoped<IContactService, ContactService>();
+```
+
+---
+
 ## 🌐 Contacts App – Entity Framework Core
 
-The Contacts Management Application was continued using **Entity Framework Core and Microsoft SQL Server**.
+The Contacts Management Application was continued using **ASP.NET Core Web API, Entity Framework Core and Microsoft SQL Server**.
 
 ### Application Flow
 
@@ -1063,10 +1204,19 @@ Client / Swagger / Postman
 ASP.NET Core Web API
           │
           ▼
-Entity Framework Core
+ContactController
+          │
+          ▼
+ContactService
+          │
+          ▼
+ContactRepository
           │
           ▼
 AppDbContext
+          │
+          ▼
+Entity Framework Core
           │
           ▼
 Microsoft SQL Server
@@ -1100,24 +1250,37 @@ ContactsEFDB
 ## 🏗️ Project Structure
 
 ```text
-ContactsEFApp
+ContactsApp
 │
 ├── Controllers
 │   └── ContactController.cs
 │
+├── Interfaces
+│   ├── IContactRepository.cs
+│   └── IContactService.cs
+│
 ├── Models
 │   └── Contact.cs
 │
-├── Data
-│   └── AppDbContext.cs
+├── Repo
+│   ├── AppDbContext.cs
+│   ├── ContactRepository.cs
+│   │
+│   └── Migrations
+│       ├── 20260812133326_InitialCreate.cs
+│       ├── 20260812133326_InitialCreate.Designer.cs
+│       └── AppDbContextModelSnapshot.cs
 │
-├── Migrations
-│   ├── InitialCreate.cs
-│   ├── InitialCreate.Designer.cs
-│   └── AppDbContextModelSnapshot.cs
+├── Services
+│   └── ContactService.cs
 │
+├── Properties
+│
+├── appsettings.json
+├── appsettings.Development.json
 ├── Program.cs
-└── ContactsEFApp.csproj
+├── ContactsApp.http
+└── ContactsApp.csproj
 ```
 
 ---
@@ -1146,13 +1309,13 @@ When changes are made to the Entity class, a new migration can be created.
 For example, if a new property is added:
 
 ```csharp
-public string Address { get; set; }
+public string Country { get; set; }
 ```
 
 Create a new migration:
 
 ```bash
-dotnet ef migrations add AddAddress
+dotnet ef migrations add AddCountryToContact --output-dir Repo/Migrations
 ```
 
 Then update the database:
@@ -1196,8 +1359,12 @@ Database + Tables
 - SQL Server
 - Code First
 - EF Core Migrations
+- Repository Pattern
+- Service Layer
+- Interfaces
+- Dependency Injection
 - Swagger / OpenAPI
-- Visual Studio
+- Visual Studio Code
 - SQL Server Management Studio (SSMS)
 
 ---
@@ -1212,7 +1379,13 @@ Database + Tables
 - Creating databases using **EF Core Migrations**.
 - Applying database changes using migrations.
 - Connecting ASP.NET Core applications with SQL Server using EF Core.
+- Understanding the **Repository Pattern**.
+- Understanding the **Service Layer**.
+- Understanding the purpose of **Interfaces**.
+- Understanding **Dependency Injection** in ASP.NET Core.
 - Understanding how EF Core maps entities to database tables.
+- Organizing database-related code inside the `Repo` layer.
+- Organizing migrations inside the `Repo/Migrations` folder.
 - Verifying generated databases and tables using SQL Server Management Studio.
 - Testing APIs using Swagger/OpenAPI.
 
@@ -1228,6 +1401,10 @@ Database + Tables
 - Created and applied EF Core migrations.
 - Created a new SQL Server database using migrations.
 - Learned how to modify entities and create new migrations.
+- Implemented a **Repository Layer** for database operations.
+- Implemented a **Service Layer** for application/business logic.
+- Used **Interfaces** for abstraction.
+- Implemented **Dependency Injection** in ASP.NET Core.
 - Integrated EF Core with ASP.NET Core Web API.
 - Continued development of the Contacts Management Application using EF Core and SQL Server.
 - Strengthened understanding of modern .NET database access techniques.
@@ -1238,7 +1415,7 @@ Database + Tables
 
 **Contacts Management System**
 
-Continued the Contacts Management Application using **ASP.NET Core Web API, Entity Framework Core and SQL Server**. Implemented database interaction using `DbContext` and `DbSet`, created the database using the Code First approach, and managed database changes using EF Core Migrations.
+Continued the Contacts Management Application using **ASP.NET Core Web API, Entity Framework Core and SQL Server**. Implemented database interaction using `AppDbContext` and `DbSet`, created the database using the Code First approach, managed database changes using EF Core Migrations, and structured the application using **Controller, Service and Repository layers with Dependency Injection**.
 
 ---
 # 📂 Repository Structure
@@ -1316,19 +1493,33 @@ BridgeLabz-Backend-Refresher
 │       └── ContactsApp.csproj
 │
 ├── Day9
-│   └── ContactsEFApp
+│   └── ContactsApp
 │       ├── Controllers
 │       │   └── ContactController.cs
+│       │
+│       ├── Interfaces
+│       │   ├── IContactRepository.cs
+│       │   └── IContactService.cs
+│       │
 │       ├── Models
 │       │   └── Contact.cs
-│       ├── Data
-│       │   └── AppDbContext.cs
-│       ├── Migrations
-│       │   ├── InitialCreate.cs
-│       │   ├── InitialCreate.Designer.cs
-│       │   └── AppDbContextModelSnapshot.cs
+│       │
+│       ├── Repo
+│       │   ├── AppDbContext.cs
+│       │   ├── ContactRepository.cs
+│       │   └── Migrations
+│       │       ├── 20260812133326_InitialCreate.cs
+│       │       ├── 20260812133326_InitialCreate.Designer.cs
+│       │       └── AppDbContextModelSnapshot.cs
+│       │
+│       ├── Services
+│       │   └── ContactService.cs
+│       │
 │       ├── Program.cs
-│       └── ContactsEFApp.csproj
+│       ├── appsettings.json
+│       ├── appsettings.Development.json
+│       ├── ContactsApp.http
+│       └── ContactsApp.csproj
 │
 └── README.md
 ```
