@@ -1,7 +1,7 @@
 using ContactsApp.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace ContactsApp.Data
+namespace ContactsApp.Repo
 {
     public class AppDbContext : DbContext
     {

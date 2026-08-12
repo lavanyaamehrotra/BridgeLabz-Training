@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace ContactsApp.Migrations
+namespace ContactsApp.Repo.Migrations
 {
     /// <inheritdoc />
     public partial class InitialCreate : Migration

@@ -1,4 +1,4 @@
-using ContactsApp.Data;
+using ContactsApp.Interfaces;
 using ContactsApp.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,17 +8,17 @@ namespace ContactsApp.Controllers
     [Route("api/[controller]")]
     public class ContactController : ControllerBase
     {
-        private readonly AppDbContext _context;
+        private readonly IContactService _service;
 
-        public ContactController(AppDbContext context)
+        public ContactController(IContactService service)
         {
-            _context = context;
+            _service = service;
         }
 
         [HttpGet]
         public IActionResult GetAll()
         {
-            var contacts = _context.Contacts.ToList();
+            var contacts = _service.GetAll();
 
             return Ok(contacts);
         }
@@ -26,7 +26,7 @@ namespace ContactsApp.Controllers
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
-            var contact = _context.Contacts.Find(id);
+            var contact = _service.GetById(id);
 
             if (contact == null)
             {
@@ -39,8 +39,7 @@ namespace ContactsApp.Controllers
         [HttpPost]
         public IActionResult Add(Contact contact)
         {
-            _context.Contacts.Add(contact);
-            _context.SaveChanges();
+            _service.Add(contact);
 
             return Ok(contact);
         }
@@ -48,37 +47,31 @@ namespace ContactsApp.Controllers
         [HttpPut("{id}")]
         public IActionResult Update(int id, Contact contact)
         {
-            var existingContact = _context.Contacts.Find(id);
+            var existingContact = _service.GetById(id);
 
             if (existingContact == null)
             {
                 return NotFound();
             }
 
-            existingContact.Name = contact.Name;
-            existingContact.Email = contact.Email;
-            existingContact.Phone = contact.Phone;
-            existingContact.Address = contact.Address;
-            existingContact.City = contact.City;
-            existingContact.State = contact.State;
+            contact.ContactId = id;
 
-            _context.SaveChanges();
+            _service.Update(contact);
 
-            return Ok(existingContact);
+            return Ok(contact);
         }
 
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            var contact = _context.Contacts.Find(id);
+            var existingContact = _service.GetById(id);
 
-            if (contact == null)
+            if (existingContact == null)
             {
                 return NotFound();
             }
 
-            _context.Contacts.Remove(contact);
-            _context.SaveChanges();
+            _service.Delete(id);
 
             return Ok("Contact deleted successfully");
         }
