@@ -895,84 +895,95 @@ Microsoft SQL Server
 Contacts Table
 ---
 
-
 ---
 
-# 📅 Day 9 – Entity Framework Core & Database Migrations
+# 📅 Day 9 – Entity Framework Core, Code First & Database Migrations
 
 ### 📅 August 12, 2026
 
-**\*\*Topic:\*\*** Entity Framework Core, Code First Approach, SQL Server Integration & Database Migrations 🗄️⚙️
+**Topic:** Entity Framework Core, Code First Approach, SQL Server Integration & Database Migrations 🗄️⚙️
 
 ### 📚 What I Learnt
 
-\- 🧩 Introduction to **\*\*Entity Framework Core (EF Core)\*\***.
-\- 🗄️ Learned about **\*\*Object Relational Mapping (ORM)\*\*** and how C# objects are mapped to database tables.
-\- 📦 Learned how to create **\*\*Entities\*\*** using C# classes.
-\- 🔗 Learned about **\*\*DbContext\*\*** and its role in database communication.
-\- 📋 Learned about **\*\*DbSet\*\*** and how it represents a database table.
-\- 🏗️ Understood the **\*\*Code First Approach\*\***.
-\- 🔄 Learned about **\*\*Entity Framework Core Migrations\*\***.
-\- 🛠️ Learned how to create migrations using:
-
+- 🧩 Introduction to **Entity Framework Core (EF Core)**.
+- 🗄️ Learned about **Object Relational Mapping (ORM)** and how C# classes are mapped to database tables.
+- 📦 Learned how to create **Entities** using C# classes.
+- 🔗 Learned about **DbContext** and its role in database communication.
+- 📋 Learned about **DbSet** and how it represents a database table.
+- 🏗️ Understood the **Code First Approach**.
+- 🔄 Learned about **Entity Framework Core Migrations**.
+- 🛠️ Learned how to create migrations using:
+  
 ```bash
 dotnet ef migrations add InitialCreate
 ```
 
-\- 🗄️ Learned how to create and update the database using:
+- 🗄️ Learned how to create and update the database using:
 
 ```bash
 dotnet ef database update
 ```
 
-\- 📋 Learned how to view existing migrations using:
+- 📋 Learned how to view existing migrations using:
 
 ```bash
 dotnet ef migrations list
 ```
 
-\- 🆕 Created a new SQL Server database using **\*\*EF Core Migration\*\*** instead of using an existing database.
-\- 🌐 Continued development of the **\*\*Contacts Management Application\*\*** using **\*\*Entity Framework Core and SQL Server\*\***.
-\- 📑 Worked with **\*\*ASP.NET Core Web API\*\***, Entity Framework Core, SQL Server and Swagger/OpenAPI.
-\- 🔍 Understood how EF Core generates database tables from C# entities.
-\- 🧪 Tested API operations using **\*\*Swagger\*\*** and verified the generated database using **\*\*SQL Server Management Studio (SSMS)\*\***.
+- 🆕 Created a **new SQL Server database using EF Core Migration** instead of using an existing database.
+- 🌐 Continued development of the **Contacts Management Application** using **Entity Framework Core and SQL Server**.
+- 📑 Worked with **ASP.NET Core Web API**, Entity Framework Core, SQL Server and Swagger/OpenAPI.
+- 🔍 Understood how EF Core generates database tables from C# entities.
+- 🧪 Tested API operations using **Swagger** and verified the generated database using **SQL Server Management Studio (SSMS)**.
 
 ---
 
 ## 🛠️ Practical Implementation
 
-Implemented **\*\*Entity Framework Core with SQL Server\*\*** and practiced the **\*\*Code First Approach\*\*** using migrations.
+Continued working on the **Contacts Management Application** and implemented database interaction using **Entity Framework Core and Microsoft SQL Server**.
 
 ### Tasks Completed
 
-\- ✅ Created an Entity Framework Core project.
-\- ✅ Created C# Entity classes representing database tables.
-\- ✅ Created `AppDbContext`.
-\- ✅ Configured Entity Framework Core with SQL Server.
-\- ✅ Implemented the Code First approach.
-\- ✅ Created a new SQL Server database using EF Core Migration.
-\- ✅ Generated the initial migration using `dotnet ef migrations add`.
-\- ✅ Applied the migration using `dotnet ef database update`.
-\- ✅ Verified the generated database and tables using SQL Server Management Studio.
-\- ✅ Practiced modifying entities and creating new migrations.
-\- ✅ Continued development of the Contacts Management Application using EF Core.
-\- ✅ Tested API endpoints using Swagger/OpenAPI.
+- ✅ Studied Entity Framework Core fundamentals.
+- ✅ Learned about ORM and object-relational mapping.
+- ✅ Created Entity classes using C#.
+- ✅ Created `AppDbContext`.
+- ✅ Configured Entity Framework Core with SQL Server.
+- ✅ Implemented the Code First approach.
+- ✅ Created a new SQL Server database using EF Core Migrations.
+- ✅ Generated the initial migration using `dotnet ef migrations add`.
+- ✅ Applied the migration using `dotnet ef database update`.
+- ✅ Verified the generated database and tables using SQL Server Management Studio.
+- ✅ Practiced modifying entities and creating new migrations.
+- ✅ Continued development of the Contacts Management backend using EF Core.
+- ✅ Tested API endpoints using Swagger/OpenAPI.
 
 ---
 
-## 🧩 Entity Framework Core Concepts
+## 🗄️ Entity Framework Core
 
 ### Entity
 
-A C# class that represents a database table.
+An Entity is a C# class that represents a table in the database.
+
+Example:
+
+```csharp
+public class Contact
+{
+    public int ContactId { get; set; }
+    public string Name { get; set; }
+    public string Email { get; set; }
+}
+```
 
 ### DbContext
 
-The main EF Core class responsible for managing database communication and tracking entities.
+`DbContext` is responsible for managing communication between the application and the database.
 
 ### DbSet
 
-Represents a database table in Entity Framework Core.
+`DbSet` represents a database table.
 
 Example:
 
@@ -982,41 +993,13 @@ public DbSet<Contact> Contacts { get; set; }
 
 ### Code First
 
-A development approach where C# entity classes are created first and EF Core generates the database structure from them.
-
-### Migration
-
-A migration records changes made to the EF Core model and applies those changes to the database.
+In the Code First approach, we create C# entity classes first and Entity Framework Core generates the database structure from those classes.
 
 ---
 
-## 🔄 EF Core Migration Flow
+## 🔄 Entity Framework Core Migrations
 
-```text
-C# Entity
-    │
-    ▼
-AppDbContext
-    │
-    ▼
-EF Core Model
-    │
-    ▼
-dotnet ef migrations add InitialCreate
-    │
-    ▼
-Migration Files
-    │
-    ▼
-dotnet ef database update
-    │
-    ▼
-SQL Server Database
-```
-
----
-
-## 🗄️ EF Core Migration Commands
+Migrations are used to track changes in the Entity Framework Core model and apply those changes to the database.
 
 ### Create Migration
 
@@ -1024,7 +1007,7 @@ SQL Server Database
 dotnet ef migrations add InitialCreate
 ```
 
-Creates migration files based on the current EF Core model.
+Creates migration files based on the current Entity Framework Core model.
 
 ### Apply Migration
 
@@ -1044,9 +1027,32 @@ Displays all migrations available in the project.
 
 ---
 
-## 🌐 Contacts Application – Entity Framework Core
+## 🔄 EF Core Migration Flow
 
-Continued development of the **\*\*Contacts Management Application\*\*** using **\*\*ASP.NET Core Web API, Entity Framework Core and SQL Server\*\***.
+```text
+C# Entity
+    │
+    ▼
+AppDbContext
+    │
+    ▼
+EF Core Model
+    │
+    ▼
+Migration
+    │
+    ▼
+Database Update
+    │
+    ▼
+SQL Server Database
+```
+
+---
+
+## 🌐 Contacts App – Entity Framework Core
+
+The Contacts Management Application was continued using **Entity Framework Core and Microsoft SQL Server**.
 
 ### Application Flow
 
@@ -1072,6 +1078,8 @@ Contacts Table
 ---
 
 ## 🗄️ Database Structure
+
+The Contacts application was implemented using an EF Core Code First database.
 
 ```text
 ContactsEFDB
@@ -1114,65 +1122,9 @@ ContactsEFApp
 
 ---
 
-## ⚙️ Technologies Used
-
-\- C#
-\- ASP.NET Core Web API
-\- Entity Framework Core
-\- SQL Server
-\- Code First
-\- EF Core Migrations
-\- Swagger / OpenAPI
-\- Visual Studio
-\- SQL Server Management Studio (SSMS)
-
----
-
-## 💡 Key Learnings
-
-\- Difference between **\*\*ADO.NET and Entity Framework Core\*\***.
-\- Understanding **\*\*ORM\*\*** and object-relational mapping.
-\- Creating database tables using C# entities.
-\- Understanding `DbContext` and `DbSet`.
-\- Understanding the **\*\*Code First Approach\*\***.
-\- Creating databases using **\*\*EF Core Migrations\*\***.
-\- Applying database changes using migrations.
-\- Connecting ASP.NET Core applications with SQL Server using EF Core.
-\- Understanding how EF Core tracks changes in the database model.
-\- Verifying generated databases and tables using SQL Server Management Studio.
-\- Testing APIs using Swagger/OpenAPI.
-
----
-
-## 🔄 Entity to Database Process
-
-```text
-Entity Class
-     │
-     ▼
-DbContext
-     │
-     ▼
-EF Core
-     │
-     ▼
-Migration
-     │
-     ▼
-Database Update
-     │
-     ▼
-SQL Server
-     │
-     ▼
-Database + Tables
-```
-
----
-
 ## 🧪 Database Verification
 
-After applying the migration, the generated database can be verified in SQL Server Management Studio.
+After applying the migration, the generated database can be verified using **SQL Server Management Studio (SSMS)**.
 
 Example:
 
@@ -1183,13 +1135,13 @@ GO
 SELECT * FROM Contacts;
 ```
 
-The database contains the table generated from the Entity Framework Core model.
+The database and table are generated based on the Entity Framework Core model.
 
 ---
 
 ## 🔁 Creating a New Migration
 
-When the entity is modified, a new migration can be created.
+When changes are made to the Entity class, a new migration can be created.
 
 For example, if a new property is added:
 
@@ -1209,31 +1161,84 @@ Then update the database:
 dotnet ef database update
 ```
 
-This applies the new change to the existing database.
+The new change is then applied to the SQL Server database.
+
+---
+
+## 🏗️ Code First Process
+
+```text
+Entity Class
+     │
+     ▼
+DbContext
+     │
+     ▼
+Entity Framework Core
+     │
+     ▼
+Migration
+     │
+     ▼
+SQL Server
+     │
+     ▼
+Database + Tables
+```
+
+---
+
+## ⚙️ Technologies Used
+
+- C#
+- ASP.NET Core Web API
+- Entity Framework Core
+- SQL Server
+- Code First
+- EF Core Migrations
+- Swagger / OpenAPI
+- Visual Studio
+- SQL Server Management Studio (SSMS)
+
+---
+
+## 💡 Key Learnings
+
+- Difference between **ADO.NET and Entity Framework Core**.
+- Understanding **ORM** and object-relational mapping.
+- Creating database tables using C# entities.
+- Understanding `DbContext` and `DbSet`.
+- Understanding the **Code First Approach**.
+- Creating databases using **EF Core Migrations**.
+- Applying database changes using migrations.
+- Connecting ASP.NET Core applications with SQL Server using EF Core.
+- Understanding how EF Core maps entities to database tables.
+- Verifying generated databases and tables using SQL Server Management Studio.
+- Testing APIs using Swagger/OpenAPI.
 
 ---
 
 ## 🎯 Learning Outcomes
 
-\- Understood the fundamentals of **\*\*Entity Framework Core\*\***.
-\- Learned how C# entities are mapped to database tables.
-\- Learned how `DbContext` manages database communication.
-\- Learned the purpose of `DbSet`.
-\- Implemented the **\*\*Code First Approach\*\***.
-\- Created and applied EF Core migrations.
-\- Created a new SQL Server database using migrations.
-\- Learned how to modify entities and create new migrations.
-\- Integrated EF Core with ASP.NET Core Web API.
-\- Continued development of the Contacts Management Application using EF Core and SQL Server.
-\- Strengthened understanding of modern .NET database access techniques.
+- Understood the fundamentals of **Entity Framework Core**.
+- Learned how C# entities are mapped to database tables.
+- Learned how `DbContext` manages database communication.
+- Learned the purpose of `DbSet`.
+- Implemented the **Code First Approach**.
+- Created and applied EF Core migrations.
+- Created a new SQL Server database using migrations.
+- Learned how to modify entities and create new migrations.
+- Integrated EF Core with ASP.NET Core Web API.
+- Continued development of the Contacts Management Application using EF Core and SQL Server.
+- Strengthened understanding of modern .NET database access techniques.
 
 ---
 
 ## 🛠️ Practice Project
 
-**\*\*Contacts Management System\*\***
+**Contacts Management System**
 
-Continued the Contacts Management Application using **\*\*ASP.NET Core Web API, Entity Framework Core and SQL Server\*\***. Implemented database interaction using `DbContext` and `DbSet`, created the database using the Code First approach, and managed database changes using EF Core Migrations.
+Continued the Contacts Management Application using **ASP.NET Core Web API, Entity Framework Core and SQL Server**. Implemented database interaction using `DbContext` and `DbSet`, created the database using the Code First approach, and managed database changes using EF Core Migrations.
 
 ---
 # 📂 Repository Structure
