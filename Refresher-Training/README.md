@@ -893,7 +893,9 @@ Microsoft SQL Server
    │
    ▼
 Contacts Table
----
+
+
+```
 
 # 📅 Day 9 – Entity Framework Core, Code First & Database Migrations
 
