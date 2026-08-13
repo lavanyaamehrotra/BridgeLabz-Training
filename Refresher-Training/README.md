@@ -1418,6 +1418,123 @@ Database + Tables
 Continued the Contacts Management Application using **ASP.NET Core Web API, Entity Framework Core and SQL Server**. Implemented database interaction using `AppDbContext` and `DbSet`, created the database using the Code First approach, managed database changes using EF Core Migrations, and structured the application using **Controller, Service and Repository layers with Dependency Injection**.
 
 ---
+
+# 📅 Day 10 – Entity Framework Core, ORM, SQL Server, Repository Pattern, Business Layer, DTOs, Migrations & CRUD Operations
+
+### 📅 August 13, 2026
+
+**Topic:** Entity Framework Core, ORM, SQL Server, Repository Pattern, Business Layer, DTOs, Dependency Injection, EF Core Migrations, CRUD Operations and Swagger 📚🗄️⚙️
+
+---
+
+## 📚 What I Learnt
+
+Today I continued working with **Entity Framework Core** and built an **Address Book application** using ASP.NET Core Web API and SQL Server.
+
+The main concepts learned today were:
+
+- 🧩 Entity Framework Core
+- 🔄 Object Relational Mapping (ORM)
+- 🗄️ SQL Server
+- 🏗️ Layered Architecture
+- 📦 Repository Pattern
+- 💼 Business Layer
+- 🔌 Interfaces
+- 💉 Dependency Injection
+- 📑 DTOs (Data Transfer Objects)
+- 🔄 Entity Framework Core Migrations
+- 🔁 CRUD Operations
+- 🌐 ASP.NET Core Web API
+- 🧪 Swagger / OpenAPI
+- 🛠️ Code First Approach
+- 🗂️ Project and layer separation
+
+---
+
+# 1. 🏗️ Layered Architecture
+
+The Address Book application follows a layered architecture where different responsibilities are separated into different projects.
+
+The project structure is:
+
+```text
+AddressBook
+│
+├── AddressBook
+│   └── Controllers
+│       └── ContactController.cs
+│
+├── BusinessLayer
+│   ├── Interface
+│   │   └── IContactBusiness.cs
+│   │
+│   └── Service
+│       └── ContactBusiness.cs
+│
+├── ModelLayer
+│   └── Entities
+│       └── Contact.cs
+│
+└── RepositoryLayer
+    ├── Context
+    │   └── AppDbContext.cs
+    │
+    ├── Interface
+    │   └── IContactRepository.cs
+    │
+    ├── Service
+    │   └── ContactRepository.cs
+    │
+    └── Migration
+        ├── InitialCreate.cs
+        ├── InitialCreate.Designer.cs
+        └── AppDbContextModelSnapshot.cs
+
+Each layer has a specific responsibility.
+
+```text
+Client / Swagger
+       │
+       ▼
+ContactController
+       │
+       ▼
+IContactBusiness
+       │
+       ▼
+ContactBusiness
+       │
+       ▼
+IContactRepository
+       │
+       ▼
+ContactRepository
+       │
+       ▼
+AppDbContext
+       │
+       ▼
+Entity Framework Core
+       │
+       ▼
+SQL Server
+```
+
+## 2. 🧩 Entity Framework Core
+Learned how to use Entity Framework Core (EF Core) with ASP.NET Core Web API and SQL Server.
+
+Entity Framework Core is an Object Relational Mapper (ORM) that allows applications to work with databases using C# objects and classes.
+
+EF Core is used to:
+
+Connect the application with SQL Server
+Map C# classes to database tables
+Perform CRUD operations
+Track changes in entities
+Save changes to the database
+Create and manage database migrations
+
+---
 # 📂 Repository Structure
 
 ```text
