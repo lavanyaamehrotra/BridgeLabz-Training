@@ -1535,6 +1535,8 @@ Save changes to the database
 Create and manage database migrations
 
 ---
+
+
 # 📂 Repository Structure
 
 ```text
