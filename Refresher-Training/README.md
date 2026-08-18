@@ -1535,9 +1535,1312 @@ Save changes to the database
 Create and manage database migrations
 
 ---
+````markdown
+# 📅 Day 12 – Fundoo Notes App – User Management Module
 
+### 📚 What I Learnt
 
-# 📂 Repository Structure
+Today I started developing the **Fundoo Notes App** and implemented the **User Management Module** using ASP.NET Core Web API with a layered architecture.
+
+The main concepts learned and implemented were:
+
+- 👤 User Management
+- 📝 User Registration
+- 🔐 User Login
+- 🔑 Password Encryption
+- 📧 Password Recovery
+- 🔄 Password Reset
+- 📦 DTOs (Data Transfer Objects)
+- 🧩 Entity Classes
+- 🏗️ Layered Architecture
+- 📁 API Layer
+- 💼 Business Layer
+- 🗄️ Repository Layer
+- 🔌 Interfaces
+- ⚠️ Custom Exceptions
+- 💉 Dependency Injection
+- 🗄️ Entity Framework Core
+- 🗃️ SQL Server
+- 🔄 EF Core Migrations
+- 🧪 Swagger / OpenAPI
+- 🔐 Authentication groundwork
+
+---
+
+## 🛠️ Practical Implementation
+
+Developed the initial **Fundoo Notes App** backend and implemented the **User Management Module** using ASP.NET Core Web API.
+
+The application follows a layered architecture:
+
+```text
+API Layer
+    ↓
+Business Layer
+    ↓
+Repository Layer
+    ↓
+Entity Framework Core
+    ↓
+SQL Server
+````
+
+### Tasks Completed
+
+* ✅ Created the Fundoo Notes App solution.
+* ✅ Created separate projects for API, Business Layer, Model Layer and Repository Layer.
+* ✅ Created `UserController`.
+* ✅ Created `UserEntity` for representing the user data.
+* ✅ Created Request DTOs for registration, login and password recovery.
+* ✅ Created Response DTO.
+* ✅ Created Business Layer interface `IUserBL`.
+* ✅ Created Business Layer service `UserBL`.
+* ✅ Created Repository Layer interface `IUserRL`.
+* ✅ Created Repository Layer service `UserRL`.
+* ✅ Created `FundooContext` for Entity Framework Core database communication.
+* ✅ Added EF Core Migrations.
+* ✅ Added custom exceptions for user-related errors.
+* ✅ Created password encryption helper.
+* ✅ Created JWT token helper as groundwork for authentication.
+* ✅ Structured the application using separation of responsibilities.
+
+---
+
+# 👤 User Management Module
+
+The User Management Module is responsible for handling user-related operations.
+
+### Main User Operations
+
+```text
+User Management
+│
+├── Registration
+├── Login
+├── Forgot Password
+└── Reset Password
+```
+
+---
+
+## 📝 User Registration
+
+The registration functionality is used to create a new user account.
+
+The registration flow follows:
+
+```text
+Client
+   │
+   ▼
+UserController
+   │
+   ▼
+UserBL
+   │
+   ▼
+UserRL
+   │
+   ▼
+FundooContext
+   │
+   ▼
+SQL Server
+```
+
+During registration, user information is received through a DTO and processed through the Business and Repository layers.
+
+---
+
+## 🔐 User Login
+
+The login functionality allows an existing user to authenticate using their credentials.
+
+The basic flow is:
+
+```text
+Client
+   │
+   ▼
+Login Request
+   │
+   ▼
+UserController
+   │
+   ▼
+UserBL
+   │
+   ▼
+UserRL
+   │
+   ▼
+Database
+   │
+   ▼
+Login Response
+```
+
+The project also contains authentication-related helper classes that provide groundwork for token-based authentication.
+
+---
+
+## 🔑 Password Encryption
+
+A separate helper class named:
+
+```text
+PasswordEncryption.cs
+```
+
+was created inside the Business Layer.
+
+The purpose of password encryption is to avoid handling user passwords directly in plain text and to provide a dedicated place for password-related processing.
+
+---
+
+## 📧 Forgot Password
+
+The application contains a DTO for handling forgot password requests:
+
+```text
+ForgotPasswordDTO.cs
+```
+
+The forgot password functionality provides the groundwork for recovering access to an existing account.
+
+---
+
+## 🔄 Reset Password
+
+The application also contains:
+
+```text
+ResetPasswordDTO.cs
+```
+
+This DTO is used for handling password reset information.
+
+The basic flow is:
+
+```text
+User
+ │
+ ▼
+Forgot Password
+ │
+ ▼
+Password Recovery
+ │
+ ▼
+Reset Password
+ │
+ ▼
+Updated Password
+```
+
+---
+
+# 📦 DTOs – Data Transfer Objects
+
+DTOs are used to transfer data between the client and application layers.
+
+The Fundoo Notes App contains separate DTOs for different user operations.
+
+### Request DTOs
+
+```text
+RequestDTO
+│
+├── ForgotPasswordDTO.cs
+├── LoginDTO.cs
+├── RegistrationDTO.cs
+└── ResetPasswordDTO.cs
+```
+
+### Purpose of DTOs
+
+* Separate API request data from database entities.
+* Define the required input for each operation.
+* Avoid directly exposing database entities through API requests.
+* Keep request models organized according to their purpose.
+
+---
+
+# 🧩 User Entity
+
+The application contains:
+
+```text
+Entities
+└── UserEntity.cs
+```
+
+`UserEntity` represents the user information that is stored in the database.
+
+The Entity Framework Core model is responsible for mapping the entity to the corresponding database structure.
+
+---
+
+# 📤 Response DTO
+
+The project contains:
+
+```text
+ResponseDTO
+└── ResponseDTO.cs
+```
+
+The Response DTO is used to provide a structured response from the application to the client.
+
+This helps maintain a consistent API response structure.
+
+---
+
+# ⚠️ Custom Exceptions
+
+Custom exceptions were created to handle common user-related errors.
+
+```text
+Exceptions
+│
+├── InvalidCredentialsException.cs
+├── UserAlreadyExistsException.cs
+└── UserNotFoundException.cs
+```
+
+### InvalidCredentialsException
+
+Used when the provided login credentials are invalid.
+
+### UserAlreadyExistsException
+
+Used when an attempt is made to register a user that already exists.
+
+### UserNotFoundException
+
+Used when the requested user cannot be found.
+
+---
+
+# 🔐 Authentication Helpers
+
+The Business Layer contains helper classes related to authentication and password handling.
+
+```text
+Helpers
+│
+├── JwtTokenHelper.cs
+└── PasswordEncryption.cs
+```
+
+### JwtTokenHelper
+
+`JwtTokenHelper.cs` provides the groundwork for generating and working with JWT-based authentication tokens.
+
+JWT stands for:
+
+```text
+JSON Web Token
+```
+
+It is commonly used for stateless authentication in Web APIs.
+
+### PasswordEncryption
+
+`PasswordEncryption.cs` is responsible for password-related encryption or hashing logic.
+
+Keeping this functionality inside a helper class keeps password processing separate from the main business logic.
+
+---
+
+# 🏗️ Layered Architecture
+
+The Fundoo Notes App follows a layered architecture.
+
+```text
+Client / Swagger / Postman
+          │
+          ▼
+   FundooNotesApp.API
+          │
+          ▼
+   Business Layer
+          │
+          ▼
+  Repository Layer
+          │
+          ▼
+ Entity Framework Core
+          │
+          ▼
+      SQL Server
+```
+
+Each layer has a specific responsibility.
+
+---
+
+## 🌐 API Layer
+
+The API layer handles HTTP requests and responses.
+
+The project contains:
+
+```text
+FundooNotesApp.API
+│
+├── Controllers
+│   └── UserController.cs
+│
+├── Program.cs
+├── appsettings.json
+└── appsettings.Development.json
+```
+
+### UserController
+
+`UserController.cs` acts as the entry point for user-related API requests.
+
+The controller communicates with the Business Layer instead of directly communicating with the database.
+
+---
+
+# 💼 Business Layer
+
+The Business Layer contains application and business logic.
+
+```text
+FundooNotesApp.BusinessLayer
+│
+├── Helpers
+│   ├── JwtTokenHelper.cs
+│   └── PasswordEncryption.cs
+│
+├── Interfaces
+│   └── IUserBL.cs
+│
+└── Services
+    └── UserBL.cs
+```
+
+### IUserBL
+
+`IUserBL` defines the contract for user-related business operations.
+
+### UserBL
+
+`UserBL` contains the business logic for user management operations.
+
+The Business Layer communicates with the Repository Layer through its interface.
+
+---
+
+# 🗄️ Repository Layer
+
+The Repository Layer handles database-related operations.
+
+```text
+FundooNotesApp.RepositoryLayer
+│
+├── Context
+│   └── FundooContext.cs
+│
+├── Interfaces
+│   └── IUserRL.cs
+│
+├── Migrations
+│
+└── Services
+    └── UserRL.cs
+```
+
+### FundooContext
+
+`FundooContext.cs` is the Entity Framework Core `DbContext`.
+
+It manages communication between the application and SQL Server.
+
+### IUserRL
+
+`IUserRL` defines the contract for repository-level user operations.
+
+### UserRL
+
+`UserRL` implements the repository operations and communicates with `FundooContext`.
+
+---
+
+# 🔄 Application Flow
+
+The user management request flows through the layers as follows:
+
+```text
+Client
+  │
+  ▼
+UserController
+  │
+  ▼
+IUserBL
+  │
+  ▼
+UserBL
+  │
+  ▼
+IUserRL
+  │
+  ▼
+UserRL
+  │
+  ▼
+FundooContext
+  │
+  ▼
+Entity Framework Core
+  │
+  ▼
+SQL Server
+  │
+  ▼
+Response
+```
+
+This separation makes the application easier to maintain and organize.
+
+---
+
+# 📂 Model Layer
+
+The Model Layer contains entities and DTOs used by the application.
+
+```text
+FundooNotesApp.ModelLayer
+│
+├── DTOs
+│   │
+│   ├── RequestDTO
+│   │   ├── ForgotPasswordDTO.cs
+│   │   ├── LoginDTO.cs
+│   │   ├── RegistrationDTO.cs
+│   │   └── ResetPasswordDTO.cs
+│   │
+│   └── ResponseDTO
+│       └── ResponseDTO.cs
+│
+├── Entities
+│   └── UserEntity.cs
+│
+├── Exceptions
+│   ├── InvalidCredentialsException.cs
+│   ├── UserAlreadyExistsException.cs
+│   └── UserNotFoundException.cs
+│
+└── Models
+    └── UserModel.cs
+```
+
+---
+
+# 🗃️ Entity Framework Core
+
+The Fundoo Notes App uses Entity Framework Core for database interaction.
+
+EF Core acts as an Object Relational Mapper (ORM).
+
+It allows the application to work with SQL Server using C# classes and objects.
+
+EF Core is used for:
+
+* Mapping C# entities to database tables.
+* Managing database communication.
+* Performing CRUD operations.
+* Tracking entity changes.
+* Managing database migrations.
+
+---
+
+# 🔄 Database Migrations
+
+The Repository Layer contains the EF Core migration files.
+
+```text
+FundooNotesApp.RepositoryLayer
+│
+└── Migrations
+```
+
+Migrations allow database changes to be tracked and applied through Entity Framework Core.
+
+The basic migration flow is:
+
+```text
+UserEntity
+    │
+    ▼
+FundooContext
+    │
+    ▼
+EF Core Model
+    │
+    ▼
+Migration
+    │
+    ▼
+SQL Server
+```
+
+---
+
+# 💉 Dependency Injection
+
+Dependency Injection is used to connect the different layers of the application.
+
+The application can register:
+
+```text
+FundooContext
+IUserBL → UserBL
+IUserRL → UserRL
+```
+
+This allows the Controller to receive the required Business Layer dependency without creating the objects manually.
+
+---
+
+# 🌐 API Layer Responsibility
+
+The API Layer is responsible for:
+
+* Receiving HTTP requests.
+* Validating request models.
+* Calling the Business Layer.
+* Returning HTTP responses.
+* Exposing user-related endpoints.
+
+The controller should not directly contain database logic.
+
+---
+
+# 💼 Business Layer Responsibility
+
+The Business Layer is responsible for:
+
+* Application logic.
+* User-related business rules.
+* Password processing.
+* Authentication-related processing.
+* Calling the Repository Layer.
+* Handling user-related operations.
+
+---
+
+# 🗄️ Repository Layer Responsibility
+
+The Repository Layer is responsible for:
+
+* Database operations.
+* Communicating with `FundooContext`.
+* Working with Entity Framework Core.
+* Retrieving user information.
+* Adding and updating user information.
+
+---
+
+# 🧪 API Testing
+
+The Fundoo Notes App API can be tested using:
+
+```text
+Swagger / OpenAPI
+Postman
+```
+
+Swagger helps to view and test the available API endpoints during development.
+
+---
+
+# 🎯 Learning Outcomes – Day 12
+
+* ✅ Understood layered architecture in ASP.NET Core Web API.
+* ✅ Learned how to structure a multi-project backend application.
+* ✅ Implemented the User Management Module.
+* ✅ Learned user registration and login concepts.
+* ✅ Learned about password encryption.
+* ✅ Learned about password recovery and reset DTOs.
+* ✅ Learned how to create Request DTOs and Response DTOs.
+* ✅ Learned how to create custom exceptions.
+* ✅ Understood the purpose of the Business Layer.
+* ✅ Understood the purpose of the Repository Layer.
+* ✅ Learned the purpose of interfaces.
+* ✅ Learned how `DbContext` communicates with the database.
+* ✅ Created authentication-related helper classes.
+* ✅ Created JWT token helper groundwork.
+* ✅ Continued working with Entity Framework Core and SQL Server.
+* ✅ Strengthened understanding of backend project architecture.
+
+---
+
+# 🛠️ Practice Project
+
+## **Fundoo Notes App**
+
+Developed the initial **Fundoo Notes App backend** using ASP.NET Core Web API and Entity Framework Core.
+
+The User Management Module provides the foundation for:
+
+```text
+Registration
+      │
+      ▼
+   Login
+      │
+      ▼
+Authentication
+      │
+      ▼
+Password Recovery
+      │
+      ▼
+Password Reset
+```
+
+The application follows a layered architecture with separate API, Business, Model and Repository layers.
+
+---
+
+# 📅 Day 13 – Fundoo Notes App – Authentication & Authorization
+
+### 📚 What I Learnt
+
+Today I continued working on the **Fundoo Notes App** and started the groundwork for the **Authentication and Authorization Module**.
+
+The main concepts covered were:
+
+* 🔐 Authentication
+* 🛡️ Authorization
+* 🎫 JWT Authentication
+* 🔑 Password Encryption
+* 👤 User Identity
+* 🔒 Securing APIs
+* 🧩 Authentication Helpers
+* 🏗️ Layered Architecture
+* 💼 Business Layer
+* 🗄️ Repository Layer
+* 🔌 Interfaces
+* 💉 Dependency Injection
+* 📦 DTO-based request handling
+* ⚠️ Custom Exceptions
+* 🌐 ASP.NET Core Web API
+
+---
+
+## 🔐 Authentication
+
+Authentication is the process of verifying the identity of a user.
+
+In the Fundoo Notes App, authentication is connected with the user login functionality.
+
+The basic flow is:
+
+```text
+User
+ │
+ ▼
+Login
+ │
+ ▼
+Validate Credentials
+ │
+ ▼
+Authentication
+ │
+ ▼
+JWT Token
+```
+
+The project contains a JWT helper:
+
+```text
+Helpers
+└── JwtTokenHelper.cs
+```
+
+This provides the groundwork for token-based authentication.
+
+---
+
+# 🛡️ Authorization
+
+Authorization determines whether an authenticated user is allowed to access a particular resource or perform a particular operation.
+
+The basic concept is:
+
+```text
+Authentication
+      │
+      ▼
+Who are you?
+      │
+      ▼
+Authorization
+      │
+      ▼
+What are you allowed to access?
+```
+
+The Fundoo Notes App is being structured to support authenticated and authorized API operations.
+
+---
+
+# 🎫 JWT Authentication
+
+JWT stands for:
+
+```text
+JSON Web Token
+```
+
+JWT can be used to represent the authenticated user after successful login.
+
+The basic authentication flow is:
+
+```text
+Client
+  │
+  ▼
+Login Request
+  │
+  ▼
+UserController
+  │
+  ▼
+UserBL
+  │
+  ▼
+Validate User
+  │
+  ▼
+Generate JWT
+  │
+  ▼
+Return Token
+```
+
+For subsequent protected requests, the client can send the token with the request.
+
+```text
+Client
+  │
+  │  JWT Token
+  ▼
+Protected API
+  │
+  ▼
+Authentication
+  │
+  ▼
+Authorization
+  │
+  ▼
+Resource
+```
+
+---
+
+# 🔑 Password Security
+
+The project contains:
+
+```text
+PasswordEncryption.cs
+```
+
+Password-related processing is separated into a helper class.
+
+This keeps password processing separate from the Controller, Business Layer and Repository Layer.
+
+The overall concept is:
+
+```text
+User Password
+     │
+     ▼
+Password Processing
+     │
+     ▼
+Secure Password Representation
+     │
+     ▼
+Database
+```
+
+---
+
+# 🧩 Authentication Helpers
+
+The Business Layer contains authentication-related helpers:
+
+```text
+Helpers
+│
+├── JwtTokenHelper.cs
+└── PasswordEncryption.cs
+```
+
+### JwtTokenHelper
+
+Responsible for JWT-related authentication groundwork.
+
+### PasswordEncryption
+
+Responsible for password-related processing.
+
+Keeping these responsibilities inside helper classes makes the Business Layer more organized.
+
+---
+
+# 🏗️ Authentication Architecture
+
+The authentication-related request follows the layered architecture:
+
+```text
+Client
+  │
+  ▼
+UserController
+  │
+  ▼
+IUserBL
+  │
+  ▼
+UserBL
+  │
+  ├──────────────► JwtTokenHelper
+  │
+  ├──────────────► PasswordEncryption
+  │
+  ▼
+IUserRL
+  │
+  ▼
+UserRL
+  │
+  ▼
+FundooContext
+  │
+  ▼
+Entity Framework Core
+  │
+  ▼
+SQL Server
+```
+
+---
+
+# 📂 Fundoo Notes App Project Structure
+
+The Fundoo Notes App is organized into separate projects.
+
+```text
+Day-12
+│
+└── FundooNotesApp
+    │
+    ├── FundooNotesApp.API
+    │   │
+    │   ├── Controllers
+    │   │   └── UserController.cs
+    │   │
+    │   ├── Properties
+    │   │
+    │   ├── appsettings.Development.json
+    │   ├── appsettings.json
+    │   ├── FundooNotesApp.API.csproj
+    │   ├── FundooNotesApp.API.http
+    │   └── Program.cs
+    │
+    ├── FundooNotesApp.BusinessLayer
+    │   │
+    │   ├── Helpers
+    │   │   ├── JwtTokenHelper.cs
+    │   │   └── PasswordEncryption.cs
+    │   │
+    │   ├── Interfaces
+    │   │   └── IUserBL.cs
+    │   │
+    │   └── Services
+    │       └── UserBL.cs
+    │
+    ├── FundooNotesApp.ModelLayer
+    │   │
+    │   ├── DTOs
+    │   │   │
+    │   │   ├── RequestDTO
+    │   │   │   ├── ForgotPasswordDTO.cs
+    │   │   │   ├── LoginDTO.cs
+    │   │   │   ├── RegistrationDTO.cs
+    │   │   │   └── ResetPasswordDTO.cs
+    │   │   │
+    │   │   └── ResponseDTO
+    │   │       └── ResponseDTO.cs
+    │   │
+    │   ├── Entities
+    │   │   └── UserEntity.cs
+    │   │
+    │   ├── Exceptions
+    │   │   ├── InvalidCredentialsException.cs
+    │   │   ├── UserAlreadyExistsException.cs
+    │   │   └── UserNotFoundException.cs
+    │   │
+    │   └── Models
+    │       └── UserModel.cs
+    │
+    ├── FundooNotesApp.RepositoryLayer
+    │   │
+    │   ├── Context
+    │   │   └── FundooContext.cs
+    │   │
+    │   ├── Interfaces
+    │   │   └── IUserRL.cs
+    │   │
+    │   ├── Migrations
+    │   │
+    │   └── Services
+    │       └── UserRL.cs
+    │
+    └── FundooNotesApp.slnx
+```
+
+---
+
+# 🔄 Authentication Request Flow
+
+The authentication request moves through the application layers:
+
+```text
+Client
+  │
+  ▼
+UserController
+  │
+  ▼
+Business Layer
+  │
+  ▼
+Password Validation
+  │
+  ▼
+Repository Layer
+  │
+  ▼
+FundooContext
+  │
+  ▼
+SQL Server
+  │
+  ▼
+User Validation
+  │
+  ▼
+JWT Token Helper
+  │
+  ▼
+JWT Token
+  │
+  ▼
+Client
+```
+
+---
+
+# 🔒 Authentication vs Authorization
+
+| Authentication         | Authorization                                       |
+| ---------------------- | --------------------------------------------------- |
+| Verifies user identity | Determines user permissions                         |
+| Answers "Who are you?" | Answers "What can you access?"                      |
+| Happens during login   | Happens when accessing protected resources          |
+| Can use JWT tokens     | Can use authenticated user information and policies |
+| Identity verification  | Access control                                      |
+
+---
+
+# 📦 DTOs Used for Authentication
+
+The authentication and user management module contains:
+
+```text
+RequestDTO
+│
+├── LoginDTO.cs
+├── RegistrationDTO.cs
+├── ForgotPasswordDTO.cs
+└── ResetPasswordDTO.cs
+```
+
+### LoginDTO
+
+Used for receiving login information.
+
+### RegistrationDTO
+
+Used for receiving registration information.
+
+### ForgotPasswordDTO
+
+Used for receiving forgot-password information.
+
+### ResetPasswordDTO
+
+Used for receiving reset-password information.
+
+---
+
+# ⚠️ Exception Handling
+
+The application contains custom exceptions related to user authentication and management.
+
+```text
+Exceptions
+│
+├── InvalidCredentialsException.cs
+├── UserAlreadyExistsException.cs
+└── UserNotFoundException.cs
+```
+
+These exceptions help represent specific user-related error conditions.
+
+---
+
+# 🧱 Separation of Responsibilities
+
+The project separates responsibilities across different layers.
+
+```text
+API Layer
+    │
+    └── Handles HTTP Requests/Responses
+
+Business Layer
+    │
+    └── Handles Application Logic
+
+Model Layer
+    │
+    └── Contains Entities, DTOs and Exceptions
+
+Repository Layer
+    │
+    └── Handles Database Operations
+```
+
+This structure makes the application easier to maintain and extend.
+
+---
+
+# 🌐 Authentication Module Flow
+
+```text
+                 Fundoo Notes App
+                        │
+                        ▼
+                 User Login
+                        │
+                        ▼
+              Validate Credentials
+                        │
+                        ▼
+              Password Processing
+                        │
+                        ▼
+                User Validation
+                        │
+                        ▼
+                 JWT Generation
+                        │
+                        ▼
+                  JWT Token
+                        │
+                        ▼
+             Authenticated Request
+                        │
+                        ▼
+                  Authorization
+                        │
+                        ▼
+              Protected Resource
+```
+
+---
+
+# 🛠️ Technologies Used
+
+* C#
+* ASP.NET Core Web API
+* Entity Framework Core
+* SQL Server
+* JWT
+* REST API
+* DTOs
+* Repository Pattern
+* Business Layer
+* Interfaces
+* Dependency Injection
+* Swagger / OpenAPI
+* Visual Studio Code
+* Git & GitHub
+
+---
+
+# 💡 Key Learnings
+
+* 🔐 Difference between Authentication and Authorization.
+* 🎫 Basic concept of JWT-based authentication.
+* 🔑 Importance of password security.
+* 🧩 Purpose of `JwtTokenHelper`.
+* 🔐 Purpose of `PasswordEncryption`.
+* 👤 User login and registration flow.
+* 📦 Importance of DTOs.
+* 🏗️ Layered architecture in ASP.NET Core.
+* 💼 Role of the Business Layer.
+* 🗄️ Role of the Repository Layer.
+* 🔌 Importance of interfaces.
+* ⚠️ Custom exception handling.
+* 💉 Dependency Injection.
+* 🗃️ Entity Framework Core database communication.
+* 🌐 Authentication groundwork for REST APIs.
+
+---
+
+# 🎯 Learning Outcomes – Day 13
+
+* ✅ Understood the difference between Authentication and Authorization.
+* ✅ Learned the basic JWT authentication flow.
+* ✅ Created JWT authentication helper groundwork.
+* ✅ Created password encryption helper.
+* ✅ Understood the role of authentication in a Web API.
+* ✅ Understood how authentication and authorization fit into a layered architecture.
+* ✅ Learned how login can be connected with token-based authentication.
+* ✅ Strengthened understanding of secure user management.
+* ✅ Continued development of the Fundoo Notes App.
+* ✅ Improved understanding of API security concepts.
+* ✅ Practiced separation of concerns using API, Business, Model and Repository layers.
+
+---
+
+# 🛠️ Practice Project
+
+## **Fundoo Notes App**
+
+Continued development of the **Fundoo Notes App** with the User Management and Authentication modules.
+
+The application currently provides the groundwork for:
+
+```text
+User Registration
+       │
+       ▼
+   User Login
+       │
+       ▼
+ Password Security
+       │
+       ▼
+ Authentication
+       │
+       ▼
+ JWT Token
+       │
+       ▼
+ Authorization
+       │
+       ▼
+ Protected APIs
+```
+
+The project follows a layered architecture:
+
+```text
+FundooNotesApp.API
+        │
+        ▼
+FundooNotesApp.BusinessLayer
+        │
+        ▼
+FundooNotesApp.ModelLayer
+        │
+        ▼
+FundooNotesApp.RepositoryLayer
+        │
+        ▼
+   SQL Server
+   ```
+
+---
+# 🎯 Overall Learning Journey
+
+```text
+Database Fundamentals
+        │
+        ▼
+SQL & Database Design
+        │
+        ▼
+ADO.NET
+        │
+        ▼
+ASP.NET Core Web API
+        │
+        ▼
+Minimal APIs
+        │
+        ▼
+Entity Framework Core
+        │
+        ▼
+Repository & Business Layers
+        │
+        ▼
+DTOs & Dependency Injection
+        │
+        ▼
+Fundoo Notes App
+        │
+        ▼
+User Management
+        │
+        ▼
+Authentication
+        │
+        ▼
+Authorization
+        │
+        ▼
+.NET Backend Development
+```
+
+## 🚀 Current Learning Progress
+
+```text
+Day 1  → DBMS & RDBMS
+Day 2  → ER Diagram, Normalization & Indexing
+Day 3  → SQL Joins, Stored Procedures & Triggers
+Day 4  → ADO.NET & Health Clinic Application
+Day 5  → ASP.NET Core Web API & REST APIs
+Day 6  → ASP.NET Core MVC
+Day 7  → Minimal APIs & ADO.NET
+Day 8  → H2Sharp, Distributed Architecture & SQL Server
+Day 9  → Entity Framework Core & Migrations
+Day 10 → Repository, Business Layer & DTOs
+Day 12 → Fundoo Notes App – User Management
+Day 13 → Authentication & Authorization Groundwork
+```
+
+---
+
+---
+
+# 📂 Repository Structure – Updated
 
 ```text
 BridgeLabz-Backend-Refresher
@@ -1615,38 +2918,131 @@ BridgeLabz-Backend-Refresher
 │   └── ContactsApp
 │       ├── Controllers
 │       │   └── ContactController.cs
-│       │
 │       ├── Interfaces
 │       │   ├── IContactRepository.cs
 │       │   └── IContactService.cs
-│       │
 │       ├── Models
 │       │   └── Contact.cs
-│       │
 │       ├── Repo
 │       │   ├── AppDbContext.cs
 │       │   ├── ContactRepository.cs
 │       │   └── Migrations
-│       │       ├── 20260812133326_InitialCreate.cs
-│       │       ├── 20260812133326_InitialCreate.Designer.cs
-│       │       └── AppDbContextModelSnapshot.cs
-│       │
 │       ├── Services
 │       │   └── ContactService.cs
-│       │
 │       ├── Program.cs
 │       ├── appsettings.json
 │       ├── appsettings.Development.json
 │       ├── ContactsApp.http
 │       └── ContactsApp.csproj
 │
+├── Day10
+│   └── AddressBook
+│       ├── AddressBook
+│       │   └── Controllers
+│       │       └── ContactController.cs
+│       ├── BusinessLayer
+│       │   ├── Interface
+│       │   │   └── IContactBusiness.cs
+│       │   └── Service
+│       │       └── ContactBusiness.cs
+│       ├── ModelLayer
+│       │   └── Entities
+│       │       └── Contact.cs
+│       └── RepositoryLayer
+│           ├── Context
+│           │   └── AppDbContext.cs
+│           ├── Interface
+│           │   └── IContactRepository.cs
+│           ├── Service
+│           │   └── ContactRepository.cs
+│           └── Migration
+│
+├── Day12
+│   └── FundooNotesApp
+│       ├── FundooNotesApp.API
+│       │   ├── Controllers
+│       │   │   └── UserController.cs
+│       │   ├── Properties
+│       │   ├── appsettings.Development.json
+│       │   ├── appsettings.json
+│       │   ├── FundooNotesApp.API.csproj
+│       │   ├── FundooNotesApp.API.http
+│       │   └── Program.cs
+│       │
+│       ├── FundooNotesApp.BusinessLayer
+│       │   ├── Helpers
+│       │   │   ├── JwtTokenHelper.cs
+│       │   │   └── PasswordEncryption.cs
+│       │   ├── Interfaces
+│       │   │   └── IUserBL.cs
+│       │   └── Services
+│       │       └── UserBL.cs
+│       │
+│       ├── FundooNotesApp.ModelLayer
+│       │   ├── DTOs
+│       │   │   ├── RequestDTO
+│       │   │   │   ├── ForgotPasswordDTO.cs
+│       │   │   │   ├── LoginDTO.cs
+│       │   │   │   ├── RegistrationDTO.cs
+│       │   │   │   └── ResetPasswordDTO.cs
+│       │   │   └── ResponseDTO
+│       │   │       └── ResponseDTO.cs
+│       │   ├── Entities
+│       │   │   └── UserEntity.cs
+│       │   ├── Exceptions
+│       │   │   ├── InvalidCredentialsException.cs
+│       │   │   ├── UserAlreadyExistsException.cs
+│       │   │   └── UserNotFoundException.cs
+│       │   └── Models
+│       │       └── UserModel.cs
+│       │
+│       ├── FundooNotesApp.RepositoryLayer
+│       │   ├── Context
+│       │   │   └── FundooContext.cs
+│       │   ├── Interfaces
+│       │   │   └── IUserRL.cs
+│       │   ├── Migrations
+│       │   └── Services
+│       │       └── UserRL.cs
+│       │
+│       └── FundooNotesApp.slnx
+│
+├── Day13
+│   └── FundooNotesApp
+│       └── Authentication & Authorization groundwork
+│
 └── README.md
+
 ```
+
+---
 
 ---
 
 # 🌟 About This Repository
 
-This repository serves as a comprehensive record of my **BridgeLabz Backend Refresher Training (.NET)**. It showcases my day-wise learning through hands-on implementations using **Microsoft SQL Server**, **ADO.NET**, **ASP.NET Core Web API**, and **ASP.NET Core MVC**. The repository covers database design, SQL programming, query optimization, joins, stored procedures, triggers, connected database programming, CRUD operations, RESTful API development, MVC architecture, routing, Razor Views, and request-response handling. Each module builds upon the previous one, helping me develop a strong foundation in **.NET Backend Development** while following industry-standard software development practices.
+This repository serves as a comprehensive record of my **BridgeLabz Backend Refresher Training (.NET)**.
+
+It documents my day-wise learning through hands-on implementations using:
+
+* Microsoft SQL Server
+* SQL
+* ADO.NET
+* ASP.NET Core
+* ASP.NET Core MVC
+* ASP.NET Core Minimal APIs
+* Entity Framework Core
+* REST APIs
+* Repository Pattern
+* Service / Business Layer
+* DTOs
+* Dependency Injection
+* JWT Authentication
+* Authentication & Authorization
+* Swagger / OpenAPI
+
+Each module builds upon the previous one and helps strengthen my understanding of **.NET Backend Development**, database integration, layered architecture, RESTful API development and backend application security.
+---
+
 
 ---
