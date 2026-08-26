@@ -1,0 +1,46 @@
+@FundooNotesApp.UserManagementService_HostAddress = http://localhost:5101
+
+### Register a new user
+POST {{FundooNotesApp.UserManagementService_HostAddress}}/api/user/register
+Content-Type: application/json
+
+{
+  "firstName": "Jane",
+  "lastName": "Doe",
+  "email": "jane.doe@example.com",
+  "password": "Password123"
+}
+
+### Login
+POST {{FundooNotesApp.UserManagementService_HostAddress}}/api/user/login
+Content-Type: application/json
+
+{
+  "email": "jane.doe@example.com",
+  "password": "Password123"
+}
+
+### Get profile (requires Bearer token from login)
+GET {{FundooNotesApp.UserManagementService_HostAddress}}/api/user/profile
+Authorization: Bearer {{token}}
+
+### Forget password
+POST {{FundooNotesApp.UserManagementService_HostAddress}}/api/user/forget-password
+Content-Type: application/json
+
+{
+  "email": "jane.doe@example.com"
+}
+
+### Reset password
+POST {{FundooNotesApp.UserManagementService_HostAddress}}/api/user/reset-password
+Content-Type: application/json
+
+{
+  "token": "PASTE_RESET_TOKEN_HERE",
+  "newPassword": "NewPassword123"
+}
+
+### Logout (requires Bearer token)
+POST {{FundooNotesApp.UserManagementService_HostAddress}}/api/user/logout
+Authorization: Bearer {{token}}
