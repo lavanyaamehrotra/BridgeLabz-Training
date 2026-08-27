@@ -1,0 +1,6 @@
+@FundooNotesApp.ReminderService_HostAddress = http://localhost:5140
+
+GET {{FundooNotesApp.ReminderService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

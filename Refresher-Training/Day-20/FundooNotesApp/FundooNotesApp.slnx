@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="FundooNotesApp.AuthService/FundooNotesApp.AuthService.csproj" />
+  <Project Path="FundooNotesApp.LabelService/FundooNotesApp.LabelService.csproj" />
+  <Project Path="FundooNotesApp.NotesService/FundooNotesApp.NotesService.csproj" />
+  <Project Path="FundooNotesApp.ReminderService/FundooNotesApp.ReminderService.csproj" />
+  <Project Path="FundooNotesApp.UserManagementService/FundooNotesApp.UserManagementService.csproj" />
+</Solution>

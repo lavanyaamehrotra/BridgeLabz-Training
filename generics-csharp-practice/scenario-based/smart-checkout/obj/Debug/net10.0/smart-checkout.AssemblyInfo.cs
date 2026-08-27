@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("smart-checkout")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+064fe528240c359d686f4f2f931f13403bb359fb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+df7a1a47154944cd21eaa27855c3722a6b4ffa21")]
 [assembly: System.Reflection.AssemblyProductAttribute("smart-checkout")]
 [assembly: System.Reflection.AssemblyTitleAttribute("smart-checkout")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
